@@ -2,7 +2,7 @@ import { isNullOrUndefined } from 'util';
 import { LoggerService } from './../logger/logger.service';
 import { Injectable } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
-import { SubscriptionResult } from './subscription-result';
+import { HttpResult } from './http-result';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +31,8 @@ export class SubscriptionService {
     this.subscriptions = [];
   }
 
-  public httpResult(observable: Observable<any>): SubscriptionResult {
-    let result = new SubscriptionResult();
+  public httpResult(observable: Observable<any>): HttpResult {
+    let result = new HttpResult();
 
     let tempSub: Subscription = observable.subscribe(
       object => {

@@ -1,4 +1,4 @@
-export class SubscriptionResult {
+export class HttpResult {
     public wasSuccessful: boolean;
     public resultObject: any;
 }

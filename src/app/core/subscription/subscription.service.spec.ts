@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { TestBed } from '@angular/core/testing';
 
 import { SubscriptionService } from './subscription.service';
-import { SubscriptionResult } from './subscription-result';
+import { HttpResult } from './http-result';
 
 describe('SubscriptionService', () => {
   let service: SubscriptionService;
@@ -50,7 +50,7 @@ describe('SubscriptionService', () => {
   });
 
   it('should have a defined result set', () => {
-    let result: SubscriptionResult = service.httpResult(new Observable());
+    let result: HttpResult = service.httpResult(new Observable());
     expect(result).toBeDefined();
   });
 });
