@@ -27,6 +27,7 @@ export class LoggerService {
 
   constructor() {
     this.initSettings();
+    this.debug('Creating instance of ' + LoggerService.name);
   }
 
   public updateSettings(logTimestamp: boolean, logType: boolean, logLevel: string) {

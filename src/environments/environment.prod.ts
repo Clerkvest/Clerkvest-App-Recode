@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  logLevel: 'debug',
+  logLevel: 'info',
   logTimestamp: true,
   logType: true
 };

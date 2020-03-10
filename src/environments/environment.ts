@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  logLevel: 'warn',
+  logLevel: 'debug',
   logTimestamp: true,
   logType: true
 };

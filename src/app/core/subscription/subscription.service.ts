@@ -11,15 +11,19 @@ export class SubscriptionService {
 
   private subscriptions: Subscription[] = [];
 
-  constructor(private logger: LoggerService) { }
+  constructor(private logger: LoggerService) {
+    this.logger.debug('Creating instance of ' + SubscriptionService.name);
+  }
 
   public add(subscription: Subscription) {
+    this.logger.debug('Subscribing ' + subscription);
     this.subscriptions.push(subscription);
   }
 
   public unsubscribe() {
     this.subscriptions.forEach(subscription => {
       if(!isNullOrUndefined(subscription)) {
+        this.logger.debug('Unsubscribing ' + subscription);
         subscription.unsubscribe();
       }
     });
@@ -34,12 +38,17 @@ export class SubscriptionService {
       object => {
         result.wasSuccessful = true;
         result.resultObject = object;
+
+        this.logger.debug('Http result: ' + result);
       },
       error => {
         result.wasSuccessful = false;
         result.resultObject = error;
+
+        this.logger.error('Http result: ' + result);
       },
       () => {
+        this.logger.debug('httpResult completed');
         tempSub.unsubscribe();
       }
     );
