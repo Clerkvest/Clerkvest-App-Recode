@@ -11,9 +11,6 @@ import { Component, Inject } from '@angular/core';
 export class AppComponent {
   title = 'Clerkvest-App';
 
-  constructor(private logger: LoggerService, private subscriptionService: SubscriptionService) {
-    subscriptionService.add(new Observable<any>().subscribe());
-    subscriptionService.add(new Observable<any>().subscribe());
-    subscriptionService.unsubscribe();
+  constructor(private logger: LoggerService) {
   }
 }
