@@ -1,6 +1,6 @@
 import { LoggerService } from './../../../core/logger/logger.service';
 import { logging } from 'protractor';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ApplicationRef, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'input-currency',
@@ -17,10 +17,6 @@ export class InputCurrencyComponent implements OnInit {
 
   @Input() decimalPlaces: number = 2;
 
-  @Input() min: number = -1;
-
-  @Input() max: number = -1;
-
   @Output() changeListener = new EventEmitter();
 
   constructor(private logger: LoggerService) { }
@@ -30,13 +26,6 @@ export class InputCurrencyComponent implements OnInit {
 
   onChange(value: string) {
     let parsed: number = parseFloat(value);
-
-    if(this.min > 0 && parsed < this.min) {
-      parsed = this.min;
-    } 
-    else if(this.max > 0 && parsed > this.max) {
-      parsed = this.max;
-    }
 
     this.value = parseFloat(parsed.toString()).toFixed(2);
     this.changeListener.emit(this.value);
