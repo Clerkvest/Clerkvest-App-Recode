@@ -1,3 +1,23 @@
-:root {
-    --border: #E8E8E8;
-}
+// Static
+$default-white: rgb(232, 232, 232);
+$element-border: rgb(232, 232, 232);
+
+// Gray theme
+$gray-btn-bg: rgb(232, 232, 232);
+$gray-btn-hover: rgb(198, 199, 199);
+$gray-btn-color: #666666;
+
+$gray-btn-border-outline: rgb(232, 232, 232);
+$gray-btn-hover-outline: rgb(198, 199, 199);
+$gray-btn-color-outline: #666666;
+$gray-btn-color-hover-outline: #666666;
+
+// Custom theme
+$custom-btn-bg: rgb(46, 141, 214);
+$custom-btn-hover: rgb(29, 117, 184);
+$custom-btn-color: rgb(255, 255, 255);
+
+$custom-btn-border-outline: rgb(29, 117, 184);
+$custom-btn-hover-outline: rgb(29, 117, 184);
+$custom-btn-color-outline: rgb(46, 141, 214);
+$custom-btn-color-hover-outline: rgb(232, 232, 232);
