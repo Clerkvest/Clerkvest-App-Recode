@@ -16,4 +16,8 @@ export class SharedOverviewComponent implements OnInit {
   changeListener($event: any) {
     this.logger.debug($event);
   }
+
+  onClick() {
+    console.log("Clicked Simple");
+  }
 }
