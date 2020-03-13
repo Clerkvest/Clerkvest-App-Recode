@@ -17,6 +17,10 @@ export class InputCurrencyComponent implements OnInit {
 
   @Input() decimalPlaces: number = 2;
 
+  @Input() min: number = -1;
+
+  @Input() max: number = -1;
+
   @Output() changeListener = new EventEmitter();
 
   constructor(private logger: LoggerService) { }
@@ -25,11 +29,16 @@ export class InputCurrencyComponent implements OnInit {
   }
 
   onChange(value: string) {
-    this.value = parseFloat(value).toFixed(2);
-    this.changeListener.emit(this.value);
-  }
+    let parsed: number = parseFloat(value);
 
-  setCurrency(currency: string) {
-    this.currency = currency;
+    if(this.min > 0 && parsed < this.min) {
+      parsed = this.min;
+    } 
+    else if(this.max > 0 && parsed > this.max) {
+      parsed = this.max;
+    }
+
+    this.value = parseFloat(parsed.toString()).toFixed(2);
+    this.changeListener.emit(this.value);
   }
 }
