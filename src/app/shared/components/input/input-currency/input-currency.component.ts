@@ -1,6 +1,5 @@
-import { LoggerService } from './../../../core/logger/logger.service';
-import { logging } from 'protractor';
-import { Component, OnInit, Input, Output, EventEmitter, ApplicationRef, ChangeDetectorRef } from '@angular/core';
+import { LoggerService } from '../../../../core/logger/logger.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'input-currency',
