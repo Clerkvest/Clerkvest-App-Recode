@@ -1,7 +1,5 @@
-import { Observable } from 'rxjs';
-import { SubscriptionService } from './core/subscription/subscription.service';
 import { LoggerService } from './core/logger/logger.service';
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +9,8 @@ import { Component, Inject } from '@angular/core';
 export class AppComponent {
   title = 'Clerkvest-App';
 
-  constructor(private logger: LoggerService) {
+  private logger: LoggerService = LoggerService.build(AppComponent.name);
+
+  constructor() {
   }
 }

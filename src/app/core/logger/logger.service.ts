@@ -16,7 +16,10 @@ export class LoggerService {
 
   private logTimestamp = true;
   private logType = true;
+  private logIdentifier = true;
   private logLevel = 3;
+
+  private identifier: string;
 
   // Trace = 5; 
   // Debug = 4;
@@ -27,13 +30,18 @@ export class LoggerService {
 
   constructor() {
     this.initSettings();
-    this.debug('Creating instance of ' + LoggerService.name);
   }
 
-  public updateSettings(logTimestamp: boolean, logType: boolean, logLevel: string) {
+  public static build(identifier?: string): LoggerService {
+    let logger: LoggerService = new LoggerService();
+    return logger;
+  }
+
+  public updateSettings(logTimestamp: boolean, logType: boolean, logLevel: string, logIdentifier: boolean) {
     environment.logTimestamp = logTimestamp;
     environment.logType = logType;
     environment.logLevel = logLevel;
+    environment.logIdentifier = logIdentifier;
 
     this.initSettings();
   }
@@ -42,6 +50,7 @@ export class LoggerService {
     this.initTimestamp();
     this.initType();
     this.initLevel();
+    this.initIdentifier();
   }
 
   private initTimestamp() {
@@ -53,6 +62,12 @@ export class LoggerService {
   private initType() {
     if (!isNullOrUndefined(environment.logType)) {
       this.logType = environment.logType;
+    }
+  }
+
+  private initIdentifier() {
+    if (!isNullOrUndefined(environment.logIdentifier)) {
+      this.logIdentifier = environment.logIdentifier;
     }
   }
 
@@ -115,9 +130,18 @@ export class LoggerService {
     return msg;
   }
 
+  private prependIdentifier (msg: string): string {
+    if(this.logIdentifier) {
+      return '[' + this.identifier + ']\t' + msg;
+    }
+
+    return msg;
+  }
+
   public fatal(object: any) {
     if(this.logLevel >= 0) {
       let msg: string = JSON.stringify(object);
+      msg = this.prependIdentifier(msg);
       msg = this.prependType(msg, LoggerService.FATAL);
       msg = this.prependTime(msg);
       console.log(msg);
@@ -127,6 +151,7 @@ export class LoggerService {
   public error(object: any) {
     if(this.logLevel >= 1) {
       let msg: string = JSON.stringify(object);
+      msg = this.prependIdentifier(msg);
       msg = this.prependType(msg, LoggerService.ERROR);
       msg = this.prependTime(msg);
       console.log(msg);
@@ -136,6 +161,7 @@ export class LoggerService {
   public warn(object: any) {
     if(this.logLevel >= 2) {
       let msg: string = JSON.stringify(object);
+      msg = this.prependIdentifier(msg);
       msg = this.prependType(msg, LoggerService.WARN);
       msg = this.prependTime(msg);
       console.warn(msg);
@@ -145,6 +171,7 @@ export class LoggerService {
   public info(object: any) {
     if(this.logLevel >= 3) {
       let msg: string = JSON.stringify(object);
+      msg = this.prependIdentifier(msg);
       msg = this.prependType(msg, LoggerService.INFO);
       msg = this.prependTime(msg);
       console.log(msg);
@@ -154,6 +181,7 @@ export class LoggerService {
   public debug(object: any) {
     if(this.logLevel >= 4) {
       let msg: string = JSON.stringify(object);
+      msg = this.prependIdentifier(msg);
       msg = this.prependType(msg, LoggerService.DEBUG);
       msg = this.prependTime(msg);
       console.log(msg);
@@ -163,6 +191,7 @@ export class LoggerService {
   public trace(object: any) {
     if(this.logLevel >= 5) {
       let msg: string = JSON.stringify(object);
+      msg = this.prependIdentifier(msg);
       msg = this.prependType(msg, LoggerService.TRACE);
       msg = this.prependTime(msg);
       console.error(msg);

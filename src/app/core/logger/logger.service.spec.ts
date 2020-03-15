@@ -18,7 +18,7 @@ describe('LoggerService', () => {
   });
 
   it('should print everything from TRACE', () => {
-    service.updateSettings(false, false, LoggerService.TRACE);
+    service.updateSettings(false, false, LoggerService.TRACE, false);
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
@@ -36,7 +36,7 @@ describe('LoggerService', () => {
   });
 
   it('should print everything from DEBUG', () => {
-    service.updateSettings(false, false, LoggerService.DEBUG);
+    service.updateSettings(false, false, LoggerService.DEBUG, false);
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
@@ -54,7 +54,7 @@ describe('LoggerService', () => {
   });
 
   it('should print everything from INFO', () => {
-    service.updateSettings(false, false, LoggerService.INFO);
+    service.updateSettings(false, false, LoggerService.INFO, false);
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
@@ -72,7 +72,7 @@ describe('LoggerService', () => {
   });
 
   it('should print everything from WARN', () => {
-    service.updateSettings(false, false, LoggerService.WARN);
+    service.updateSettings(false, false, LoggerService.WARN, false);
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
@@ -90,7 +90,7 @@ describe('LoggerService', () => {
   });
 
   it('should print everything from ERROR', () => {
-    service.updateSettings(false, false, LoggerService.ERROR);
+    service.updateSettings(false, false, LoggerService.ERROR, false);
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
@@ -108,7 +108,7 @@ describe('LoggerService', () => {
   });
 
   it('should print everything from FATAL', () => {
-    service.updateSettings(false, false, LoggerService.FATAL);
+    service.updateSettings(false, false, LoggerService.FATAL, false);
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);

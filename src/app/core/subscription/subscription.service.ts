@@ -9,9 +9,11 @@ import { HttpResult } from './http-result';
 })
 export class SubscriptionService {
 
+  private logger: LoggerService = LoggerService.build(SubscriptionService.name);
+
   private subscriptions: Subscription[] = [];
 
-  constructor(private logger: LoggerService) {
+  constructor() {
     this.logger.debug('Creating instance of ' + SubscriptionService.name);
   }
 

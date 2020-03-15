@@ -6,7 +6,9 @@ export const environment = {
   production: false,
   logLevel: 'debug',
   logTimestamp: true,
-  logType: true
+  logType: true,
+  logIdentifier: true,
+  basePath: 'https://clerkvest.com/api'
 };
 
 /*
