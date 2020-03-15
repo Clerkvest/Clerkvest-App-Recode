@@ -4,12 +4,12 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { TestBed, tick } from '@angular/core/testing';
 
-import { ProjectEndpointService } from './project-repository.service';
 import { IProjectImage } from '../../models/models';
 import { Observable } from 'rxjs';
+import { ProjectRepositoryService } from './project-repository.service';
 
 describe('ProjectEndpointService', () => {
-  let service: ProjectEndpointService;
+  let service: ProjectRepositoryService;
   let cookieService: CookieService;
 
   beforeEach(() => {
@@ -25,7 +25,7 @@ describe('ProjectEndpointService', () => {
     cookieService = TestBed.inject(CookieService);
     cookieService.set('_api', 'swagger-token')
 
-    service = TestBed.inject(ProjectEndpointService);
+    service = TestBed.inject(ProjectRepositoryService);
   });
 
   it('should be created', () => {
@@ -47,12 +47,11 @@ describe('ProjectEndpointService', () => {
 
           expect(project.id).toBe(0);
           expect(project.description).toBe('string');
+          done();
         });
       },
       error => {
         console.log(error);
-      },
-      () => {
         done();
       }
     );

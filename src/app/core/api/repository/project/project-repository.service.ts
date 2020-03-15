@@ -8,9 +8,9 @@ import { IProjectImage } from '../../models/models';
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectEndpointService {
+export class ProjectRepositoryService {
 
-  private logger: LoggerService = LoggerService.build(ProjectEndpointService.name);
+  private logger: LoggerService = LoggerService.build(ProjectRepositoryService.name);
 
   private basePath: string;
 
@@ -21,7 +21,7 @@ export class ProjectEndpointService {
   public getAll(): Observable<Array<IProjectImage>> {
     let headers = this.configuration.getHeaders();
 
-    this.logger.debug('Request: ' + `${this.basePath}/project/all/image`);
+    this.logger.debug('Executing request: ' + `${this.basePath}/project/all/image`);
 
     return this.httpClient.get<Array<IProjectImage>>(`${this.basePath}/project/all/image`,
     {
@@ -29,4 +29,15 @@ export class ProjectEndpointService {
         headers: headers,
     });
   }
+
+  public getById() {}
+
+  public create(): Observable<any> {
+    return null;
+  }
+
+  public update() {}
+
+  public deleteById() {}
+
 }

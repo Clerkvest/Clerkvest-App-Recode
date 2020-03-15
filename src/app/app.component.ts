@@ -1,3 +1,4 @@
+import { ProjectRepositoryService } from './core/api/repository/project/project-repository.service';
 import { LoggerService } from './core/logger/logger.service';
 import { Component } from '@angular/core';
 
