@@ -12,5 +12,6 @@ export class AppComponent {
   private logger: LoggerService = LoggerService.build(AppComponent.name);
 
   constructor() {
+    this.logger.debug('Test');
   }
 }

@@ -32,8 +32,9 @@ export class LoggerService {
     this.initSettings();
   }
 
-  public static build(identifier?: string): LoggerService {
+  public static build(identifier: string): LoggerService {
     let logger: LoggerService = new LoggerService();
+    logger.identifier = identifier;
     return logger;
   }
 
@@ -116,7 +117,7 @@ export class LoggerService {
         now.getMinutes() + ':' + 
         now.getSeconds();
 
-      return date + '\t' + msg;
+      return date + '   ' + msg;
     } 
 
     return msg;
@@ -124,7 +125,7 @@ export class LoggerService {
 
   private prependType (msg: string, type: string): string {
     if(this.logType) {
-      return type.toUpperCase() + '\t' + msg;
+      return type.toUpperCase() + '   ' + msg;
     }
 
     return msg;
@@ -132,7 +133,7 @@ export class LoggerService {
 
   private prependIdentifier (msg: string): string {
     if(this.logIdentifier) {
-      return '[' + this.identifier + ']\t' + msg;
+      return '[' + this.identifier + ']   ' + msg;
     }
 
     return msg;
