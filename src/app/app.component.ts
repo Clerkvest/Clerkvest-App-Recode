@@ -13,6 +13,8 @@ export class AppComponent {
   private logger: LoggerService = LoggerService.build(AppComponent.name);
 
   constructor(private ProjectEndpointService: ProjectEndpointService) {
-    ProjectEndpointService.getAllUsingGET().subscribe(e => this.logger.debug(e));
+    ProjectEndpointService.getAllUsingGET().subscribe(
+      e => this.logger.debug(e)
+    );
   }
 }
