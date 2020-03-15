@@ -1,3 +1,4 @@
+import { ProjectEndpointService } from './core/api/endpoints/project/project-endpoint.service';
 import { LoggerService } from './core/logger/logger.service';
 import { Component } from '@angular/core';
 
@@ -11,7 +12,7 @@ export class AppComponent {
 
   private logger: LoggerService = LoggerService.build(AppComponent.name);
 
-  constructor() {
-    this.logger.debug('Test');
+  constructor(private ProjectEndpointService: ProjectEndpointService) {
+    ProjectEndpointService.getAllUsingGET().subscribe(e => this.logger.debug(e));
   }
 }
