@@ -14,18 +14,15 @@ export class SubscriptionService {
   private subscriptions: Subscription[] = [];
 
   constructor() {
-    this.logger.debug('Creating instance of ' + SubscriptionService.name);
   }
 
   public add(subscription: Subscription) {
-    this.logger.debug('Subscribing ' + subscription);
     this.subscriptions.push(subscription);
   }
 
   public unsubscribe() {
     this.subscriptions.forEach(subscription => {
       if(!isNullOrUndefined(subscription)) {
-        this.logger.debug('Unsubscribing ' + subscription);
         subscription.unsubscribe();
       }
     });

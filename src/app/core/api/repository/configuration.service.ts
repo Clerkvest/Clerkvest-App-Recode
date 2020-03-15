@@ -31,8 +31,8 @@ export class ConfigurationService {
   getHeaders() {
     let headers = this.defaultHeaders;
     headers = headers.set('Authorization', 'Bearer '  + this.cookieService.get('_api'));
-    headers = headers.set('Accept', 'application/json');
-    headers = headers.set('Content-Type', 'application/json');
+    // headers = headers.set('Accept', 'application/json');
+    // headers = headers.set('Content-Type', 'application/json');
 
     return headers;
   }

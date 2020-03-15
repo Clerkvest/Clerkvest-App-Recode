@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ConfigurationService } from './../configuration.service';
-import { LoggerService } from './../../../logger/logger.service';
+import { ConfigurationService } from '../configuration.service';
+import { LoggerService } from '../../../logger/logger.service';
 import { Injectable } from '@angular/core';
 import { IProjectImage } from '../../models/models';
 
@@ -18,10 +18,10 @@ export class ProjectEndpointService {
     this.basePath = configuration.getBasePath();
   }
 
-  public getAllUsingGET(): Observable<Array<IProjectImage>> {
+  public getAll(): Observable<Array<IProjectImage>> {
     let headers = this.configuration.getHeaders();
 
-    this.logger.debug('http request using get with headers: ' + headers);
+    this.logger.debug('Request: ' + `${this.basePath}/project/all/image`);
 
     return this.httpClient.get<Array<IProjectImage>>(`${this.basePath}/project/all/image`,
     {
