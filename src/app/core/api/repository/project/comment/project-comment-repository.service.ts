@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ProjectCommentRepositoryService {
 
-  private static readonly SERVICE_BASE: string = '/comment/'
+  public static readonly SERVICE_BASE: string = '/comment/'
 
   private static readonly GET_ALL_OF_PROJECT: string = '/comments';
   private static readonly GET_SINGLE: string = ProjectCommentRepositoryService.SERVICE_BASE + 'get/';

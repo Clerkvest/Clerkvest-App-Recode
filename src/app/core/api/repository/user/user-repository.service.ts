@@ -12,7 +12,7 @@ import { IProjectImage, IProject } from '../../models/models';
 })
 export class UserRepositoryService {
 
-  private static readonly SERVICE_BASE: string = '/employee/'
+  public static readonly SERVICE_BASE: string = '/employee/'
 
   private static readonly GET_ALL: string = UserRepositoryService.SERVICE_BASE + 'all/'
   private static readonly GET_SINGLE: string = UserRepositoryService.SERVICE_BASE + 'get/';

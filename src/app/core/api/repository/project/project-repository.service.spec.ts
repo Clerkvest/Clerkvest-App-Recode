@@ -97,7 +97,7 @@ describe('ProjectRepositoryService', () => {
     )
   });
 
-  it('should return create a IProject object', (done) => {
+  it('should create a IProject object', (done) => {
 
     let project: IProject = new class implements IProject {
       id?: number;
@@ -142,7 +142,7 @@ describe('ProjectRepositoryService', () => {
     )
   });
 
-  it('should return update a IProject object', (done) => {
+  it('should update a IProject object', (done) => {
 
     let project: IProject = new class implements IProject {
       id?: number;
@@ -187,7 +187,7 @@ describe('ProjectRepositoryService', () => {
     )
   });
 
-  it('should return delete a IProject', (done) => {
+  it('should delete a IProject', (done) => {
 
     let project$ = service.deleteById(0);
 
