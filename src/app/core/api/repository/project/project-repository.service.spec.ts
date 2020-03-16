@@ -9,7 +9,7 @@ import { IProjectImage } from '../../models/models';
 import { Observable } from 'rxjs';
 import { ProjectRepositoryService } from './project-repository.service';
 
-describe('ProjectEndpointService', () => {
+describe('ProjectRepositoryService', () => {
   let service: ProjectRepositoryService;
   let cookieService: CookieService;
 
