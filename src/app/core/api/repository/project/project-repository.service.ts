@@ -11,11 +11,13 @@ import { IProjectImage } from '../../models/IProjectImage';
 })
 export class ProjectRepositoryService {
 
-  private static readonly GET_ALL_WITH_IMAGE: string = '/project/all/image'
-  private static readonly GET_SINGLE: string = '/project/get/';
-  private static readonly CREATE: string = '/project/create';
-  private static readonly UPDATE: string = '/project/update';
-  private static readonly DELETE_SINGLE: string = '/project/delete/';
+  private static readonly SERVICE_BASE: string = '/project/'
+
+  private static readonly GET_ALL_WITH_IMAGE: string = ProjectRepositoryService.SERVICE_BASE + 'all/image'
+  private static readonly GET_SINGLE: string = ProjectRepositoryService.SERVICE_BASE +  'get/';
+  private static readonly CREATE: string = ProjectRepositoryService.SERVICE_BASE + 'create';
+  private static readonly UPDATE: string = ProjectRepositoryService.SERVICE_BASE + 'update';
+  private static readonly DELETE_SINGLE: string = ProjectRepositoryService.SERVICE_BASE + 'delete/';
 
   private logger: LoggerService = LoggerService.build(ProjectRepositoryService.name);
 
