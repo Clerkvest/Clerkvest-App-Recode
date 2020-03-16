@@ -1,14 +1,21 @@
+import { IProject } from './../../models/IProject';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ConfigurationService } from '../configuration.service';
 import { LoggerService } from '../../../logger/logger.service';
 import { Injectable } from '@angular/core';
-import { IProjectImage } from '../../models/models';
+import { IProjectImage } from '../../models/IProjectImage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectRepositoryService {
+
+  private static readonly GET_ALL_WITH_IMAGE: string = '/project/all/image'
+  private static readonly GET_SINGLE: string = '/project/get/';
+  private static readonly CREATE: string = '/project/create';
+  private static readonly UPDATE: string = '/project/update';
+  private static readonly DELETE_SINGLE: string = '/project/delete/';
 
   private logger: LoggerService = LoggerService.build(ProjectRepositoryService.name);
 
@@ -20,24 +27,57 @@ export class ProjectRepositoryService {
 
   public getAll(): Observable<Array<IProjectImage>> {
     let headers = this.configuration.getHeaders();
+    let url = this.basePath + ProjectRepositoryService.GET_ALL_WITH_IMAGE;
+    this.logger.debug('Executing request: ' + url);
 
-    this.logger.debug('Executing request: ' + `${this.basePath}/project/all/image`);
-
-    return this.httpClient.get<Array<IProjectImage>>(`${this.basePath}/project/all/image`,
+    return this.httpClient.get<Array<IProjectImage>>(url,
     {
-        withCredentials: false,
         headers: headers,
     });
   }
 
-  public getById() {}
+  public getById(id: number): Observable<IProject> {
+    let headers = this.configuration.getHeaders();
+    let url = this.basePath + ProjectRepositoryService.GET_SINGLE + encodeURIComponent(String(id));
+    this.logger.debug('Executing request: ' + url);
 
-  public create(): Observable<any> {
-    return null;
+    return this.httpClient.get<IProject>(url,
+    {
+        headers: headers,
+    });
   }
 
-  public update() {}
+  public create(body: IProject): Observable<any> {
+    let headers = this.configuration.getHeaders();
+    let url = this.basePath + ProjectRepositoryService.CREATE;
+    this.logger.debug('Executing request: ' + url);
 
-  public deleteById() {}
+    return this.httpClient.post<IProject>(url, body,
+    {
+        headers: headers,
+    });
+  }
+
+  public update(body: IProject) {
+    let headers = this.configuration.getHeaders();
+    let url = this.basePath + ProjectRepositoryService.UPDATE;
+    this.logger.debug('Executing request: ' + url);
+
+    return this.httpClient.put<IProject>(url, body,
+    {
+        headers: headers,
+    });
+  }
+
+  public deleteById(id: number) {
+    let headers = this.configuration.getHeaders();
+    let url = this.basePath + ProjectRepositoryService.DELETE_SINGLE + encodeURIComponent(String(id));
+    this.logger.debug('Executing request: ' + url);
+
+    return this.httpClient.delete<IProject>(url,
+    {
+        headers: headers,
+    });
+  }
 
 }

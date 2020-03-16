@@ -1,3 +1,4 @@
+import { IProject } from './../../models/IProject';
 import { CookieService } from 'ngx-cookie-service';
 
 import { environment } from 'src/environments/environment';
@@ -46,14 +47,159 @@ describe('ProjectEndpointService', () => {
           _project = project;
 
           expect(project.id).toBe(0);
-          expect(project.description).toBe('string');
+          expect(project.employeeId).toBeDefined();
+          expect(project.companyId).toBeDefined();
+          expect(project.link).toBeDefined();
+          expect(project.description).toBeDefined();
+          expect(project.goal).toBeDefined();
+          expect(project.investedIn).toBeDefined();
+          expect(project.reached).toBeDefined();
+          expect(project.image).toBeDefined();
+          expect(project.createdAt).toBeDefined();
+          expect(project.fundedAt).toBeDefined();
+
           done();
         });
       },
       error => {
-        console.log(error);
+        expect(error).not.toBeDefined();
         done();
       }
     );
+  });
+
+  it('should return a IProject object', (done) => {
+    let project$ = service.getById(0);
+
+    project$.subscribe(
+      p => {
+
+        expect(p).toBeDefined();
+
+        expect(p.id).toBe(0);
+        expect(p.employeeId).toBeDefined();
+        expect(p.companyId).toBeDefined();
+        expect(p.link).toBeDefined();
+        expect(p.description).toBeDefined();
+        expect(p.goal).toBeDefined();
+        expect(p.investedIn).toBeDefined();
+        expect(p.reached).toBeDefined();
+        expect(p.image).toBeDefined();
+        expect(p.createdAt).toBeDefined();
+        expect(p.fundedAt).toBeDefined();
+
+        done();
+      },
+      error => {
+        expect(error).not.toBeDefined();
+        done();
+      }
+    )
+  });
+
+  it('should return create a IProject object', (done) => {
+
+    let project: IProject = new class implements IProject {
+      id?: number;
+      employeeId?: number;
+      companyId?: number;
+      link?: string;
+      title?: string;
+      description?: string;
+      goal?: number;
+      investedIn?: number;
+      reached?: boolean;
+      image?: number;
+      createdAt?: Date;
+      fundedAt?: Date;
+    }
+
+    let project$ = service.create(project);
+
+    project$.subscribe(
+      p => {
+
+        expect(p).toBeDefined();
+
+        expect(p.id).toBe(0);
+        expect(p.employeeId).toBeDefined();
+        expect(p.companyId).toBeDefined();
+        expect(p.link).toBeDefined();
+        expect(p.description).toBeDefined();
+        expect(p.goal).toBeDefined();
+        expect(p.investedIn).toBeDefined();
+        expect(p.reached).toBeDefined();
+        expect(p.image).toBeDefined();
+        expect(p.createdAt).toBeDefined();
+        expect(p.fundedAt).toBeDefined();
+
+        done();
+      },
+      error => {
+        expect(error).not.toBeDefined();
+        done();
+      }
+    )
+  });
+
+  it('should return update a IProject object', (done) => {
+
+    let project: IProject = new class implements IProject {
+      id?: number;
+      employeeId?: number;
+      companyId?: number;
+      link?: string;
+      title?: string;
+      description?: string;
+      goal?: number;
+      investedIn?: number;
+      reached?: boolean;
+      image?: number;
+      createdAt?: Date;
+      fundedAt?: Date;
+    }
+
+    let project$ = service.update(project);
+
+    project$.subscribe(
+      p => {
+
+        expect(p).toBeDefined();
+
+        expect(p.id).toBe(0);
+        expect(p.employeeId).toBeDefined();
+        expect(p.companyId).toBeDefined();
+        expect(p.link).toBeDefined();
+        expect(p.description).toBeDefined();
+        expect(p.goal).toBeDefined();
+        expect(p.investedIn).toBeDefined();
+        expect(p.reached).toBeDefined();
+        expect(p.image).toBeDefined();
+        expect(p.createdAt).toBeDefined();
+        expect(p.fundedAt).toBeDefined();
+
+        done();
+      },
+      error => {
+        expect(error).not.toBeDefined();
+        done();
+      }
+    )
+  });
+
+  it('should return delete a IProject', (done) => {
+
+    let project$ = service.deleteById(0);
+
+    project$.subscribe(
+      p => {
+        expect(p).toBeDefined();
+        done();
+      },
+      error => {
+        expect(error).not.toBeDefined();
+        done();
+      }
+    )
   });
 });
