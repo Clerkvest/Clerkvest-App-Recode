@@ -3,12 +3,20 @@ import { TestBed } from '@angular/core/testing';
 
 import { CompanyRepositoryService } from './company-repository.service';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { CookieService } from 'ngx-cookie-service';
 
 describe('CompanyRepositoryService', () => {
   let service: CompanyRepositoryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({imports: [HttpClientModule]});
+
+    environment.basePath = 'https://virtserver.swaggerhub.com/c669/ClerkvestPublic/1.0.0/api';
+
+    const cookieService = TestBed.inject(CookieService);
+    cookieService.set('_api', 'swagger-token')
+
     service = TestBed.inject(CompanyRepositoryService);
   });
 
