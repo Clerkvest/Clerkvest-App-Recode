@@ -1,16 +1,42 @@
+import { IResponse } from './../../models/IResponse';
+import { environment } from './../../../../../environments/environment';
 import { TestBed } from '@angular/core/testing';
 
 import { TokenRepositoryService } from './token-repository.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 describe('TokenRepositoryService', () => {
   let service: TokenRepositoryService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({imports: [HttpClientModule]});
+    
+    environment.basePath = 'https://virtserver.swaggerhub.com/c669/ClerkvestPublic/1.0.0/api';
+
+    const cookieService = TestBed.inject(CookieService);
+    cookieService.set('_api', 'swagger-token')
+    
     service = TestBed.inject(TokenRepositoryService);
   });
 
+
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('should return an IResponse object', (done) => {
+    let response$ = service.getApiKey('1234');
+
+    response$.subscribe(
+      r => {
+        expect(r.response).toBeDefined();
+        done();
+      },
+      error => {
+        expect(error).not.toBeDefined();
+        done();
+      }
+    );
   });
 });

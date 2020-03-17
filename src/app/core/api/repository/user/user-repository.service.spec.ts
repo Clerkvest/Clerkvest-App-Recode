@@ -1,6 +1,6 @@
 import { IEmployee } from './../../models/IEmployee';
 import { HttpClientModule } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 
 import { UserRepositoryService } from './user-repository.service';
 import { environment } from 'src/environments/environment';
@@ -201,6 +201,24 @@ describe('UserRepositoryService', () => {
     employee$.subscribe(
       employee => {
         expect(employee).toBeDefined();
+
+        done();
+      },
+      error => {
+        expect(error).not.toBeDefined();
+        done();
+      }
+    );
+  });
+
+  it('should invite and return a IResponse object', (done) => {
+    let response$ = service.invite('test@test.com');
+
+    response$.subscribe(
+      response => {
+        expect(response).toBeDefined();
+        expect(response.response).toBeDefined();
+
         done();
       },
       error => {

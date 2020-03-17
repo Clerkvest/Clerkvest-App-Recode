@@ -1,8 +1,9 @@
+import { IResponse } from './../../models/IResponse';
 import { IEmployee } from './../../models/IEmployee';
 import { Injectable } from '@angular/core';
 import { LoggerService } from 'src/app/core/logger/logger.service';
 import { ConfigurationService } from '../configuration.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProjectRepositoryService } from '../project/project-repository.service';
 import { IProjectImage, IProject } from '../../models/models';
@@ -19,6 +20,7 @@ export class UserRepositoryService {
   private static readonly CREATE: string = UserRepositoryService.SERVICE_BASE + 'create';
   private static readonly UPDATE: string = UserRepositoryService.SERVICE_BASE + 'update';
   private static readonly DELETE_SINGLE: string = UserRepositoryService.SERVICE_BASE + 'delete/';
+  private static readonly INVITE: string = '/invite'
 
   private logger: LoggerService = LoggerService.build(UserRepositoryService.name);
 
@@ -92,5 +94,16 @@ export class UserRepositoryService {
     {
         headers: headers,
     });
+  }
+
+  public invite(email: string): Observable<IResponse> {
+    let headers = this.configuration.getHeaders();
+    let url = this.basePath + UserRepositoryService.INVITE + '?mail=' + encodeURIComponent(email);
+    this.logger.debug('Executing request: ' + url);
+
+    return this.httpClient.post<IResponse>(url,
+      {
+          headers: headers,
+      });
   }
 }

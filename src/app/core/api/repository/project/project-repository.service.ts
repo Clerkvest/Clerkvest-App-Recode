@@ -11,7 +11,7 @@ import { IProjectImage } from '../../models/IProjectImage';
 })
 export class ProjectRepositoryService {
 
-  private static readonly SERVICE_BASE: string = '/project/'
+  public static readonly SERVICE_BASE: string = '/project/'
 
   private static readonly GET_ALL_WITH_IMAGE: string = ProjectRepositoryService.SERVICE_BASE + 'all/image'
   private static readonly GET_SINGLE: string = ProjectRepositoryService.SERVICE_BASE + 'get/';
