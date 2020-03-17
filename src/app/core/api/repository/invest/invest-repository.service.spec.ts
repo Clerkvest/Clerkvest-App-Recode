@@ -12,6 +12,10 @@ describe('InvestRepositoryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({imports: [HttpClientModule]});
 
+    environment.logLevel = 'debug',
+    environment.logTimestamp = true,
+    environment.logType = true,
+    environment.logIdentifier = true,
     environment.basePath = 'https://virtserver.swaggerhub.com/c669/ClerkvestPublic/1.0.0/api';
 
     const cookieService = TestBed.inject(CookieService);
