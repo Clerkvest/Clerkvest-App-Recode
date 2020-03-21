@@ -3,6 +3,7 @@ import { LoggerService } from './../logger/logger.service';
 import { Injectable } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { HttpResult } from './http-result';
+import { mergeMap, switchMap, retry, map, catchError, filter, scan } from 'rxjs/operators'; 
 
 @Injectable({
   providedIn: 'root'
@@ -33,25 +34,18 @@ export class SubscriptionService {
   public httpResult(observable: Observable<any>): HttpResult {
     let result = new HttpResult();
 
-    let tempSub: Subscription = observable.subscribe(
-      object => {
+    observable.subscribe(
+      val => {
+        result.resultObject = val;
         result.wasSuccessful = true;
-        result.resultObject = object;
-
-        this.logger.debug('Http result: ' + result);
       },
-      error => {
-        result.wasSuccessful = false;
-        result.resultObject = error;
-
-        this.logger.error('Http result: ' + result);
-      },
-      () => {
-        this.logger.debug('httpResult completed');
-        tempSub.unsubscribe();
+      err => {
+        result.resultObject = err;
+        result.wasSuccessful = true;
       }
     );
 
+    observable.toPromise();
     return result;
   }
 

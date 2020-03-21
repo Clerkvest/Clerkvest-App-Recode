@@ -4,6 +4,9 @@ import { LoggerService } from './core/logger/logger.service';
 import { Component } from '@angular/core';
 import { LocalizationService } from './core/localization/localization.service';
 import { ILocalization } from './core/localization/ilocalization';
+import { SubscriptionService } from './core/subscription/subscription.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpResult } from './core/subscription/http-result';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +19,10 @@ export class AppComponent {
 
   private localized: ILocalization;
 
-  constructor(private localization: LocalizationService) {
+  constructor(private localization: LocalizationService, private subscriptionSerivce: SubscriptionService) {
     this.logger.info('Creating application');
-    localization.getLocalizedStrings().subscribe(local => {
-      this.localized = local;
-      this.logger.debug('Localized strings: ' + this.localized.hello);
-    });
+
+    let httpResult = subscriptionSerivce.httpResult(this.localization.getLocalizedStrings());
+    console.log(httpResult);
   }
 }
