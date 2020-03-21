@@ -28,6 +28,10 @@ describe('UserRepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+
   it('should return at least one IEmployee object', (done) => {
     let employees$ = service.getAll();
 

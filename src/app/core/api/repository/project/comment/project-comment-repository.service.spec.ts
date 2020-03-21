@@ -28,6 +28,10 @@ describe('ProjectCommentRepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+
   it('should return at least one IProjectComment object', (done) => {
     let projects = service.getAllByProjectId(0);
 

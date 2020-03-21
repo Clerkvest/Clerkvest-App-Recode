@@ -10,13 +10,13 @@ import { IEmployee } from '../../models/models';
   providedIn: 'root'
 })
 export class TokenRepositoryService {
+  
+  public logger: LoggerService = LoggerService.build(TokenRepositoryService.name);
 
   public static readonly SERVICE_BASE: string = '/token/'
 
   private static readonly GET_KEY: string = '/token/'
   private static readonly INVITE: string = '/invite';
-
-  private logger: LoggerService = LoggerService.build(TokenRepositoryService.name);
 
   private basePath: string;
 

@@ -13,6 +13,8 @@ import { IProjectImage, IProject } from '../../models/models';
 })
 export class UserRepositoryService {
 
+  public logger: LoggerService = LoggerService.build(UserRepositoryService.name);
+
   public static readonly SERVICE_BASE: string = '/employee/'
 
   private static readonly GET_ALL: string = UserRepositoryService.SERVICE_BASE + 'all/'
@@ -21,8 +23,6 @@ export class UserRepositoryService {
   private static readonly UPDATE: string = UserRepositoryService.SERVICE_BASE + 'update';
   private static readonly DELETE_SINGLE: string = UserRepositoryService.SERVICE_BASE + 'delete/';
   private static readonly INVITE: string = '/invite'
-
-  private logger: LoggerService = LoggerService.build(UserRepositoryService.name);
 
   private basePath: string;
 

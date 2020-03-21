@@ -9,13 +9,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImageRepositoryService {
 
+  public logger: LoggerService = LoggerService.build(ImageRepositoryService.name);
+  
   public static readonly SERVICE_BASE: string = '/image/'
 
   private static readonly GET_SINGLE: string = ImageRepositoryService.SERVICE_BASE + 'get/';
   private static readonly CREATE_COMPANY: string = ImageRepositoryService.SERVICE_BASE + 'create/company/';
   private static readonly CREATE_PROJECT: string = ImageRepositoryService.SERVICE_BASE + 'create/project/';
-
-  private logger: LoggerService = LoggerService.build(ImageRepositoryService.name);
 
   private basePath: string;
 

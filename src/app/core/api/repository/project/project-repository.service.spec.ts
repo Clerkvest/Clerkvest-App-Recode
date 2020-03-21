@@ -37,6 +37,10 @@ describe('ProjectRepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+
   it('should return at least one IProject object', (done) => {
     let projects = service.getAll();
 

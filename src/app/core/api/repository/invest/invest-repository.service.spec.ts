@@ -28,6 +28,10 @@ describe('InvestRepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+
   it('should create a IInvestIn object', (done) => {
     let investment: IInvestIn = new class implements IInvestIn {
       id?: number;

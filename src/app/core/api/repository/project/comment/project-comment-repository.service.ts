@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjectCommentRepositoryService {
+  
+  public logger: LoggerService = LoggerService.build(ProjectCommentRepositoryService.name);
 
   public static readonly SERVICE_BASE: string = '/comment/'
 
@@ -17,8 +19,6 @@ export class ProjectCommentRepositoryService {
   private static readonly CREATE: string = ProjectCommentRepositoryService.SERVICE_BASE + 'create';
   private static readonly UPDATE: string = ProjectCommentRepositoryService.SERVICE_BASE + 'update';
   private static readonly DELETE_SINGLE: string = ProjectCommentRepositoryService.SERVICE_BASE + 'delete/';
-
-  private logger: LoggerService = LoggerService.build(ProjectCommentRepositoryService.name);
 
   private basePath: string;
 

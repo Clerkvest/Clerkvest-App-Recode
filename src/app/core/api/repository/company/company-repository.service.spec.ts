@@ -28,6 +28,10 @@ describe('CompanyRepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+
   it('should return a ICompany object', (done) => {
     let company$ = service.getById(0);
 

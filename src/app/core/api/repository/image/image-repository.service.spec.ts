@@ -27,6 +27,10 @@ describe('ImageRepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+  
   it('should return a String object', (done) => {
     let image$ = service.getById(0);
 

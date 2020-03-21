@@ -1,3 +1,4 @@
+import { IProjectImage } from './core/api/models/IProjectImage';
 import { ProjectRepositoryService } from './core/api/repository/project/project-repository.service';
 import { LoggerService } from './core/logger/logger.service';
 import { Component } from '@angular/core';
@@ -8,10 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Clerkvest-App';
 
-  private logger: LoggerService = LoggerService.build(AppComponent.name);
+  public logger: LoggerService = LoggerService.build(AppComponent.name);
 
   constructor() {
+    this.logger.info('Creating application');
   }
 }

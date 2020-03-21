@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CompanyRepositoryService {
+  
+  public logger: LoggerService = LoggerService.build(CompanyRepositoryService.name);
 
   public static readonly SERVICE_BASE: string = '/company/'
 
   private static readonly GET_SINGLE: string = CompanyRepositoryService.SERVICE_BASE + 'get/';
   private static readonly UPDATE: string = CompanyRepositoryService.SERVICE_BASE + 'update';
-
-  private logger: LoggerService = LoggerService.build(CompanyRepositoryService.name);
 
   private basePath: string;
 

@@ -10,6 +10,8 @@ import { UserRepositoryService } from '../user/user-repository.service';
   providedIn: 'root'
 })
 export class InvestRepositoryService {
+  
+  public logger: LoggerService = LoggerService.build(InvestRepositoryService.name);
 
   public static readonly SERVICE_BASE: string = '/invest/'
 
@@ -19,8 +21,6 @@ export class InvestRepositoryService {
   private static readonly UPDATE: string = InvestRepositoryService.SERVICE_BASE + 'update';
   private static readonly DELETE_SINGLE: string = InvestRepositoryService.SERVICE_BASE + 'delete/';
   private static readonly DELETE_ALL_PROJECT: string = InvestRepositoryService.SERVICE_BASE + 'delete/project/';
-
-  private logger: LoggerService = LoggerService.build(InvestRepositoryService.name);
 
   private basePath: string;
 

@@ -11,6 +11,8 @@ import { IProjectImage } from '../../models/IProjectImage';
 })
 export class ProjectRepositoryService {
 
+  public logger: LoggerService = LoggerService.build(ProjectRepositoryService.name);
+
   public static readonly SERVICE_BASE: string = '/project/'
 
   private static readonly GET_ALL_WITH_IMAGE: string = ProjectRepositoryService.SERVICE_BASE + 'all/image'
@@ -18,8 +20,6 @@ export class ProjectRepositoryService {
   private static readonly CREATE: string = ProjectRepositoryService.SERVICE_BASE + 'create';
   private static readonly UPDATE: string = ProjectRepositoryService.SERVICE_BASE + 'update';
   private static readonly DELETE_SINGLE: string = ProjectRepositoryService.SERVICE_BASE + 'delete/';
-
-  private logger: LoggerService = LoggerService.build(ProjectRepositoryService.name);
 
   private basePath: string;
 

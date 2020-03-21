@@ -29,6 +29,10 @@ describe('TokenRepositoryService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+
   it('should return an IResponse object', (done) => {
     let response$ = service.getApiKey('1234');
 
