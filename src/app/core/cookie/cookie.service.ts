@@ -30,22 +30,22 @@ export class CookieService {
     cookie.domain = domain;
     cookie.secure = secure;
 
-    this.logger.debug('Setting cookie: ' + cookie.toString());
+    this.logger.debug('Successfully saved ' + cookie.toString());
     this.document.cookie = cookie.toString();
   }
 
   public get(key: string): string {
-    this.logger.debug('Getting cookie: ' + key);
-
     let cookies = this.document.cookie.split('; ');
 
     for(let i = 0; i < cookies.length; i++) {
       let keyValue = cookies[i].split('=');
       if(keyValue.length === 2 && keyValue[0] === key) {
+        this.logger.debug('Requested cookie \'' + key + '\' has been found. Value: ' + keyValue[1]);
         return keyValue[1];
       }
     }
 
+    this.logger.debug('Requested cookie \'' + key + '\' has not been found.');
     return undefined;
   }
 
@@ -95,7 +95,7 @@ export class CookieService {
     cookie.domain = domain;
     cookie.secure = secure;
 
-    this.logger.debug('Deleting cookie: ' + cookie.toString());
+    this.logger.debug('Successfully deleted ' + cookie.toString());
     this.document.cookie = cookie.toString();
   }
 

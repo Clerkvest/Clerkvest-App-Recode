@@ -18,10 +18,12 @@ export class SubscriptionService {
   }
 
   public add(subscription: Subscription) {
+    this.logger.debug('Adding subscription: ' + subscription);
     this.subscriptions.push(subscription);
   }
 
   public unsubscribe() {
+    this.logger.debug('Unsubcribing ...');
     this.subscriptions.forEach(subscription => {
       if(!isNullOrUndefined(subscription)) {
         subscription.unsubscribe();
@@ -41,11 +43,10 @@ export class SubscriptionService {
       },
       err => {
         result.resultObject = err;
-        result.wasSuccessful = true;
+        result.wasSuccessful = false;
       }
     );
 
-    observable.toPromise();
     return result;
   }
 
