@@ -1,5 +1,5 @@
 import { IProject } from './../../models/IProject';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'src/app/core/cookie/cookie.service';
 
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';

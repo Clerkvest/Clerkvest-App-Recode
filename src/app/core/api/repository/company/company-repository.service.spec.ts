@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { CompanyRepositoryService } from './company-repository.service';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'src/app/core/cookie/cookie.service';
 
 describe('CompanyRepositoryService', () => {
   let service: CompanyRepositoryService;

@@ -1,12 +1,9 @@
-import { IProjectImage } from './core/api/models/IProjectImage';
-import { ProjectRepositoryService } from './core/api/repository/project/project-repository.service';
 import { LoggerService } from './core/logger/logger.service';
 import { Component } from '@angular/core';
 import { LocalizationService } from './core/localization/localization.service';
 import { ILocalization } from './core/localization/ilocalization';
 import { SubscriptionService } from './core/subscription/subscription.service';
-import { HttpClient } from '@angular/common/http';
-import { HttpResult } from './core/subscription/http-result';
+import { CookieService } from './core/cookie/cookie.service';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +16,10 @@ export class AppComponent {
 
   private localized: ILocalization;
 
-  constructor(private localization: LocalizationService, private subscriptionSerivce: SubscriptionService) {
+  constructor(private localization: LocalizationService, private subscriptionSerivce: SubscriptionService, private cookie: CookieService) {
     this.logger.info('Creating application');
 
-    let httpResult = subscriptionSerivce.httpResult(this.localization.getLocalizedStrings());
-    console.log(httpResult);
+    // let httpResult = subscriptionSerivce.httpResult(this.localization.getLocalizedStrings());
+    // console.log(httpResult);
   }
 }

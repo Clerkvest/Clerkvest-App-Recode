@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { InvestRepositoryService } from './invest-repository.service';
 import { environment } from 'src/environments/environment';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'src/app/core/cookie/cookie.service';
 
 describe('InvestRepositoryService', () => {
   let service: InvestRepositoryService;

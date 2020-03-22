@@ -15,6 +15,10 @@ describe('ConfigurationService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should create logger', () => {
+    expect(service.logger).toBeTruthy();
+  });
+
   it('should set headers', () => {
     let header = service.getHeaders();
 

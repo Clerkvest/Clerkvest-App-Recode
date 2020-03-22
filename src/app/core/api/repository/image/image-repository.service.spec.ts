@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { ImageRepositoryService } from './image-repository.service';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'src/app/core/cookie/cookie.service';
 
 describe('ImageRepositoryService', () => {
   let service: ImageRepositoryService;

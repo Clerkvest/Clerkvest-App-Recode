@@ -3,8 +3,8 @@ import { LoggerService } from '../logger/logger.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ILocalization } from './ilocalization';
-import { CookieService } from 'ngx-cookie-service';
 import { Language } from './language.enum';
+import { CookieService } from '../cookie/cookie.service';
 
 @Injectable({
   providedIn: 'root'

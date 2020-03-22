@@ -1,16 +1,16 @@
 import { HttpHeaders } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
 import { LoggerService } from './../../logger/logger.service';
 import { Injectable } from '@angular/core';
 import { isNullOrUndefined } from 'util';
 import { environment } from 'src/environments/environment';
+import { CookieService } from '../../cookie/cookie.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigurationService {
 
-  private logger: LoggerService = LoggerService.build(ConfigurationService.name);
+  public logger: LoggerService = LoggerService.build(ConfigurationService.name);
 
   public defaultHeaders = new HttpHeaders();
 

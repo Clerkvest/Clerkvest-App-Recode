@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
 import { LocalizationService } from './localization.service';
-import { CookieService } from 'ngx-cookie-service';
 import { Language } from './language.enum';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from '../cookie/cookie.service';
 
 describe('LocalizationService', () => {
   let service: LocalizationService;
@@ -24,6 +24,7 @@ describe('LocalizationService', () => {
   });
 
   it('should set default language', (done) => {
+    cookieService.set(LocalizationService.LANG_COOKIE, 'unknown');
     service.getLocalizedStrings().subscribe(local => {
       expect(local.hello).toBe('Hello');
       done();

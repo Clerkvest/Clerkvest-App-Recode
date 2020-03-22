@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { TokenRepositoryService } from './token-repository.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'src/app/core/cookie/cookie.service';
 
 describe('TokenRepositoryService', () => {
   let service: TokenRepositoryService;
