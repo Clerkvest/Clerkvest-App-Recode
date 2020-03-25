@@ -1,23 +1,16 @@
 // Static
-$default-white: rgb(232, 232, 232);
-$element-border: rgb(232, 232, 232);
+$success-side: rgba(66, 168, 95);
+$success-bg: rgba(104, 205, 134);
 
-// Gray theme
-$gray-btn-bg: rgb(232, 232, 232);
-$gray-btn-hover: rgb(198, 199, 199);
-$gray-btn-color: #666666;
+$info-side: rgba(244, 138, 6);
+$info-bg: rgba(255, 182, 72);
 
-$gray-btn-border-outline: rgb(232, 232, 232);
-$gray-btn-hover-outline: rgb(198, 199, 199);
-$gray-btn-color-outline: #666666;
-$gray-btn-color-hover-outline: #666666;
+$error-side: rgba(184, 46, 36);
+$error-bg: rgba(229, 77, 66);
 
-// Custom theme
-$custom-btn-bg: rgb(46, 141, 214);
-$custom-btn-hover: rgb(29, 117, 184);
-$custom-btn-color: rgb(255, 255, 255);
-
-$custom-btn-border-outline: rgb(29, 117, 184);
-$custom-btn-hover-outline: rgb(29, 117, 184);
-$custom-btn-color-outline: rgb(46, 141, 214);
-$custom-btn-color-hover-outline: rgb(232, 232, 232);
+// Notification
+$notification-height: 100px;
+$notification-width: 300px;
+$notification-hline: 15px;
+$notification-margin: 1%;
+$notification-text-color: white;
