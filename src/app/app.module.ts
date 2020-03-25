@@ -8,6 +8,7 @@ import { NotFoundComponent } from './execption/pages/not-found/not-found.compone
 import { UnauthorizedComponent } from './execption/pages/unauthorized/unauthorized.component';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { NotificationComponent } from './shared/components/notification/notification.component';
+import { TestgroundComponent } from './pages/testground/testground.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NotificationComponent } from './shared/components/notification/notifica
     InternalServerErrorComponent,
     NotFoundComponent,
     UnauthorizedComponent,
-    NotificationComponent
+    NotificationComponent,
+    TestgroundComponent
   ],
   imports: [
     BrowserModule,
