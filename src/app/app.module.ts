@@ -7,8 +7,9 @@ import { InternalServerErrorComponent } from './execption/pages/internal-server-
 import { NotFoundComponent } from './execption/pages/not-found/not-found.component';
 import { UnauthorizedComponent } from './execption/pages/unauthorized/unauthorized.component';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
-import { NotificationComponent } from './shared/components/notification/notification.component';
 import { TestgroundComponent } from './pages/testground/testground.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
+import { PopupComponent } from './shared/components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { TestgroundComponent } from './pages/testground/testground.component';
     InternalServerErrorComponent,
     NotFoundComponent,
     UnauthorizedComponent,
-    NotificationComponent,
-    TestgroundComponent
+    TestgroundComponent,
+    AlertComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

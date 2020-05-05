@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NotificationComponent } from 'src/app/shared/components/notification/notification.component';
+import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
 
 @Component({
   selector: 'app-testground',
@@ -8,7 +9,7 @@ import { NotificationComponent } from 'src/app/shared/components/notification/no
 })
 export class TestgroundComponent implements OnInit {
 
-  @ViewChild(NotificationComponent) notification: NotificationComponent;
+  @ViewChild(AlertComponent) notification: AlertComponent;
 
   constructor() { }
 

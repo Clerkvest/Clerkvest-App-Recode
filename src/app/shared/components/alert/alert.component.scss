@@ -1,0 +1,100 @@
+$alert-height: 100px;
+$alert-width: 350px;
+$alert-image: 50px;
+$alert-margin: 1%;
+$alert-text-color: white;
+
+$success-bg: rgba(117, 207, 15);
+$info-bg: rgba(255, 182, 10);
+$warn-bg: rgba(53, 196, 252);
+$error-bg: rgba(242, 57, 81);
+
+.container {
+  height: $alert-height;
+  width: $alert-width;
+
+  display: flex;
+
+  border-radius: 10px;
+  box-shadow: 0 0 2px gray;
+
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+  .image {
+    width: $alert-image;
+    height: 100%;
+
+    i {
+      position: relative;
+      top: 15px;
+      left: 25%;
+
+      color: $alert-text-color;
+      font-size: 35px;
+    }
+  }
+
+  .content {
+    width: $alert-width - $alert-image;
+    height: 100%;
+
+    .title {
+      margin-top: 15px;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      font-size: 1.05rem;
+      color: $alert-text-color;
+
+      font-weight: bold;
+    }
+
+    .text {
+      margin-top: -5px;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      font-size: 1rem;
+      color: $alert-text-color;
+    }
+  }
+}
+
+.display {
+  display: inline;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.hide {
+  position: absolute;
+  bottom: $alert-margin;
+  right: -$alert-width;
+}
+
+.show {
+  position: absolute;
+  bottom: $alert-margin;
+  right: $alert-margin;
+}
+
+.success {
+  .image { background-color: $success-bg; }
+  .content { background-color: $success-bg; }
+}
+
+.info {
+  .image { background-color: $info-bg; }
+  .content { background-color: $info-bg; }
+}
+
+.error {
+  .image { background-color: $error-bg; }
+  .content { background-color: $error-bg; }
+}
