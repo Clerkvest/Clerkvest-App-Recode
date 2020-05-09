@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NotificationComponent } from 'src/app/shared/components/notification/notification.component';
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-testground',
@@ -10,6 +10,8 @@ import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
 export class TestgroundComponent implements OnInit {
 
   @ViewChild(AlertComponent) notification: AlertComponent;
+
+  @ViewChild(ModalComponent) modal: ModalComponent;
 
   constructor() { }
 
@@ -26,5 +28,17 @@ export class TestgroundComponent implements OnInit {
 
   public notification_error() {
     this.notification.error('Error', 'Called from testing ground. Error message given.');
+  }
+
+  public open_modal() {
+    this.modal.display();
+  }
+
+  public ok() {
+    console.log("OK");
+  }
+
+  public cls() {
+    console.log("Cls");
   }
 }

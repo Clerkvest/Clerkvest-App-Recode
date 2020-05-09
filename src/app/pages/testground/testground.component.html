@@ -6,4 +6,16 @@
     <button (click)="notification_succ()">Success notification</button>
     <button style="margin-left: 15px;" (click)="notification_info()">Info notification</button>
     <button style="margin-left: 15px;" (click)="notification_error()">Error notification</button>
+
+    <h4>Modal</h4>
+    <modal>
+      <i image class="fa fa-check-circle-o" style="color: green;" aria-hidden="true"></i>
+      <p title style="color: green;"> Success </p>
+      <p text> Some Success text over here! </p>
+      <div action>
+        <button class="ok" (click)="ok()">Ok</button>
+        <button class="cls" (click)="cls()">Cls</button>
+      </div>
+    </modal>
+    <button (click)="open_modal()"></button>
 </div>

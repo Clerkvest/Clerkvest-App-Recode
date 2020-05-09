@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { InternalServerErrorComponent } from './execption/pages/internal-server-error/internal-server-error.component';
 import { NotFoundComponent } from './execption/pages/not-found/not-found.component';
 import { UnauthorizedComponent } from './execption/pages/unauthorized/unauthorized.component';
-import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { TestgroundComponent } from './pages/testground/testground.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
-import { PopupComponent } from './shared/components/popup/popup.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { PopupComponent } from './shared/components/popup/popup.component';
     UnauthorizedComponent,
     TestgroundComponent,
     AlertComponent,
-    PopupComponent
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<div #container class="container hide">
+  <div class="modal">
+    <div class="modal-body">
+      <ng-content></ng-content>
+      <a class="eks" (click)="hide()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="modal-background" (click)="hide()"></div>
+</div>

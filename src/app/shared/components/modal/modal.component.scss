@@ -1,0 +1,40 @@
+.show {
+  display: inline;
+}
+
+.hide {
+  display: none;
+}
+
+.modal {
+  z-index: 1000;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-body {
+  min-height: 450px;
+  width: 350px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.modal-background {
+  z-index: 900;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.70;
+}
+
+.eks {
+  position: fixed;
+  right: 10px;
+  top: 5px;
+  color: black;
+  font-size: 20px;
+}
