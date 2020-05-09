@@ -69,13 +69,14 @@ $error-bg: rgba(242, 57, 81);
 }
 
 .hidden {
-  display: hidden;
+  display: none;
 }
 
 .hide {
+  display: none;
   position: absolute;
   bottom: $alert-margin;
-  right: -$alert-width;
+  right: $alert-margin;
 }
 
 .show {
