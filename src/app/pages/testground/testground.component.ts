@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
 import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
+import { SuccessModalComponent } from 'src/app/shared/components/modal/success-modal/success-modal.component';
+import { FailureModalComponent } from 'src/app/shared/components/modal/failure-modal/failure-modal.component';
 
 @Component({
   selector: 'app-testground',
@@ -12,6 +14,10 @@ export class TestgroundComponent implements OnInit {
   @ViewChild(AlertComponent) notification: AlertComponent;
 
   @ViewChild(ModalComponent) modal: ModalComponent;
+
+  @ViewChild(SuccessModalComponent) succ_modal: SuccessModalComponent;
+
+  @ViewChild(FailureModalComponent) fail_modal: FailureModalComponent;
 
   constructor() { }
 
@@ -32,6 +38,14 @@ export class TestgroundComponent implements OnInit {
 
   public open_modal() {
     this.modal.display();
+  }
+
+  public open_success_modal() {
+    this.succ_modal.display();
+  }
+
+  public open_failure_modal() {
+    this.fail_modal.display();
   }
 
   public ok() {

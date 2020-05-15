@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TestgroundComponent } from './pages/testground/testground.component';
 import { AlertComponent } from './shared/components/alert/alert.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { SuccessModalComponent } from './shared/components/modal/success-modal/success-modal.component';
+import { FailureModalComponent } from './shared/components/modal/failure-modal/failure-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ModalComponent } from './shared/components/modal/modal.component';
     TestgroundComponent,
     AlertComponent,
     ModalComponent,
+    SuccessModalComponent,
+    FailureModalComponent,
   ],
   imports: [
     BrowserModule,

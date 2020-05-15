@@ -1,0 +1,96 @@
+$white-bg: white;
+$success-bg: rgba(117, 207, 15);
+
+$font-prim: black;
+$font-sec: rgba(0, 0, 0, .7);;
+
+.top {
+  height: 225px;
+  width: 100%;
+
+  background-color: $success-bg;
+
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  i {
+    position: relative;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: white;
+    font-size: 104px;
+  }
+}
+
+.bottom {
+  height: 225px;
+  width: 100%;
+
+  background-color: $white-bg;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  .title {
+    color: $font-prim;
+    font-size: 32px;
+    text-align: center;
+
+    margin-top: 15px;
+  }
+
+  .text {
+    color: $font-sec;
+    font-size: 20px;
+    text-align: center;
+
+    margin-top: -15px;
+  }
+
+  button {
+    min-width: 150px;
+    min-height: 50px;
+
+    margin-left: 4px;
+    margin-right: 4px;
+
+    background-color: $success-bg;
+    border-radius: 25px;
+    border: none;
+    color: $white-bg;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 4px;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+
+    &:hover {
+      background-color: darken($success-bg, 15%);
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
