@@ -1,0 +1,19 @@
+@import '../../../../variable.scss';
+
+.container {
+
+  .sidebar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 300px;
+
+    background-color: $sidebar-bg-color;
+  }
+
+
+  .ng-content {
+    padding-left: $wrapper-left-offset;
+  }
+}

@@ -16,11 +16,11 @@ export class LocalizationService {
   public static readonly LANG_COOKIE = 'language';
 
   private static readonly JSON_BASE: string = 'assets/localization/localization.';
-  
+  private static readonly JSON_END: string = '.json';
+
   constructor(private httpClient: HttpClient, private cookieService: CookieService) { }
 
   getLocalizedStrings(): Observable<ILocalization> {
-    
     if (!this.cookieService.check(LocalizationService.LANG_COOKIE)) {
       this.cookieService.set(LocalizationService.LANG_COOKIE, Language.EN);
     }
@@ -32,6 +32,6 @@ export class LocalizationService {
       cookieValue = Language.EN;
     }
 
-    return this.httpClient.get<ILocalization>(LocalizationService.JSON_BASE + cookieValue + '.json');
+    return this.httpClient.get<ILocalization>(LocalizationService.JSON_BASE + cookieValue + LocalizationService.JSON_END);
   }
 }

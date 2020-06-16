@@ -6,21 +6,21 @@
   display: none;
 }
 
-.modal {
+.content {
   z-index: 1000;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.modal-body {
+.content-body {
   height: 450px;
   width: 350px;
   border-radius: 12px;
   background: white;
 }
 
-.modal-background {
+.content-background {
   z-index: 900;
   position: fixed;
   top: 0;

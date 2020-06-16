@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
 
-body {
-    height: 100%;
-    margin: 0;
+@import 'variable.scss';
 
-    font-family: 'Roboto', sans-serif;
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $color-sub;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  padding-left: $sidebar-width;
+
+  @media (max-width: $breakpoint-md) {
+    padding-left: $sidebar-width-collapsed;
+  }
 }
