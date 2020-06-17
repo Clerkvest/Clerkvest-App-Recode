@@ -1,6 +1,7 @@
-import { environment } from './../../../environments/environment';
+
 import { Injectable, OnInit } from '@angular/core';
 import { isNullOrUndefined } from 'util';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class LoggerService {
 
   private identifier: string;
 
-  // Trace = 5; 
+  // Trace = 5;
   // Debug = 4;
   // Info = 3;
   // Warn = 2;
@@ -109,16 +110,16 @@ export class LoggerService {
     if(this.logTimestamp) {
       let now = new Date();
 
-      let date = 
-        now.getDate() + '.' + 
-        (now.getMonth() + 1) + '.' + 
-        now.getFullYear() + ' ' + 
-        now.getHours() + ':' + 
-        now.getMinutes() + ':' + 
+      let date =
+        now.getDate() + '.' +
+        (now.getMonth() + 1) + '.' +
+        now.getFullYear() + ' ' +
+        now.getHours() + ':' +
+        now.getMinutes() + ':' +
         now.getSeconds();
 
       return date + '   ' + msg;
-    } 
+    }
 
     return msg;
   }

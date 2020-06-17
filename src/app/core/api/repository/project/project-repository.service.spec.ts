@@ -1,5 +1,4 @@
 import { IProject } from './../../models/IProject';
-import { CookieService } from 'src/app/core/cookie/cookie.service';
 
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
@@ -8,6 +7,7 @@ import { TestBed, tick } from '@angular/core/testing';
 import { IProjectImage } from '../../models/models';
 import { Observable } from 'rxjs';
 import { ProjectRepositoryService } from './project-repository.service';
+import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 
 describe('ProjectRepositoryService', () => {
   let service: ProjectRepositoryService;

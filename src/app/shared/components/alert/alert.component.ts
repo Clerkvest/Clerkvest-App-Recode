@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { LoggerService } from 'src/app/core/logger/logger.service';
 import { isNullOrUndefined } from 'util';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Component({
   selector: 'alert',

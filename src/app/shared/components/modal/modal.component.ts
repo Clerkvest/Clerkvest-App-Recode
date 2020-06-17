@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
-import { LoggerService } from 'src/app/core/logger/logger.service';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Component({
   selector: 'modal',

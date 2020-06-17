@@ -1,12 +1,12 @@
 import { IResponse } from './../../models/IResponse';
 import { IEmployee } from './../../models/IEmployee';
 import { Injectable } from '@angular/core';
-import { LoggerService } from 'src/app/core/logger/logger.service';
 import { ConfigurationService } from '../configuration.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProjectRepositoryService } from '../project/project-repository.service';
 import { IProjectImage, IProject } from '../../models/models';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'

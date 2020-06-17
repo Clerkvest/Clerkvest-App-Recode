@@ -2,9 +2,9 @@ import { IProject } from './../../models/IProject';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ConfigurationService } from '../configuration.service';
-import { LoggerService } from '../../../logger/logger.service';
 import { Injectable } from '@angular/core';
 import { IProjectImage } from '../../models/IProjectImage';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'

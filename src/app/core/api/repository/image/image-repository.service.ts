@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { LoggerService } from 'src/app/core/logger/logger.service';
 import { ConfigurationService } from '../configuration.service';
 import { HttpClient } from '@angular/common/http';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class ImageRepositoryService {
 
   public logger: LoggerService = LoggerService.build(ImageRepositoryService.name);
-  
+
   public static readonly SERVICE_BASE: string = '/image/'
 
   private static readonly GET_SINGLE: string = ImageRepositoryService.SERVICE_BASE + 'get/';

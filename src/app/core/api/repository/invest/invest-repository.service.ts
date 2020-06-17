@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { LoggerService } from 'src/app/core/logger/logger.service';
 import { ConfigurationService } from '../configuration.service';
 import { HttpClient } from '@angular/common/http';
 import { IInvestIn } from '../../models/models';
 import { Observable } from 'rxjs';
 import { UserRepositoryService } from '../user/user-repository.service';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvestRepositoryService {
-  
+
   public logger: LoggerService = LoggerService.build(InvestRepositoryService.name);
 
   public static readonly SERVICE_BASE: string = '/invest/'

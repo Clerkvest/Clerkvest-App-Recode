@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { ModalComponent } from '../modal.component';
-import { LoggerService } from 'src/app/core/logger/logger.service';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Component({
   selector: 'success-modal',

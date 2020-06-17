@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { InvestRepositoryService } from './invest-repository.service';
 import { environment } from 'src/environments/environment';
-import { CookieService } from 'src/app/core/cookie/cookie.service';
+import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 
 describe('InvestRepositoryService', () => {
   let service: InvestRepositoryService;
@@ -45,7 +45,7 @@ describe('InvestRepositoryService', () => {
     invest$.subscribe(
       invest => {
         expect(invest).toBeDefined();
-        
+
         expect(invest.id).toBe(0);
         expect(invest.employeeId).toBeDefined();
         expect(invest.projectId).toBeDefined();

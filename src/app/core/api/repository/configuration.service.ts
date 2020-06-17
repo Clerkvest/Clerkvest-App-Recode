@@ -1,9 +1,9 @@
 import { HttpHeaders } from '@angular/common/http';
-import { LoggerService } from './../../logger/logger.service';
 import { Injectable } from '@angular/core';
 import { isNullOrUndefined } from 'util';
 import { environment } from 'src/environments/environment';
-import { CookieService } from '../../cookie/cookie.service';
+import { LoggerService } from '../../utils/logger/logger.service';
+import { CookieService } from '../../utils/cookie/cookie.service';
 
 @Injectable({
   providedIn: 'root'

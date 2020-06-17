@@ -1,16 +1,16 @@
 import { IResponse } from './../../models/IResponse';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { LoggerService } from 'src/app/core/logger/logger.service';
 import { ConfigurationService } from '../configuration.service';
 import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../../models/models';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenRepositoryService {
-  
+
   public logger: LoggerService = LoggerService.build(TokenRepositoryService.name);
 
   public static readonly SERVICE_BASE: string = '/token/'

@@ -4,14 +4,14 @@ import { TestBed } from '@angular/core/testing';
 
 import { TokenRepositoryService } from './token-repository.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CookieService } from 'src/app/core/cookie/cookie.service';
+import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 
 describe('TokenRepositoryService', () => {
   let service: TokenRepositoryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({imports: [HttpClientModule]});
-    
+
     environment.logLevel = 'debug',
     environment.logTimestamp = true,
     environment.logType = true,
@@ -20,7 +20,7 @@ describe('TokenRepositoryService', () => {
 
     const cookieService = TestBed.inject(CookieService);
     cookieService.set('_api', 'swagger-token')
-    
+
     service = TestBed.inject(TokenRepositoryService);
   });
 

@@ -11,5 +11,4 @@ export class NavigatorLayoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

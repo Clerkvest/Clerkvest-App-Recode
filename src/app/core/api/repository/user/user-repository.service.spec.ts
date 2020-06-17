@@ -4,7 +4,7 @@ import { TestBed, async } from '@angular/core/testing';
 
 import { UserRepositoryService } from './user-repository.service';
 import { environment } from 'src/environments/environment';
-import { CookieService } from 'src/app/core/cookie/cookie.service';
+import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 
 describe('UserRepositoryService', () => {
   let service: UserRepositoryService;
@@ -113,7 +113,7 @@ describe('UserRepositoryService', () => {
         expect(employee.lastname).toBeDefined();
         expect(employee.nickname).toBeDefined();
         expect(employee.admin).toBeDefined();
-        
+
         done();
       },
       error => {
@@ -153,7 +153,7 @@ describe('UserRepositoryService', () => {
         expect(employee.lastname).toBeDefined();
         expect(employee.nickname).toBeDefined();
         expect(employee.admin).toBeDefined();
-        
+
         done();
       },
       error => {
@@ -193,7 +193,7 @@ describe('UserRepositoryService', () => {
         expect(employee.lastname).toBeDefined();
         expect(employee.nickname).toBeDefined();
         expect(employee.admin).toBeDefined();
-        
+
         done();
       },
       error => {

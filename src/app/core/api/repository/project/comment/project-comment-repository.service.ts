@@ -1,15 +1,15 @@
 import { IProjectComment } from './../../../models/IProjectComment';
 import { Injectable } from '@angular/core';
-import { LoggerService } from 'src/app/core/logger/logger.service';
 import { ConfigurationService } from '../../configuration.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectCommentRepositoryService {
-  
+
   public logger: LoggerService = LoggerService.build(ProjectCommentRepositoryService.name);
 
   public static readonly SERVICE_BASE: string = '/comment/'

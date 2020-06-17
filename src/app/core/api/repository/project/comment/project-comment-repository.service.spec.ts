@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ProjectCommentRepositoryService } from './project-comment-repository.service';
 import { environment } from 'src/environments/environment';
-import { CookieService } from 'src/app/core/cookie/cookie.service';
+import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 
 describe('ProjectCommentRepositoryService', () => {
   let service: ProjectCommentRepositoryService;
@@ -20,7 +20,7 @@ describe('ProjectCommentRepositoryService', () => {
 
     const cookieService = TestBed.inject(CookieService);
     cookieService.set('_api', 'swagger-token')
-    
+
     service = TestBed.inject(ProjectCommentRepositoryService);
   });
 
@@ -77,7 +77,7 @@ describe('ProjectCommentRepositoryService', () => {
     project$.subscribe(
       project => {
         expect(project).toBeDefined();
-        
+
         expect(project.id).toBe(0);
         expect(project.employeeId).toBeDefined();
         expect(project.date).toBeDefined();

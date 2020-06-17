@@ -12,7 +12,6 @@ import { AlertComponent } from './shared/components/alert/alert.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { SuccessModalComponent } from './shared/components/modal/success-modal/success-modal.component';
 import { FailureModalComponent } from './shared/components/modal/failure-modal/failure-modal.component';
-import { NavigatorComponent } from './shared/components/navigator/navigator.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
 import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-layout.component';
@@ -28,7 +27,6 @@ import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-la
     ModalComponent,
     SuccessModalComponent,
     FailureModalComponent,
-    NavigatorComponent,
     LoginComponent,
     EmptyLayoutComponent,
     NavigatorLayoutComponent,
