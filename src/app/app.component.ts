@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public logger: LoggerService = LoggerService.build(AppComponent.name);
 
   constructor(
-    public displayService: DisplayService
+    public displayService: DisplayService,
   ) {
     this.logger.info('Creating application');
   }
