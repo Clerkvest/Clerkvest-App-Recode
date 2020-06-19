@@ -3,7 +3,6 @@
 @import 'variable.scss';
 
 html, body {
-  overflow-x: hidden;
   height: 100%;
 }
 
@@ -13,10 +12,19 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.wrapper {
-  padding-left: $sidebar-width;
+::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+}
 
-  @media (max-width: $breakpoint-md) {
-    padding-left: $sidebar-width-collapsed;
-  }
+::-webkit-scrollbar
+{
+    width: 8px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #0e0e0e;
 }

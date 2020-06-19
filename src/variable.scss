@@ -1,16 +1,17 @@
 $color-main: #fff;
 $color-sub: #f3f5f9;
 
-$breakpoint-sm: 700px;
+$breakpoint-sm: 600px;
 $breakpoint-md: 1000px;
 $breakpoint-lg: 1200px;
 
 $offset-left-sm: 10px;
 $offset-left-md: 15px;
 
-$sidebar-bg-color: #373737;
+$sidebar-bg-color: $color-main;
 $sidebar-height: 100%;
 $sidebar-width: 300px;
+$sidebar-width-negative: -300px;
 $sidebar-width-collapsed: 0px;
 
 $sidebar-sector-title-size: 16px;
@@ -18,9 +19,8 @@ $sidebar-item-size: 18px;
 $sidebar-item-icon-size: 18px;
 
 $navbar-bg-color: $color-main;
-$navbar-height: 50px;
-$navbar-width: calc(100% - $sidebar-width);
-$navbar-width-collapsed: 100%;
+$navbar-height: 75px;
+$navbar-width: 100%;
 
 $wrapper-top-offset: 25px;
 $wrapper-left-offset: $sidebar-width;

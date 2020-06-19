@@ -1,4 +1,12 @@
 
+<p *ngIf="displayService.getIsMobile()">
+  isMobile
+</p>
+
+<p *ngIf="!displayService.getIsMobile()">
+  !isMobile
+</p>
+
   <div style="margin-left: 15px; width: calc(100% - 15px); height: 100%;">
     <h1>Testing ground</h1>
 
