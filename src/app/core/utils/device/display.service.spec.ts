@@ -28,23 +28,23 @@ describe('DisplayService', () => {
   });
 
   it('should be able to set window inner width', () => {
-    spyOnProperty(window, 'innerWidth').and.returnValue(DisplayService.BREAKPOINT_TABLET);
+    spyOnProperty(window, 'innerWidth').and.returnValue(DisplayService.BREAKPOINT_MOBILE);
     window.dispatchEvent(new Event('resize'));
-    expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_TABLET);
+    expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_MOBILE);
   });
 
   it('should get set mobile to true on small devices', () => {
-    spyOnProperty(window, 'innerWidth').and.returnValue(DisplayService.BREAKPOINT_TABLET);
+    spyOnProperty(window, 'innerWidth').and.returnValue(DisplayService.BREAKPOINT_MOBILE);
     window.dispatchEvent(new Event('resize'));
-    expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_TABLET);
+    expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_MOBILE);
     service.onResize();
     expect(service.getIsMobile()).toBeTrue();
   });
 
   it('should get set mobile to false on large devices', () => {
-    spyOnProperty(window, 'innerWidth').and.returnValue(DisplayService.BREAKPOINT_TABLET + 1);
+    spyOnProperty(window, 'innerWidth').and.returnValue(DisplayService.BREAKPOINT_MOBILE + 1);
     window.dispatchEvent(new Event('resize'));
-    expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_TABLET + 1);
+    expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_MOBILE + 1);
     service.onResize();
     expect(service.getIsMobile()).toBeFalse();
   });

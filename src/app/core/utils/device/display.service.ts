@@ -21,7 +21,7 @@ export class DisplayService {
   public onResize() {
     this.width = window.innerWidth;
 
-    if(this.width <= DisplayService.BREAKPOINT_TABLET) {
+    if(this.width <= DisplayService.BREAKPOINT_MOBILE) {
       this.isMobile = true;
     } else {
       this.isMobile = false;
