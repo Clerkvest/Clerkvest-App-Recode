@@ -1,6 +1,78 @@
+/******************
+
+  external imports
+  external imports
+  external imports
+  external imports
+  external imports
+  external imports
+
+*******************/
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+
+/******************
+
+  local imports
+  local imports
+  local imports
+  local imports
+  local imports
+  local imports
+
+*******************/
+
+
 
 @import 'variable.scss';
+@import 'color.scss';
+
+
+
+/******************
+
+  guidelines
+  guidelines
+  guidelines
+  guidelines
+  guidelines
+  guidelines
+
+*******************/
+
+
+
+/*
+
+${classname | element} {
+  ${size settings}
+  ${spacing}
+  ${positioning}
+  ${color}
+  ${text settings}
+  ${spezial}
+}
+
+*/
+
+
+
+/******************
+
+  default
+  default
+  default
+  default
+  default
+  default
+
+*******************/
+
 
 html, body {
   height: 100%;
@@ -8,28 +80,664 @@ html, body {
 
 body {
   margin: 0;
-  background-color: $color-sub;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', 'Roboto', sans-serif;
+  background-color: $secondary;
 }
 
-::-webkit-scrollbar {
-  width: 7px;
-  min-height: 50px;
-  max-height: 50px;
-  background-color: rgba(0,0,0,0);
-  border-radius: 100px;
+
+
+/******************
+
+  positioning
+  Positioning
+  positioning
+  positioning
+  Positioning
+  positioning
+
+*******************/
+
+
+
+.cv-center-y {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-::-webkit-scrollbar:hover {
-  background-color: rgba(0, 0, 0, 0.09);
+.cv-center-x {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-::-webkit-scrollbar-thumb:vertical {
-  background: rgba(0,0,0,0.5);
-  border-radius: 100px;
+.cv-center-xy {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
 }
 
-::-webkit-scrollbar-thumb:vertical:active {
-  background: rgba(0,0,0,0.61);
-  border-radius: 100px;
+.cv-justify-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
+
+.cv-justify-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.cv-justify-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cv-justify-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cv-justify-space-around {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+
+/******************
+
+  padding
+  padding
+  padding
+  padding
+  padding
+  padding
+
+*******************/
+
+
+
+.cv-padding-sm {
+  padding: $spacing-sm $spacing-sm $spacing-sm $spacing-sm;
+}
+
+.cv-padding-md {
+  padding: $spacing-md $spacing-md $spacing-md $spacing-md;
+}
+
+.cv-padding-lg {
+  padding: $spacing-lg $spacing-lg $spacing-lg $spacing-lg;
+}
+
+
+
+
+.cv-padding-sm-r {
+  padding-right: $spacing-sm;
+}
+
+.cv-padding-md-r {
+  padding-right: $spacing-md;
+}
+
+.cv-padding-lg-r {
+  padding-right: $spacing-lg;
+}
+
+
+
+.cv-padding-sm-l {
+  padding-left: $spacing-sm;
+}
+
+.cv-padding-md-l {
+  padding-left: $spacing-md;
+}
+
+.cv-padding-lg-l {
+  padding-left: $spacing-lg;
+}
+
+
+
+.cv-padding-sm-t {
+  padding-top: $spacing-sm;
+}
+
+.cv-padding-md-t {
+  padding-top: $spacing-md;
+}
+
+.cv-padding-lg-t {
+  padding-top: $spacing-lg;
+}
+
+
+
+.cv-padding-sm-b {
+  padding-bottom: $spacing-sm;
+}
+
+.cv-padding-md-b {
+  padding-bottom: $spacing-md;
+}
+
+.cv-padding-lg-b {
+  padding-bottom: $spacing-lg;
+}
+
+
+
+
+/******************
+
+  margin
+  margin
+  margin
+  margin
+  margin
+  margin
+
+*******************/
+
+
+
+
+.cv-margin-sm {
+  margin: $spacing-sm $spacing-sm $spacing-sm $spacing-sm;
+}
+
+.cv-margin-md {
+  margin: $spacing-md $spacing-md $spacing-md $spacing-md;
+}
+
+.cv-margin-lg {
+  margin: $spacing-lg $spacing-lg $spacing-lg $spacing-lg;
+}
+
+
+
+.cv-margin-sm-r {
+  margin-right: $spacing-sm;
+}
+
+.cv-margin-md-r {
+  margin-right: $spacing-md;
+}
+
+.cv-margin-lg-r {
+  margin-right: $spacing-lg;
+}
+
+
+
+.cv-margin-sm-l {
+  margin-left: $spacing-sm;
+}
+
+.cv-margin-md-l {
+  margin-left: $spacing-md;
+}
+
+.cv-margin-lg-l {
+  margin-left: $spacing-lg;
+}
+
+
+
+.cv-margin-sm-t {
+  margin-top: $spacing-sm;
+}
+
+.cv-margin-md-t {
+  margin-top: $spacing-md;
+}
+
+.cv-margin-lg-t {
+  margin-top: $spacing-lg;
+}
+
+
+
+.cv-margin-sm-b {
+  margin-bottom: $spacing-sm;
+}
+
+.cv-margin-md-b {
+  margin-bottom: $spacing-md;
+}
+
+.cv-margin-lg-b {
+  margin-bottom: $spacing-lg;
+}
+
+
+
+/******************
+
+  transition
+  transition
+  transition
+  transition
+  transition
+  transition
+
+*******************/
+
+
+
+.cv-transition-sh {
+  -webkit-transition: all $transition-sh ease-in-out;
+  -moz-transition: all $transition-sh ease-in-out;
+  -o-transition: all $transition-sh ease-in-out;
+  -ms-transition: all $transition-sh ease-in-out;
+  transition: all $transition-sh ease-in-out;
+}
+
+.cv-transition-md {
+  -webkit-transition: all $transition-md ease-in-out;
+  -moz-transition: all $transition-md ease-in-out;
+  -o-transition: all $transition-md ease-in-out;
+  -ms-transition: all $transition-md ease-in-out;
+  transition: all $transition-md ease-in-out;
+}
+
+.cv-transition-ln {
+  -webkit-transition: all $transition-ln ease-in-out;
+  -moz-transition: all $transition-ln ease-in-out;
+  -o-transition: all $transition-ln ease-in-out;
+  -ms-transition: all $transition-ln ease-in-out;
+  transition: all $transition-ln ease-in-out;
+}
+
+
+
+/******************
+
+  font
+  font
+  font
+  font
+  font
+  font
+
+*******************/
+
+
+
+.cv-font-size-sm {
+  font-size: 14px;
+}
+
+.cv-font-size-md {
+  font-size: 18px;
+}
+
+.cv-font-size-lg {
+  font-size: 24px;
+}
+
+
+
+/******************
+
+  text
+  text
+  text
+  text
+  text
+  text
+
+*******************/
+
+
+
+.cv-text-center {
+  text-align: center;
+}
+
+.cv-text-uppercase {
+  text-transform: uppercase;
+}
+
+.cv-text-lowercase {
+  text-transform: lowercase;
+}
+
+
+
+
+/******************
+
+  header
+  header
+  header
+  header
+  header
+  header
+
+*******************/
+
+
+
+.cv-h1 {
+  color: $black;
+}
+
+.cv-h2 {
+  color: $black;
+}
+
+.cv-h3 {
+  color: $black;
+}
+
+.cv-h4 {
+  color: $black;
+}
+
+.cv-h5 {
+  color: $gray;
+}
+
+.cv-h6 {
+  color: $gray;
+}
+
+
+
+/******************
+
+  button
+  button
+  button
+  button
+  button
+  button
+
+*******************/
+
+
+
+.cv-btn {
+  padding: 10px 15px 10px 15px;
+
+  background-color: $primary;
+  color: $white !important;
+
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-weight: normal;
+  font-family: 'Nunito', sans-serif;
+
+  border: 0;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-transition: all $transition-sh ease-in-out;
+  -moz-transition: all $transition-sh ease-in-out;
+  -o-transition: all $transition-sh ease-in-out;
+  -ms-transition: all $transition-sh ease-in-out;
+  transition: all $transition-sh ease-in-out;
+
+  &:hover, &.active {
+    background-color: darken($primary, 10%);
+  }
+
+  &:focus {
+    background-color: darken($primary, 10%);
+    border: 0;
+    outline: 0;
+  }
+
+  &.cv-btn-edgy {
+    border-radius: 0;
+  }
+
+  /*********
+    primary
+    primary
+    primary
+  **********/
+  &.cv-btn-primary {
+    color: $white;
+    background-color: $primary;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($primary, 10%);
+    }
+
+    &.cv-btn-outline {
+      border: 1px solid $primary;
+      background-color: transparent;
+      color: $primary !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $primary;
+      }
+    }
+  }
+
+  /*********
+    secondary
+    secondary
+    secondary
+  **********/
+  &.cv-btn-secondary {
+    color: $black !important;
+    background-color: $secondary;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($secondary, 10%);
+    }
+
+    &.cv-btn-outline {
+      border: 1px solid $secondary;
+      background-color: transparent;
+      color: $secondary !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $secondary;
+      }
+    }
+  }
+
+  /*********
+    success
+    success
+    success
+  **********/
+  &.cv-btn-success {
+    color: $white;
+    background-color: $success;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($success, 10%);
+    }
+
+    &.cv-btn-outline {
+      border: 1px solid $success;
+      background-color: transparent;
+      color: $success !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $success;
+      }
+    }
+  }
+
+  /*********
+    info
+    info
+    info
+  **********/
+  &.cv-btn-info {
+    color: $white;
+    background-color: $info;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($info, 10%);
+    }
+
+    &.cv-btn-outline {
+      border: 1px solid $info;
+      background-color: transparent;
+      color: $info !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $info;
+      }
+    }
+  }
+
+  /*********
+    warn
+    warn
+    warn
+  **********/
+  &.cv-btn-warn {
+    color: $white;
+    background-color: $warn;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($warn, 10%);
+    }
+
+    &.cv-btn-outline {
+      border: 1px solid $warn;
+      background-color: transparent;
+      color: $warn !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $warn;
+      }
+    }
+  }
+
+  /*********
+    danger
+    danger
+    danger
+  **********/
+  &.cv-btn-danger {
+    color: $white;
+    background-color: $danger;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($danger, 10%);
+    }
+
+    &.cv-btn-outline {
+      border: 1px solid $danger;
+      background-color: transparent;
+      color: $danger !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $danger;
+      }
+    }
+  }
+
+  /*********
+    light
+    light
+    light
+  **********/
+  &.cv-btn-light {
+    color: $black !important;
+    background-color: $light;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($light, 10%);
+    }
+
+    &.cv-btn-outline {
+      //border: 1px solid $light;
+      background-color: transparent;
+      color: $dark !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $dark;
+      }
+    }
+  }
+
+  /*********
+    dark
+    dark
+    dark
+  **********/
+  &.cv-btn-dark {
+    color: $white;
+    background-color: $dark;
+
+    &:hover, &:focus, &.active {
+      background-color: darken($dark, 10%);
+    }
+
+    &.cv-btn-outline {
+      border: 1px solid $dark;
+      background-color: transparent;
+      color: $dark !important;
+
+      &:hover, &:focus, &.active {
+        color: $white !important;
+        background-color: $dark;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggerService } from './core/utils/logger/logger.service';
 import { DisplayService } from './core/utils/device/display.service';
+import { ScrollService } from './core/utils/scroll/scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     public displayService: DisplayService,
+    public scrollService: ScrollService
   ) {
     this.logger.info('Creating application');
   }
