@@ -984,7 +984,7 @@ body {
 
 
 
-.cv-checkbox-simple {
+.cv-checkbox {
   input {
     height: 20px;
     width: 20px;
@@ -1002,8 +1002,44 @@ body {
   }
 }
 
-.cv-checkbox {
-  
+/*
+  Thanks to https://codepen.io/rakeizer/pen/QQRBoZ
+*/
+.cv-switch {
+  input {
+    height: 20px;
+    width: 40px;
+
+    background-color: transparent;
+
+    outline: none;
+    border: 1px solid $gray;
+    border-radius: 50px;
+
+    box-shadow: inset -20px 0px 0px 0px $danger;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+
+    -webkit-transition: all $transition-sh ease-in-out;
+    -moz-transition: all $transition-sh ease-in-out;
+    -o-transition: all $transition-sh ease-in-out;
+    -ms-transition: all $transition-sh ease-in-out;
+    transition: all $transition-sh ease-in-out;
+
+    &:checked {
+      border: 1px solid $success;
+
+      box-shadow: inset 20px 0px 0px 0px $success;
+    }
+  }
+
+  label {
+    position: relative;
+    top: -4px;
+    margin-left: 5px;
+  }
 }
 
 
@@ -1037,26 +1073,109 @@ body {
   }
 }
 
+.cv-radio-switch {
+  input {
+    height: 20px;
+    width: 40px;
+
+    background-color: transparent;
+
+    outline: none;
+    border: 1px solid $gray;
+    border-radius: 50px;
+
+    box-shadow: inset -20px 0px 0px 0px $danger;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+
+    -webkit-transition: all $transition-sh ease-in-out;
+    -moz-transition: all $transition-sh ease-in-out;
+    -o-transition: all $transition-sh ease-in-out;
+    -ms-transition: all $transition-sh ease-in-out;
+    transition: all $transition-sh ease-in-out;
+
+    &:checked {
+      border: 1px solid $success;
+
+      box-shadow: inset 20px 0px 0px 0px $success;
+    }
+  }
+
+  label {
+    position: relative;
+    top: -4px;
+    margin-left: 5px;
+  }
+}
 
 
-/***
 
-todo:
-multichoose
-toggler
-icon
-radio
-ribbon
-slider
-badge
+/******************
 
-***/
+  badge
+  badge
+  badge
+  badge
+  badge
+  badge
 
+*******************/
 
 
+.cv-badge {
+  width: 50px;
+  height: 50px;
 
+  position: relative;
+  top: -10px;
+  left: 75%;
 
+  padding: 2px 8px 2px 8px;
 
+  color: $white !important;
+  border-radius: 100px;
+  background-color: $primary;
+
+  &.cv-badge-edgy {
+    border-radius: 0;
+  }
+
+  &.cv-badge-primary {
+    background-color: $primary;
+  }
+
+  &.cv-badge-secondary {
+    background-color: $secondary;
+    color: $dark !important;
+  }
+
+  &.cv-badge-success {
+    background-color: $success;
+  }
+
+  &.cv-badge-info {
+    background-color: $info;
+  }
+
+  &.cv-badge-warn {
+    background-color: $warn;
+  }
+
+  &.cv-badge-danger {
+    background-color: $danger;
+  }
+
+  &.cv-badge-light {
+    background-color: $light;
+    color: $dark !important;
+  }
+
+  &.cv-badge-dark {
+    background-color: $dark;
+  }
+}
 
 
 
