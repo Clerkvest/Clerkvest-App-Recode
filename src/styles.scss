@@ -782,10 +782,20 @@ body {
 
 
 
-.cv-textfield {
+.cv-form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  &.cv-form-edgy {
+    input {
+      border-radius: 0;
+    }
+
+    select {
+      border-radius: 0;
+    }
+  }
 
   label {
     padding-left: 5px;
@@ -798,6 +808,13 @@ body {
       background-position: 99% 50%;
       background-color: lighten($color: $gray, $amount: 10);
     }
+
+    select {
+      background: $icon-check no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
+      background-color: lighten($color: $gray, $amount: 10);
+    }
   }
 
   &.invalid {
@@ -805,6 +822,13 @@ body {
       background: $icon-danger no-repeat;
       background-size: 30px 30px;
       background-position: 99% 50%;
+      background-color: lighten($color: $gray, $amount: 10);
+    }
+
+    select {
+      background: $icon-danger no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
       background-color: lighten($color: $gray, $amount: 10);
     }
   }
@@ -819,6 +843,18 @@ body {
     border-radius: 5px;
   }
 
+  select {
+    padding: 8px 12px 8px 12px;
+
+    background-color: lighten($color: $gray, $amount: 10);
+
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+
+    cursor: pointer;
+  }
+
   span {
     color: $gray;
 
@@ -827,10 +863,20 @@ body {
 }
 
 
-.cv-textfield-outline {
+.cv-form-outline {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  &.cv-form-edgy {
+    input {
+      border-radius: 0;
+    }
+
+    select {
+      border-radius: 0;
+    }
+  }
 
   label {
     padding-left: 5px;
@@ -845,6 +891,15 @@ body {
 
       border: 1px solid $success;
     }
+
+    select {
+      background: $icon-check no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
+      background-color: $white;
+
+      border: 1px solid $success;
+    }
   }
 
   &.invalid {
@@ -853,6 +908,15 @@ body {
       background-size: 30px 30px;
       background-position: 99% 50%;
       background-color: transparent;
+
+      border: 1px solid $danger;
+    }
+
+    select {
+      background: $icon-danger no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
+      background-color: $white;
 
       border: 1px solid $danger;
     }
@@ -868,6 +932,18 @@ body {
     border-radius: 5px;
   }
 
+  select {
+    padding: 8px 12px 8px 12px;
+
+    background-color: $white;
+
+    outline: 0;
+    border: 1px solid $gray;
+    border-radius: 5px;
+
+    cursor: pointer;
+  }
+
   span {
     color: $gray;
 
@@ -877,28 +953,9 @@ body {
 
 
 
-/******************
-
-  dropdown
-  dropdown
-  dropdown
-  dropdown
-  dropdown
-  dropdown
-
-*******************/
-
-
-
-
-
-
-
-
 /***
 
 todo:
-dropdown
 multichoose
 toggler
 icon
