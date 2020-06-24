@@ -771,12 +771,12 @@ body {
 
 /******************
 
-  textfield
-  textfield
-  textfield
-  textfield
-  textfield
-  textfield
+  form
+  form
+  form
+  form
+  form
+  form
 
 *******************/
 
@@ -801,60 +801,6 @@ body {
     padding-left: 5px;
   }
 
-  &.valid {
-    input {
-      background: $icon-check no-repeat;
-      background-size: 30px 30px;
-      background-position: 99% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
-    }
-
-    select {
-      background: $icon-check no-repeat;
-      background-size: 30px 30px;
-      background-position: 98% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
-    }
-  }
-
-  &.invalid {
-    input {
-      background: $icon-danger no-repeat;
-      background-size: 30px 30px;
-      background-position: 99% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
-    }
-
-    select {
-      background: $icon-danger no-repeat;
-      background-size: 30px 30px;
-      background-position: 98% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
-    }
-  }
-
-  input {
-    padding: 8px 12px 8px 12px;
-
-    background-color: lighten($color: $gray, $amount: 10);
-
-    outline: 0;
-    border: 0;
-    border-radius: 5px;
-  }
-
-  select {
-    padding: 8px 12px 8px 12px;
-
-    background-color: lighten($color: $gray, $amount: 10);
-
-    outline: 0;
-    border: 0;
-    border-radius: 5px;
-
-    cursor: pointer;
-  }
-
   span {
     color: $gray;
 
@@ -863,40 +809,56 @@ body {
 }
 
 
-.cv-form-outline {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 
-  &.cv-form-edgy {
+/******************
+
+  textfield
+  textfield
+  textfield
+  textfield
+  textfield
+  textfield
+
+*******************/
+
+
+
+.cv-textfield {
+  &.valid {
     input {
-      border-radius: 0;
-    }
-
-    select {
-      border-radius: 0;
+      background: $icon-check no-repeat;
+      background-size: 30px 30px;
+      background-position: 99% 50%;
+      background-color: lighten($color: $gray, $amount: 10);
     }
   }
 
-  label {
-    padding-left: 5px;
+  &.invalid {
+    input {
+      background: $icon-danger no-repeat;
+      background-size: 30px 30px;
+      background-position: 99% 50%;
+      background-color: lighten($color: $gray, $amount: 10);
+    }
   }
 
+  input {
+    padding: 8px 12px 8px 12px;
+    background-color: lighten($color: $gray, $amount: 10);
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+  }
+}
+
+
+.cv-textfield-outline {
   &.valid {
     input {
       background: $icon-check no-repeat;
       background-size: 30px 30px;
       background-position: 99% 50%;
       background-color: transparent;
-
-      border: 1px solid $success;
-    }
-
-    select {
-      background: $icon-check no-repeat;
-      background-size: 30px 30px;
-      background-position: 98% 50%;
-      background-color: $white;
 
       border: 1px solid $success;
     }
@@ -908,15 +870,6 @@ body {
       background-size: 30px 30px;
       background-position: 99% 50%;
       background-color: transparent;
-
-      border: 1px solid $danger;
-    }
-
-    select {
-      background: $icon-danger no-repeat;
-      background-size: 30px 30px;
-      background-position: 98% 50%;
-      background-color: $white;
 
       border: 1px solid $danger;
     }
@@ -931,6 +884,77 @@ body {
     border: 1px solid $gray;
     border-radius: 5px;
   }
+}
+
+
+
+/******************
+
+  dropdown
+  dropdown
+  dropdown
+  dropdown
+  dropdown
+  dropdown
+
+*******************/
+
+
+.cv-dropdown {
+  &.valid {
+    select {
+      background: $icon-check no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
+      background-color: lighten($color: $gray, $amount: 10);
+    }
+  }
+
+  &.invalid {
+    select {
+      background: $icon-danger no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
+      background-color: lighten($color: $gray, $amount: 10);
+    }
+  }
+
+  select {
+    padding: 8px 12px 8px 12px;
+
+    background-color: lighten($color: $gray, $amount: 10);
+
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+
+    cursor: pointer;
+  }
+}
+
+
+.cv-dropdown-outline {
+  &.valid {
+    select {
+      background: $icon-check no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
+      background-color: $white;
+
+      border: 1px solid $success;
+    }
+  }
+
+  &.invalid {
+    select {
+      background: $icon-danger no-repeat;
+      background-size: 30px 30px;
+      background-position: 98% 50%;
+      background-color: $white;
+
+      border: 1px solid $danger;
+    }
+  }
 
   select {
     padding: 8px 12px 8px 12px;
@@ -943,14 +967,7 @@ body {
 
     cursor: pointer;
   }
-
-  span {
-    color: $gray;
-
-    font-size: 13px;
-  }
 }
-
 
 
 /***
