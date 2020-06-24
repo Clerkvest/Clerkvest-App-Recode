@@ -970,6 +970,75 @@ body {
 }
 
 
+
+/******************
+
+  checkbox
+  checkbox
+  checkbox
+  checkbox
+  checkbox
+  checkbox
+
+*******************/
+
+
+
+.cv-checkbox-simple {
+  input {
+    height: 20px;
+    width: 20px;
+
+    margin-right: 10px;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  label {
+    position: relative;
+    top: -5px;
+  }
+}
+
+.cv-checkbox {
+  
+}
+
+
+
+/******************
+
+  radio
+  radio
+  radio
+  radio
+  radio
+  radio
+
+*******************/
+
+
+
+.cv-radio {
+  input {
+    height: 22px;
+    width: 22px;
+
+    margin-right: 10px;
+  }
+
+  label {
+    position: relative;
+    top: -7px;
+
+    margin-right: 10px;
+  }
+}
+
+
+
 /***
 
 todo:
