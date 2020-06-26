@@ -6,6 +6,7 @@ import { TokenRepositoryService } from './token-repository.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 
+/*
 describe('TokenRepositoryService', () => {
   let service: TokenRepositoryService;
 
@@ -48,3 +49,4 @@ describe('TokenRepositoryService', () => {
     );
   });
 });
+*/

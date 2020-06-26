@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
 import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-layout.component';
 import { ElementsComponent } from './pages/elements/elements.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,11 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: ElementsComponent
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       }
     ]
   },

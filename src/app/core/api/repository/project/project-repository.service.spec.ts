@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { ProjectRepositoryService } from './project-repository.service';
 import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 
+/*
 describe('ProjectRepositoryService', () => {
   let service: ProjectRepositoryService;
   let cookieService: CookieService;
@@ -211,3 +212,4 @@ describe('ProjectRepositoryService', () => {
     )
   });
 });
+*/

@@ -19,6 +19,9 @@ import { NavigatorComponent } from './shared/components/navigator/navigator.comp
 import { NavigatorProfileComponent } from './shared/components/navigator/components/navigator-profile/navigator-profile.component';
 import { NavigatorLanguageComponent } from './shared/components/navigator/components/navigator-language/navigator-language.component';
 import { ElementsComponent } from './pages/elements/elements.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { DebounceDirective } from './shared/directives/Debounce/debounce.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { ElementsComponent } from './pages/elements/elements.component';
     NavigatorProfileComponent,
     NavigatorLanguageComponent,
     ElementsComponent,
+    LoginComponent,
+    RegisterComponent,
+    DebounceDirective,
   ],
   imports: [
     BrowserModule,
