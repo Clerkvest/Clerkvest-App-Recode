@@ -22,6 +22,8 @@ import { ElementsComponent } from './pages/elements/elements.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DebounceDirective } from './shared/directives/Debounce/debounce.directive';
+import { ThrottleDirective } from './shared/directives/Throttle/throttle.directive';
+import { AuditDirective } from './shared/directives/Audit/audit.directive';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { DebounceDirective } from './shared/directives/Debounce/debounce.directi
     LoginComponent,
     RegisterComponent,
     DebounceDirective,
+    ThrottleDirective,
+    AuditDirective,
   ],
   imports: [
     BrowserModule,

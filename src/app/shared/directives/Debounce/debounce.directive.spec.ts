@@ -24,13 +24,10 @@ describe('DebounceDirective', () => {
     component = fixture.componentInstance;
     directive = new DebounceDirective();
     inputEl = fixture.debugElement.query(By.css('input'));
-
-    jasmine.clock().install();
   });
 
   afterEach(() => {
     fixture = null;
-    jasmine.clock().uninstall();
   });
 
   it('should create an instance', () => {
@@ -41,14 +38,14 @@ describe('DebounceDirective', () => {
     expect(directive.logger).toBeTruthy();
   });
 
-  it('should trigger event on keyup event', () => {
+  it('should trigger onKeyUp on keyup event', () => {
     spy = spyOn(DebounceDirective.prototype, 'onKeyUp');
     inputEl.triggerEventHandler('keyup', null);
 
     expect(directive.onKeyUp).toHaveBeenCalled();
   });
 
-  it('should trigger event on keyup event', () => {
+  it('should trigger onClick on click event', () => {
     spy = spyOn(DebounceDirective.prototype, 'onClick');
     inputEl.triggerEventHandler('click', null);
 
