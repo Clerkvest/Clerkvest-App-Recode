@@ -15,13 +15,16 @@ export class AuditDirective {
   @Input('audit')
   public auditTime: number = 300;
 
-  public logger: LoggerService = LoggerService.build(AuditDirective.name);
+  public logger: LoggerService;
+  public subscription: SubscriptionService;
 
-  private subject: Subject<any> = new Subject();
+  private subject: Subject<any>;
 
-  private subscription: SubscriptionService = new SubscriptionService();
-
-  constructor() { }
+  constructor() {
+    this.logger = LoggerService.build(AuditDirective.name);
+    this.subscription = new SubscriptionService();
+    this.subject = new Subject();
+  }
 
   ngOnInit(): void {
     this.subscription.add(
@@ -31,7 +34,7 @@ export class AuditDirective {
           this.onAudit.emit(event);
           this.logger.debug(`Emitting audit event: ${event.type}`);
         }
-      )
+      ), 'AuditDirective#ngOnInit()'
     );
   }
 

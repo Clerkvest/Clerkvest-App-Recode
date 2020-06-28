@@ -15,13 +15,16 @@ export class ThrottleDirective {
   @Input('throttle')
   public throttleTime: number = 300;
 
-  public logger: LoggerService = LoggerService.build(ThrottleDirective.name);
+  public logger: LoggerService;
+  public subscription: SubscriptionService;
 
-  private subject: Subject<any> = new Subject();
+  private subject: Subject<any>;
 
-  private subscription: SubscriptionService = new SubscriptionService();
-
-  constructor() { }
+  constructor() {
+    this.logger = LoggerService.build(ThrottleDirective.name);
+    this.subscription = new SubscriptionService();
+    this.subject = new Subject();
+  }
 
   ngOnInit(): void {
     this.subscription.add(
@@ -31,7 +34,7 @@ export class ThrottleDirective {
           this.onThrottle.emit(event);
           this.logger.debug(`Emitting throttled event: ${event.type}`);
         }
-      )
+      ), 'ThrottleDirective#ngOnInit()'
     );
   }
 

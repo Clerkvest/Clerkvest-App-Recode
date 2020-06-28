@@ -22,15 +22,15 @@ describe('LoggerService', () => {
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
-    service.info(LoggerService.INFO);    
+    service.info(LoggerService.INFO);
     service.warn(LoggerService.WARN);
     service.error(LoggerService.ERROR);
     service.fatal(LoggerService.FATAL);
-    
+
     expect(window.console.error).toHaveBeenCalledWith('"' + LoggerService.TRACE + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.DEBUG + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.INFO + '"');
-    expect(window.console.warn).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
+    expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.ERROR + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.FATAL + '"');
   });
@@ -40,15 +40,15 @@ describe('LoggerService', () => {
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
-    service.info(LoggerService.INFO);    
+    service.info(LoggerService.INFO);
     service.warn(LoggerService.WARN);
     service.error(LoggerService.ERROR);
     service.fatal(LoggerService.FATAL);
-    
+
     expect(window.console.error).not.toHaveBeenCalled();
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.DEBUG + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.INFO + '"');
-    expect(window.console.warn).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
+    expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.ERROR + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.FATAL + '"');
   });
@@ -58,15 +58,15 @@ describe('LoggerService', () => {
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
-    service.info(LoggerService.INFO);    
+    service.info(LoggerService.INFO);
     service.warn(LoggerService.WARN);
     service.error(LoggerService.ERROR);
     service.fatal(LoggerService.FATAL);
-    
+
     expect(window.console.error).not.toHaveBeenCalled();
     expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.DEBUG + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.INFO + '"');
-    expect(window.console.warn).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
+    expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.ERROR + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.FATAL + '"');
   });
@@ -76,15 +76,15 @@ describe('LoggerService', () => {
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
-    service.info(LoggerService.INFO);    
+    service.info(LoggerService.INFO);
     service.warn(LoggerService.WARN);
     service.error(LoggerService.ERROR);
     service.fatal(LoggerService.FATAL);
-    
+
     expect(window.console.error).not.toHaveBeenCalled();
     expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.DEBUG + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.INFO + '"');
-    expect(window.console.warn).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
+    expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.ERROR + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.FATAL + '"');
   });
@@ -94,15 +94,15 @@ describe('LoggerService', () => {
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
-    service.info(LoggerService.INFO);    
+    service.info(LoggerService.INFO);
     service.warn(LoggerService.WARN);
     service.error(LoggerService.ERROR);
     service.fatal(LoggerService.FATAL);
-    
+
     expect(window.console.error).not.toHaveBeenCalled();
     expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.DEBUG + '"');
     expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.INFO + '"');
-    expect(window.console.warn).not.toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
+    expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.ERROR + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.FATAL + '"');
   });
@@ -112,15 +112,15 @@ describe('LoggerService', () => {
 
     service.trace(LoggerService.TRACE);
     service.debug(LoggerService.DEBUG);
-    service.info(LoggerService.INFO);    
+    service.info(LoggerService.INFO);
     service.warn(LoggerService.WARN);
     service.error(LoggerService.ERROR);
     service.fatal(LoggerService.FATAL);
-    
+
     expect(window.console.error).not.toHaveBeenCalled();
     expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.DEBUG + '"');
     expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.INFO + '"');
-    expect(window.console.warn).not.toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
+    expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.WARN + '"');
     expect(window.console.log).not.toHaveBeenCalledWith('"' + LoggerService.ERROR + '"');
     expect(window.console.log).toHaveBeenCalledWith('"' + LoggerService.FATAL + '"');
   });

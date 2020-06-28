@@ -1,5 +1,13 @@
 import { isNullOrUndefined } from 'util';
 
+export enum CookieTime {
+  YEAR = 365,
+}
+
+export enum Cookies {
+  API_KEY = '_api',
+}
+
 export class Cookie {
     public key: string;
     public value: string;

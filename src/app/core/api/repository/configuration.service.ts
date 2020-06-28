@@ -4,6 +4,7 @@ import { isNullOrUndefined } from 'util';
 import { environment } from 'src/environments/environment';
 import { LoggerService } from '../../utils/logger/logger.service';
 import { CookieService } from '../../utils/cookie/cookie.service';
+import { Cookies } from '../../utils/cookie/cookie';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class ConfigurationService {
 
   getHeaders() {
     let headers = this.defaultHeaders;
-    headers = headers.set('Authorization', 'Bearer '  + this.cookieService.get('_api'));
+    headers = headers.set('Authorization', 'Bearer '  + this.cookieService.get(Cookies.API_KEY));
     // headers = headers.set('Accept', 'application/json');
     // headers = headers.set('Content-Type', 'application/json');
 

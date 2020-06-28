@@ -2,6 +2,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { isNullOrUndefined } from 'util';
 import { environment } from 'src/environments/environment';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -166,7 +167,7 @@ export class LoggerService {
       msg = this.prependIdentifier(msg);
       msg = this.prependType(msg, LoggerService.WARN);
       msg = this.prependTime(msg);
-      console.warn(msg);
+      console.log(msg);
     }
   }
 
@@ -198,5 +199,11 @@ export class LoggerService {
       msg = this.prependTime(msg);
       console.error(msg);
     }
+  }
+
+  public httpRequestError(err: HttpErrorResponse) {
+    this.fatal(
+      `Http request ${err.url} responded with: ${err.name} ${err.status} ${err.error}`
+    );
   }
 }

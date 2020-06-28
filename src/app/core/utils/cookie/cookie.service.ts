@@ -30,8 +30,8 @@ export class CookieService {
     cookie.domain = domain;
     cookie.secure = secure;
 
-    this.logger.debug('Successfully saved ' + cookie.toString());
     this.document.cookie = cookie.toString();
+    this.logger.debug('Successfully saved ' + cookie.toString());
   }
 
   public get(key: string): string {

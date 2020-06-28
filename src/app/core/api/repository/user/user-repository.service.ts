@@ -23,6 +23,7 @@ export class UserRepositoryService {
   private static readonly UPDATE: string = UserRepositoryService.SERVICE_BASE + 'update';
   private static readonly DELETE_SINGLE: string = UserRepositoryService.SERVICE_BASE + 'delete/';
   private static readonly INVITE: string = '/invite'
+  private static readonly LOGIN: string = '/login'
 
   private basePath: string;
 
@@ -99,6 +100,17 @@ export class UserRepositoryService {
   public invite(email: string): Observable<IResponse> {
     let headers = this.configuration.getHeaders();
     let url = this.basePath + UserRepositoryService.INVITE + '?mail=' + encodeURIComponent(email);
+    this.logger.debug('Executing request: ' + url);
+
+    return this.httpClient.post<IResponse>(url,
+      {
+          headers: headers,
+      });
+  }
+
+  public login(email: string): Observable<IResponse> {
+    let headers = null;
+    let url = this.basePath + UserRepositoryService.LOGIN + '?mail=' + encodeURIComponent(email);
     this.logger.debug('Executing request: ' + url);
 
     return this.httpClient.post<IResponse>(url,

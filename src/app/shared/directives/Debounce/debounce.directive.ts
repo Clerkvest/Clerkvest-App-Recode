@@ -15,13 +15,16 @@ export class DebounceDirective implements OnInit, OnDestroy {
   @Input('debounce')
   public debounceTime: number = 300;
 
-  public logger: LoggerService = LoggerService.build(DebounceDirective.name);
+  public logger: LoggerService;
+  public subscription: SubscriptionService;
 
-  private subject: Subject<any> = new Subject();
+  private subject: Subject<any>;
 
-  private subscription: SubscriptionService = new SubscriptionService();
-
-  constructor() { }
+  constructor() {
+    this.logger = LoggerService.build(DebounceDirective.name);
+    this.subscription = new SubscriptionService();
+    this.subject = new Subject();
+  }
 
   ngOnInit(): void {
     this.subscription.add(
@@ -31,7 +34,7 @@ export class DebounceDirective implements OnInit, OnDestroy {
           this.onDebounce.emit(event);
           this.logger.debug(`Emitting debounced event: ${event.type}`);
         }
-      )
+      ), 'DebounceDirective#ngOnInit()'
     );
   }
 
