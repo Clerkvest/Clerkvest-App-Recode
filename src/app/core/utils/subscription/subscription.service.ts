@@ -19,13 +19,14 @@ export class SubscriptionService {
 
   public add(subscription: Subscription, name?: string) {
     this.logger.debug('Adding subscription: ' + (isNullOrUndefined(name) ? 'unnamed' : name));
+    subscription['name'] = (isNullOrUndefined(name) ? 'unnamed' : name)
     this.subscriptions.push(subscription);
   }
 
   public unsubscribe() {
-    this.logger.debug('Unsubcribing ...');
     this.subscriptions.forEach(subscription => {
       if(!isNullOrUndefined(subscription)) {
+        this.logger.debug('Unsubscribe: ' + subscription['name']);
         subscription.unsubscribe();
       }
     });

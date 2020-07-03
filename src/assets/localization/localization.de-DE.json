@@ -1,4 +1,7 @@
 {
-    "hello": "Hallo",
-    "dashboard": "Dashboard"
+  "hello": "Hallo",
+
+  "localizationLogin": {
+    "headlineLogin": "Einloggen"
+  }
 }

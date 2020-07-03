@@ -6,24 +6,24 @@ import { AppComponent } from './app.component';
 import { InternalServerErrorComponent } from './execption/pages/internal-server-error/internal-server-error.component';
 import { NotFoundComponent } from './execption/pages/not-found/not-found.component';
 import { UnauthorizedComponent } from './execption/pages/unauthorized/unauthorized.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './shared/components/alert/alert.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { SuccessModalComponent } from './shared/components/modal/success-modal/success-modal.component';
 import { FailureModalComponent } from './shared/components/modal/failure-modal/failure-modal.component';
 import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
 import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-layout.component';
-import { DesktopNavigatorComponent } from './shared/components/navigator/desktop-navigator/desktop-navigator.component';
-import { MobileNavigatorComponent } from './shared/components/navigator/mobile-navigator/mobile-navigator.component';
-import { NavigatorComponent } from './shared/components/navigator/navigator.component';
-import { NavigatorProfileComponent } from './shared/components/navigator/components/navigator-profile/navigator-profile.component';
-import { NavigatorLanguageComponent } from './shared/components/navigator/components/navigator-language/navigator-language.component';
 import { ElementsComponent } from './pages/elements/elements.component';
 import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
 import { DebounceDirective } from './shared/directives/Debounce/debounce.directive';
 import { ThrottleDirective } from './shared/directives/Throttle/throttle.directive';
 import { AuditDirective } from './shared/directives/Audit/audit.directive';
+import { LoginEmailInputComponent } from './shared/components/login/login-email-input/login-email-input.component';
+import { LoginEmailSendComponent } from './shared/components/login/login-email-send/login-email-send.component';
+import { LoginAuthManuallyComponent } from './shared/components/login/login-auth-manually/login-auth-manually.component';
+import { LoginLanguageSelectorComponent } from './shared/components/login/login-language-selector/login-language-selector.component';
+import { LocalizationService } from './core/utils/localization/localization.service';
+import { CookieService } from './core/utils/cookie/cookie.service';
 
 @NgModule({
   declarations: [
@@ -37,17 +37,15 @@ import { AuditDirective } from './shared/directives/Audit/audit.directive';
     FailureModalComponent,
     EmptyLayoutComponent,
     NavigatorLayoutComponent,
-    DesktopNavigatorComponent,
-    MobileNavigatorComponent,
-    NavigatorComponent,
-    NavigatorProfileComponent,
-    NavigatorLanguageComponent,
     ElementsComponent,
     LoginComponent,
-    RegisterComponent,
     DebounceDirective,
     ThrottleDirective,
     AuditDirective,
+    LoginEmailInputComponent,
+    LoginEmailSendComponent,
+    LoginAuthManuallyComponent,
+    LoginLanguageSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +53,8 @@ import { AuditDirective } from './shared/directives/Audit/audit.directive';
     HttpClientModule
   ],
   providers: [
+    LocalizationService,
+    CookieService,
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

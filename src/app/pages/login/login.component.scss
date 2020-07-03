@@ -1,0 +1,56 @@
+@import "../../../color.scss";
+@import "../../../variable.scss";
+
+.cv-split-container {
+  display: flex;
+  flex-direction: column;
+
+  .cv-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cv-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+
+    height: 100vh;
+    width: 640px;
+
+    padding: 40px 90px;
+
+    background-color: $white;
+
+    @media screen and (max-width: 900px){
+      width: 100%;
+    }
+
+    @media screen and (max-width: $breakpoint-md){
+      padding: 40px 30px;
+    }
+
+    .cv-btn {
+      width: 100%;
+    }
+  }
+
+  .cv-right {
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+
+    height: 100vh;
+    flex-grow: 1;
+
+    background: url("../../../assets/img/bubble-bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (max-width: 900px){
+      display: none;
+    }
+  }
+}

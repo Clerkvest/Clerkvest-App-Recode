@@ -5,7 +5,9 @@ export enum CookieTime {
 }
 
 export enum Cookies {
-  API_KEY = '_api',
+  API_KEY = 'app-user',
+  STORED_LOGIN = 'app-login',
+  LANGUAGE = 'app-lang'
 }
 
 export class Cookie {

@@ -4,7 +4,6 @@ import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.compone
 import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-layout.component';
 import { ElementsComponent } from './pages/elements/elements.component';
 import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
 
 
 const routes: Routes = [
@@ -26,10 +25,6 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent
       },
-      {
-        path: 'register',
-        component: RegisterComponent
-      }
     ]
   },
   { path: '**', redirectTo: '' }

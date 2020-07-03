@@ -40,7 +40,7 @@ export class CookieService {
     for(let i = 0; i < cookies.length; i++) {
       let keyValue = cookies[i].split('=');
       if(keyValue.length === 2 && keyValue[0] === key) {
-        this.logger.debug('Requested cookie \'' + key + '\' has been found. Value: ' + keyValue[1]);
+        //this.logger.debug('Requested cookie \'' + key + '\' has been found. Value: ' + keyValue[1]);
         return keyValue[1];
       }
     }

@@ -1,0 +1,34 @@
+<div>
+  <h1 class="cv-margin-md-b">{{localizedStrings().localizationLogin.headlineLogin}}</h1>
+  <div
+    class="cv-form cv-form-edgy cv-textfield-outline cv-margin-sm-b"
+    [ngClass]="{
+      'valid': emailValidity.isDirty() && emailValidity.isTrue(),
+      'invalid': emailValidity.isDirty() && emailValidity.isFalse()
+      }"
+  >
+    <label>E-Mail-Adresse</label>
+    <input #textfieldEmail type="email" placeholder="joe@email.net" required [debounce]="500" (onDebounce)="onEmailChange()" />
+    <div class="cv-message-container" [ngClass]="{'display': emailValidity.isDirty() && emailValidity.isFalse()}">
+      <span class="cv-message-danger cv-font-size-sm">Hier musst du etwas eingeben.</span>
+    </div>
+  </div>
+  <div class="cv-switch">
+    <label>Login-Informationen Speichern</label>
+    <input #checkboxSave type="checkbox"/>
+  </div>
+  <button id="buttonSend" class="cv-btn cv-btn-full cv-btn-dark cv-btn-edgy margin-md-b" [throttle]="1000" (onThrottle)="sendEmail()">
+    Login-Link senden
+  </button>
+  <div *ngIf="httpError != undefined" class="cv-message-container display cv-margin-lg-t">
+    <p class="cv-message-danger cv-font-size-sm">
+      Dein Login-Link konnte leider nicht zugestellt werden. Error: {{httpError.status}} {{httpError.error}}
+    </p>
+  </div>
+  <div class="cv-message-container display cv-margin-lg-t">
+    <p class="cv-message-dark cv-font-size-sm">Durch das Fortfahren akzeptierst du die Servicebedingungen und bestätigst, dass du die Datenschutzinformation zur Kenntnis genommen hast.</p>
+  </div>
+  <div class="cv-message-container display">
+    <p class="cv-message-dark cv-font-size-sm">Diese Seite ist durch reCAPTCHA geschützt. Mit dem Fortfahren bestätige ich, dass ich die Datenschutzbestimmungen von Google gelesen habe und die Nutzungsbedingungen von Google akzeptiere.</p>
+  </div>
+</div>

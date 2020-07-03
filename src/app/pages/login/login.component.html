@@ -1,0 +1,25 @@
+<div class="cv-split-container">
+  <div class="cv-wrapper">
+    <div class="cv-left" *ngIf="true">
+      <div class="cv-justify-space-between">
+        <span>Clerkvest</span>
+        <div>
+          <a class="cv-curser-pointer" (click)="openLanguageSelector()" *ngIf="state != LoginComponent.STATE_LANG_SELECTOR">
+            <span [ngClass]="'cv-flag cv-flag-' + currentLocalization()"></span>
+          </a>
+          <a class="cv-curser-pointer" (click)="closeLanguageSelector()" *ngIf="state == LoginComponent.STATE_LANG_SELECTOR">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <login-email-input *ngIf="state == LoginComponent.STATE_EMAIL" (emailSend)="emailSend()"></login-email-input>
+        <login-email-send *ngIf="state == LoginComponent.STATE_SEND" (authManually)="authManually()"></login-email-send>
+        <login-auth-manually *ngIf="state == LoginComponent.STATE_MANUALLY"></login-auth-manually>
+        <login-language-selector *ngIf="state == LoginComponent.STATE_LANG_SELECTOR" (languageChanged)="closeLanguageSelector()"></login-language-selector>
+      </div>
+      <div></div>
+    </div>
+    <div class="cv-right"></div>
+  </div>
+</div>
