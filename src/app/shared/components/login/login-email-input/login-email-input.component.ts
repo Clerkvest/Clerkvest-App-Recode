@@ -15,7 +15,7 @@ import { Cookies, CookieTime } from 'src/app/core/utils/cookie/cookie';
   templateUrl: './login-email-input.component.html',
   styleUrls: ['./login-email-input.component.scss']
 })
-export class LoginEmailInputComponent implements OnInit, OnDestroy, AfterViewInit, ILocalizedComponent {
+export class LoginEmailInputComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild('textfieldEmail')
   private _textfieldEmailElemt: ElementRef;
@@ -52,14 +52,7 @@ export class LoginEmailInputComponent implements OnInit, OnDestroy, AfterViewIni
   }
 
   ngOnDestroy(): void {
-  }
-
-  localizedStrings(): Localization {
-    return this._localizationService.localized;
-  }
-
-  currentLocalization(): string {
-    return this._localizationService.getCurrentLocalization();
+    this.subscription.unsubscribe();
   }
 
   public onEmailChange() {
@@ -131,6 +124,14 @@ export class LoginEmailInputComponent implements OnInit, OnDestroy, AfterViewIni
      */
 	public get logger(): LoggerService {
 		return this._logger;
+  }
+
+    /**
+     * Getter localizationService
+     * @return {LocalizationService}
+     */
+	public get localizationService(): LocalizationService {
+		return this._localizationService;
 	}
 
     /**

@@ -24,6 +24,8 @@ export class LocalizationService {
     private httpClient: HttpClient,
     private cookieService: CookieService
   ) {
+    console.log(new Localization());
+
     this._logger = LoggerService.build(LocalizationService.name);
     this._subscription = new SubscriptionService();
     this._localized = new Localization();

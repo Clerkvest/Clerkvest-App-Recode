@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 import { SubscriptionService } from 'src/app/core/utils/subscription/subscription.service';
 import { State } from 'src/app/core/utils/state/state';
@@ -10,13 +10,15 @@ import { LoginEmailInputComponent } from '../login-email-input/login-email-input
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
 import { TokenRepositoryService } from 'src/app/core/api/repository/token/token-repository.service';
+import { ILocalizedComponent } from 'src/app/core/utils/localization/ILocalizedComponent';
+import { Localization } from 'src/app/core/utils/localization/ilocalization';
 
 @Component({
   selector: 'login-auth-manually',
   templateUrl: './login-auth-manually.component.html',
   styleUrls: ['./login-auth-manually.component.scss']
 })
-export class LoginAuthManuallyComponent implements OnInit {
+export class LoginAuthManuallyComponent implements OnInit, OnDestroy {
 
   @ViewChild('textfieldAuth')
   private _textfieldAuthElemt: ElementRef;
@@ -41,6 +43,10 @@ export class LoginAuthManuallyComponent implements OnInit {
     this._logger = LoggerService.build(LoginEmailInputComponent.name);
     this._subscription = new SubscriptionService();
     this._authValidity = new State();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   public auth(): void {
@@ -91,6 +97,14 @@ export class LoginAuthManuallyComponent implements OnInit {
      */
 	public get logger(): LoggerService {
 		return this._logger;
+  }
+
+    /**
+     * Getter localizationService
+     * @return {LocalizationService}
+     */
+	public get localizationService(): LocalizationService {
+		return this._localizationService;
 	}
 
     /**

@@ -1349,8 +1349,10 @@ body {
   background-repeat: no-repeat;
   background-position: 50%;
 
-  height: 15px;
-  width: 25px;
+  &.cv-flag-sm {
+    height: 15px;
+    width: 20px;
+  }
 
   &.cv-flag-de-DE {
     background: url("assets/flag/de-DE.svg");
@@ -1360,3 +1362,32 @@ body {
     background: url("assets/flag/en-EN.svg");
   }
 }
+
+
+
+/******************
+
+  flag
+  flag
+  flag
+  flag
+  flag
+  flag
+
+*******************/
+
+.cv-brand-sm {
+  max-width: 100px;
+  height: auto;
+}
+
+.cv-brand-md {
+  max-width: 150px;
+  height: auto;
+}
+
+.cv-brand-lg {
+  max-width: 200px;
+  height: auto;
+}
+

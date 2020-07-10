@@ -1,7 +1,40 @@
 {
-  "hello": "Hello",
-
-  "localizationLogin": {
-    "headlineLogin": "Log in"
+  "loginPage": {
+    "inputSection": {
+      "headline": "Log in",
+      "textfieldEmailLabel": "Email address",
+      "textfieldEmailErrorMsg": "You need to enter something here",
+      "rememberLabel": "Remember login details",
+      "buttonSend": "Send link",
+      "error": "Unfortunately your login link could not be delivered.",
+      "legalTextBeforeTerms": "By proceeding, I accept the",
+      "legalTextAfterTerms": "and confirm that I have read",
+      "legalTextAfterPrivacy": "",
+      "reCapLegalTextBeforeTerms": "This page is protected by reCAPTCHA. By continuing I confirm having read Google’s",
+      "reCapLegalTextAfterTerms": "and accepted Google’s",
+      "reCapLegalTextAfterPrivacy": ""
+    },
+    "sentSection": {
+      "headline": "Your login link has been delivered!",
+      "sentText": "We have sent you an e-mail with a confirmation link.",
+      "spamText": "If you cannot find the email, please check your spam folder.",
+      "buttonManually": "Entering Manually"
+    },
+    "manuallySection": {
+      "headline": "Authentication",
+      "textfieldLabel": "Authentication code",
+      "textfieldErrorMsg": "You need to enter something here",
+      "buttonAuth": "Authenticate",
+      "reminderText": "The authentication code is no longer usable after successful use.",
+      "error": "Unfortunately authentication code could not be activated."
+    }
+  },
+  "language": {
+    "german": "Deutsch",
+    "english": "English"
+  },
+  "legal": {
+    "terms": "Services Terms",
+    "privacy": "Privacy Policy"
   }
 }

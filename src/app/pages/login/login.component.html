@@ -2,10 +2,10 @@
   <div class="cv-wrapper">
     <div class="cv-left" *ngIf="true">
       <div class="cv-justify-space-between">
-        <span>Clerkvest</span>
-        <div>
+        <img class="cv-brand-sm" src="../../../assets/img/brand/brand.svg">
+        <div style="height: 100%;">
           <a class="cv-curser-pointer" (click)="openLanguageSelector()" *ngIf="state != LoginComponent.STATE_LANG_SELECTOR">
-            <span [ngClass]="'cv-flag cv-flag-' + currentLocalization()"></span>
+            <span [ngClass]="'cv-flag cv-flag-sm cv-flag-' + currentLocalization()"></span>
           </a>
           <a class="cv-curser-pointer" (click)="closeLanguageSelector()" *ngIf="state == LoginComponent.STATE_LANG_SELECTOR">
             <i class="fa fa-times"></i>
@@ -14,7 +14,7 @@
       </div>
       <div>
         <login-email-input *ngIf="state == LoginComponent.STATE_EMAIL" (emailSend)="emailSend()"></login-email-input>
-        <login-email-send *ngIf="state == LoginComponent.STATE_SEND" (authManually)="authManually()"></login-email-send>
+        <login-email-send *ngIf="state == LoginComponent.STATE_SENT" (authManually)="authManually()"></login-email-send>
         <login-auth-manually *ngIf="state == LoginComponent.STATE_MANUALLY"></login-auth-manually>
         <login-language-selector *ngIf="state == LoginComponent.STATE_LANG_SELECTOR" (languageChanged)="closeLanguageSelector()"></login-language-selector>
       </div>

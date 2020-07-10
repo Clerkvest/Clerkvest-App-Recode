@@ -1,4 +1,4 @@
-<h1 class="cv-margin-md-b">Authentifizierung</h1>
+<h1 class="cv-margin-md-b">{{localizationService.localized.loginPage.manuallySection.headline}}</h1>
 <div
   class="cv-form cv-form-edgy cv-textfield-outline cv-margin-sm-b"
   [ngClass]="{
@@ -6,20 +6,20 @@
     'invalid': authValidity.isDirty() && authValidity.isFalse()
     }"
 >
-  <label>Authentifizierungscode</label>
+  <label>{{localizationService.localized.loginPage.manuallySection.textfieldLabel}}</label>
   <input #textfieldAuth type="text" placeholder="9e0d4a8f-d15a-4e4a-b6fb-163927423d90" required [debounce]="300" (onDebounce)="setAuthValidity()" />
   <div class="cv-message-container" [ngClass]="{'display': authValidity.isDirty() && authValidity.isFalse()}">
-    <span class="cv-message-danger cv-font-size-sm">Hier musst du etwas eingeben.</span>
+    <span class="cv-message-danger cv-font-size-sm">{{localizationService.localized.loginPage.manuallySection.textfieldErrorMsg}}</span>
   </div>
 </div>
 <button class="cv-btn cv-btn-full cv-btn-dark cv-btn-edgy margin-md-b" [throttle]="1000" (onThrottle)="auth()">
-  Authentifizieren
+  {{localizationService.localized.loginPage.manuallySection.buttonAuth}}
 </button>
 <div *ngIf="httpError != undefined"  class="cv-message-container display cv-margin-lg-t">
   <p class="cv-message-danger cv-font-size-sm">
-    Authentifizierungscode konnte leider nicht aktiviert werden. Error: {{httpError.status}} {{httpError.error}}
+    {{localizationService.localized.loginPage.manuallySection.error}} Error: {{httpError.status}} {{httpError.error}}
   </p>
 </div>
 <div class="cv-message-container display cv-margin-lg-t">
-  <p class="cv-message-dark cv-font-size-sm">Der Authentifizierungscode ist nach der erfolgreichen Nutzung nicht mehr verwendbar.</p>
+  <p class="cv-message-dark cv-font-size-sm">{{localizationService.localized.loginPage.manuallySection.reminderText}}</p>
 </div>

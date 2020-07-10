@@ -9,6 +9,8 @@ import { UserRepositoryService } from 'src/app/core/api/repository/user/user-rep
 import { LoginEmailInputComponent } from '../login-email-input/login-email-input.component';
 import { Cookies, Cookie, CookieTime } from 'src/app/core/utils/cookie/cookie';
 import { Language } from 'src/app/core/utils/localization/language.enum';
+import { ILocalizedComponent } from 'src/app/core/utils/localization/ILocalizedComponent';
+import { Localization } from 'src/app/core/utils/localization/ilocalization';
 
 @Component({
   selector: 'login-language-selector',
@@ -59,6 +61,14 @@ export class LoginLanguageSelectorComponent implements OnInit {
      */
 	public get logger(): LoggerService {
 		return this._logger;
+  }
+
+  /**
+     * Getter localizationService
+     * @return {LocalizationService}
+     */
+	public get localizationService(): LocalizationService {
+		return this._localizationService;
 	}
 
     /**
@@ -76,5 +86,4 @@ export class LoginLanguageSelectorComponent implements OnInit {
 	public set logger(value: LoggerService) {
 		this._logger = value;
 	}
-
 }

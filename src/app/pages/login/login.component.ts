@@ -1,14 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 import { SubscriptionService } from 'src/app/core/utils/subscription/subscription.service';
-import { UserRepositoryService } from 'src/app/core/api/repository/user/user-repository.service';
-import { TokenRepositoryService } from 'src/app/core/api/repository/token/token-repository.service';
-import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 import { LocalizationService } from 'src/app/core/utils/localization/localization.service';
-import { Cookies, CookieTime } from 'src/app/core/utils/cookie/cookie';
-import { Router } from '@angular/router';
-import { State } from 'src/app/core/utils/state/state';
-import { HttpErrorResponse } from '@angular/common/http';
 import { ILocalizedComponent } from 'src/app/core/utils/localization/ILocalizedComponent';
 import { Localization } from 'src/app/core/utils/localization/ilocalization';
 
@@ -20,7 +13,7 @@ import { Localization } from 'src/app/core/utils/localization/ilocalization';
 export class LoginComponent implements OnInit, OnDestroy, ILocalizedComponent {
 
   public static readonly STATE_EMAIL: number = 0;
-  public static readonly STATE_SEND: number = 1;
+  public static readonly STATE_SENT: number = 1;
   public static readonly STATE_MANUALLY: number = 2;
   public static readonly STATE_LANG_SELECTOR: number = 3;
   public static readonly STATE_LOADING: number = 4;
@@ -56,7 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy, ILocalizedComponent {
 
   public emailSend(): void {
     this._logger.debug('Changing view: E-Mail has been send');
-    this._state = LoginComponent.STATE_SEND;
+    this._state = LoginComponent.STATE_SENT;
   }
 
   public authManually(): void {

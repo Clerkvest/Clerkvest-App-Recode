@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 import { SubscriptionService } from 'src/app/core/utils/subscription/subscription.service';
 import { State } from 'src/app/core/utils/state/state';
@@ -7,19 +7,20 @@ import { CookieService } from 'src/app/core/utils/cookie/cookie.service';
 import { LocalizationService } from 'src/app/core/utils/localization/localization.service';
 import { UserRepositoryService } from 'src/app/core/api/repository/user/user-repository.service';
 import { LoginEmailInputComponent } from '../login-email-input/login-email-input.component';
+import { ILocalizedComponent } from 'src/app/core/utils/localization/ILocalizedComponent';
+import { Localization } from 'src/app/core/utils/localization/ilocalization';
 
 @Component({
   selector: 'login-email-send',
   templateUrl: './login-email-send.component.html',
   styleUrls: ['./login-email-send.component.scss']
 })
-export class LoginEmailSendComponent implements OnInit {
+export class LoginEmailSendComponent implements OnInit, OnDestroy {
 
   @Output('authManually')
   private _authManually: EventEmitter<any> = new EventEmitter();
 
   private _logger: LoggerService;
-  private _subscription: SubscriptionService;
 
   constructor(
     private _cookieService: CookieService,
@@ -28,6 +29,9 @@ export class LoginEmailSendComponent implements OnInit {
 
   ngOnInit(): void {
     this._logger = LoggerService.build(LoginEmailSendComponent.name);
+  }
+
+  ngOnDestroy(): void {
   }
 
   public enterManually(): void {
@@ -51,11 +55,11 @@ export class LoginEmailSendComponent implements OnInit {
 	}
 
     /**
-     * Getter subscription
-     * @return {SubscriptionService}
+     * Getter localizationService
+     * @return {LocalizationService}
      */
-	public get subscription(): SubscriptionService {
-		return this._subscription;
+	public get localizationService(): LocalizationService {
+		return this._localizationService;
 	}
 
     /**
@@ -72,14 +76,6 @@ export class LoginEmailSendComponent implements OnInit {
      */
 	public set logger(value: LoggerService) {
 		this._logger = value;
-	}
-
-    /**
-     * Setter subscription
-     * @param {SubscriptionService} value
-     */
-	public set subscription(value: SubscriptionService) {
-		this._subscription = value;
 	}
 
 }
