@@ -1,0 +1,19 @@
+@import "../../../../../color.scss";
+@import "../../../../../variable.scss";
+
+nav {
+  .section {
+    padding-left: 10%;
+    padding-right: 10%;
+
+    height: $navbar-height;
+
+    &.upper {
+      background-color: $primary;
+    }
+
+    &.lower {
+      background-color: $white;
+    }
+  }
+}

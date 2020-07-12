@@ -100,19 +100,25 @@ body {
 
 
 
-.display-hidden {
+.cv-display-hidden {
   display: none;
 }
 
-.display-flex {
+.cv-display-flex {
   display: flex;
 }
 
-.display-block {
-  display: block;
+.cv-display-block {
+  display: inline-block;
 }
 
-.flex-col {
+.cv-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cv-flex-col {
+  display: flex;
   flex-direction: column;
 }
 
@@ -167,7 +173,6 @@ body {
   height: 100vh;
   width: 100vw;
 }
-
 
 .cv-background-gradient {
   background: rgb(106,114,217);
@@ -228,9 +233,21 @@ body {
   justify-content: flex-end;
 }
 
+.cv-justify-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 .cv-justify-center {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+.cv-justify-center-col {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -246,8 +263,18 @@ body {
   justify-content: space-around;
 }
 
+.cv-justify-space-around-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .cv-text-center {
   text-align: center;
+}
+
+.cv-align-center {
+  align-items: center;
 }
 
 /******************
@@ -867,6 +894,60 @@ body {
       }
     }
   }
+
+  /*********
+    nav-link
+    nav-link
+    nav-link
+  **********/
+  &.cv-btn-nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+
+    color: $white !important;
+    background-color: transparent;
+
+    &:hover, &:focus {
+      color: $white !important;
+    }
+
+    &.active {
+      color: $dark !important;
+      background-color: $white;
+    }
+  }
+
+  /*********
+    nav-section-link
+    nav-section-link
+    nav-section-link
+  **********/
+  &.cv-btn-nav-section {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: $dark !important;
+    background-color: transparent;
+
+    &:hover, &:focus {
+      color: $primary !important;
+    }
+
+    &:focus {
+      background-color: $secondary;
+    }
+
+    &.active {
+      background-color: $secondary;
+    }
+  }
 }
 
 
@@ -1381,6 +1462,11 @@ body {
   flag
 
 *******************/
+
+.cv-brand-smm {
+  max-width: 75px;
+  height: auto;
+}
 
 .cv-brand-sm {
   max-width: 100px;

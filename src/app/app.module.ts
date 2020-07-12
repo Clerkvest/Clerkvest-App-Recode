@@ -24,6 +24,9 @@ import { LoginAuthManuallyComponent } from './shared/components/login/login-auth
 import { LoginLanguageSelectorComponent } from './shared/components/login/login-language-selector/login-language-selector.component';
 import { LocalizationService } from './core/utils/localization/localization.service';
 import { CookieService } from './core/utils/cookie/cookie.service';
+import { NavigatorComponent } from './shared/components/navigator/navigator.component';
+import { NavigatorDesktopComponent } from './shared/components/navigator/navigator-desktop/navigator-desktop.component';
+import { NavigatorMobileComponent } from './shared/components/navigator/navigator-mobile/navigator-mobile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { CookieService } from './core/utils/cookie/cookie.service';
     LoginEmailInputComponent,
     LoginEmailSendComponent,
     LoginAuthManuallyComponent,
-    LoginLanguageSelectorComponent
+    LoginLanguageSelectorComponent,
+    NavigatorComponent,
+    NavigatorDesktopComponent,
+    NavigatorMobileComponent,
   ],
   imports: [
     BrowserModule,
