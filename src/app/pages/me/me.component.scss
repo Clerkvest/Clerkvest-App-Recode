@@ -1,0 +1,52 @@
+@import "../../../color.scss";
+@import "../../../variable.scss";
+
+#profile-image-box{
+  width: 250px;
+  height: 250px;
+  background-color: #08f828;
+  margin: 20px 8px;
+}
+
+#v-pills-tabContent{
+  width: 100%;
+}
+
+#profile-container{
+  margin-top: 5%;
+}
+
+/*.profile-icon-large{
+  font-size: 300px;
+  width: 100%;
+  height: 100%;
+}
+
+.img:hover #profile-icon-upload-btn{
+  opacity: 1;
+}
+
+#profile-icon-upload-btn{
+  opacity: 0;
+}
+
+.profile-input {
+  padding: 0px 8px 8px 0px;
+}
+
+.img:hover .profile-icon-large{
+  //filter: blur(1px);
+  filter:drop-shadow(8px 8px 10px gray)
+}
+
+.img {
+  height: 300px;
+  width: 300px;
+  #profile-icon-upload-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+*/

@@ -27,6 +27,7 @@ import { CookieService } from './core/utils/cookie/cookie.service';
 import { NavigatorComponent } from './shared/components/navigator/navigator.component';
 import { NavigatorDesktopComponent } from './shared/components/navigator/navigator-desktop/navigator-desktop.component';
 import { NavigatorMobileComponent } from './shared/components/navigator/navigator-mobile/navigator-mobile.component';
+import { MeComponent } from './pages/me/me.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { NavigatorMobileComponent } from './shared/components/navigator/navigato
     NavigatorComponent,
     NavigatorDesktopComponent,
     NavigatorMobileComponent,
+    MeComponent
   ],
   imports: [
     BrowserModule,

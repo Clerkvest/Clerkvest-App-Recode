@@ -4,7 +4,7 @@ import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.compone
 import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-layout.component';
 import { ElementsComponent } from './pages/elements/elements.component';
 import { LoginComponent } from './pages/login/login.component';
-
+import {MeComponent} from './pages/me/me.component';
 
 const routes: Routes = [
   {
@@ -14,6 +14,10 @@ const routes: Routes = [
       {
         path: '',
         component: ElementsComponent
+      },
+      {
+        path: 'me',
+        component: MeComponent
       }
     ]
   },
