@@ -1,0 +1,63 @@
+@import "../../../../color.scss";
+@import "../../../../variable.scss";
+
+.container-fluid {
+  position: relative;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+}
+
+button {
+
+  outline: 0;
+  border: 0;
+
+  background: transparent;
+
+  i {
+    font-size: 38px;
+
+    &.dark {
+      color: $dark;
+    }
+
+    &.light {
+      color: $light;
+    }
+  }
+
+}
+
+#btn-scroll-left {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  bottom: 0;
+
+  @media screen and (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+#btn-scroll-right {
+  position: absolute;
+  right: -50px;
+  top: 0;
+  bottom: 0;
+
+  @media screen and (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}

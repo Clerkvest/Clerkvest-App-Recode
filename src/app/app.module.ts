@@ -29,6 +29,7 @@ import { NavigatorDesktopComponent } from './shared/components/navigator/navigat
 import { NavigatorMobileComponent } from './shared/components/navigator/navigator-mobile/navigator-mobile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DashboardProjectComponent } from './pages/dashboard/dashboard-project/dashboard-project.component';
+import { HorizontalScrollerComponent } from './shared/components/horizontal-scroller/horizontal-scroller.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { DashboardProjectComponent } from './pages/dashboard/dashboard-project/d
     NavigatorMobileComponent,
     DashboardComponent,
     DashboardProjectComponent,
+    HorizontalScrollerComponent,
   ],
   imports: [
     BrowserModule,

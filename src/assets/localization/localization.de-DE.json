@@ -1,4 +1,5 @@
 {
+  "hello": "Hallo",
   "loginPage": {
     "inputSection": {
       "headline": "Log in",

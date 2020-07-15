@@ -1,4 +1,5 @@
 export class Localization {
+  hello?: string = 'hello';
   loginPage?: LocalizationLogin = new LocalizationLogin();
   language?: LocalizationLanguage = new LocalizationLanguage();
   legal?: LocalizationLegal = new LocalizationLegal();
