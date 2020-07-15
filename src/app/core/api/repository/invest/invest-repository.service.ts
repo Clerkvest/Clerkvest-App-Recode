@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { ConfigurationService } from '../configuration.service';
-import { HttpClient } from '@angular/common/http';
-import { IInvestIn } from '../../models/models';
-import { Observable } from 'rxjs';
-import { UserRepositoryService } from '../user/user-repository.service';
-import { LoggerService } from 'src/app/core/utils/logger/logger.service';
+import {Injectable} from '@angular/core';
+import {ConfigurationService} from '../configuration.service';
+import {HttpClient} from '@angular/common/http';
+import {IInvestIn} from '../../models/models';
+import {Observable} from 'rxjs';
+import {UserRepositoryService} from '../user/user-repository.service';
+import {LoggerService} from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,9 @@ export class InvestRepositoryService {
 
   public logger: LoggerService = LoggerService.build(InvestRepositoryService.name);
 
-  public static readonly SERVICE_BASE: string = '/invest/'
+  public static readonly SERVICE_BASE: string = '/invest/';
 
-  private static readonly GET_ALL_WITH_IMAGE: string = InvestRepositoryService.SERVICE_BASE + 'all/'
+  private static readonly GET_ALL: string = InvestRepositoryService.SERVICE_BASE + 'get/employee';
   private static readonly GET_SINGLE: string = InvestRepositoryService.SERVICE_BASE + 'get/';
   private static readonly CREATE: string = InvestRepositoryService.SERVICE_BASE + 'create';
   private static readonly UPDATE: string = InvestRepositoryService.SERVICE_BASE + 'update';
@@ -56,8 +56,20 @@ export class InvestRepositoryService {
     this.logger.debug('Executing request: ' + url);
 
     return this.httpClient.get<number>(url,
-    {
+      {
         headers: headers,
-    });
+      });
+  }
+
+
+  public getAll(): Observable<Array<IInvestIn>> {
+    let headers = this.configuration.getHeaders();
+    let url = this.basePath + InvestRepositoryService.GET_ALL;
+    this.logger.debug('Executing request: ' + url);
+
+    return this.httpClient.get<Array<IInvestIn>>(url,
+      {
+        headers: headers,
+      });
   }
 }
