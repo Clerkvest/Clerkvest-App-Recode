@@ -2,34 +2,98 @@
     <div class="row">
       <div class="col-md-6 col-xl-4">
         <div class="row">
-          <div class="col"><i class="fa fa-star"></i><span>Text</span>
+          <div class="col">
+            <img class="profile-image-thumb" src="assets/img/login-bg.jpg">
+            <span>{{(userObj)?.firstname}}</span>
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Edit Profile</a>
-              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Notification Preferences</a>
-              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Your Projects</a>
-              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Your Investments</a>
+              <a aria-controls="v-pills-profile" aria-selected="true" class="nav-link active" data-toggle="pill"
+                 href="#v-pills-profile" id="v-pills-profile-tab" role="tab">Edit Profile</a>
+              <a aria-controls="v-pills-notifications" aria-selected="false" class="nav-link" data-toggle="pill"
+                 href="#v-pills-notifications" id="v-pills-notifications-tab" role="tab">Notification Preferences</a>
+              <a aria-controls="v-pills-projects" aria-selected="false" class="nav-link" data-toggle="pill"
+                 href="#v-pills-projects" id="v-pills-projects-tab" role="tab">Your Projects</a>
+              <a aria-controls="v-pills-investments" aria-selected="false" class="nav-link" data-toggle="pill"
+                 href="#v-pills-investments" id="v-pills-investments-tab" role="tab">Your Investments</a>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-xl-8">
         <div class="tab-content" id="v-pills-tabContent">
-          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-              <h1>Edit Profile</h1>
-              <div id="profile-image-box"></div>
-              <div class="settings-input"><label>Firstname</label><input type="text" placeholder="Firstname" /></div>
-              <div class="settings-input"><label>Lastname</label><input type="text" placeholder="Lastname" /></div>
-              <div class="settings-input"><label>Nickname</label><input type="text" placeholder="Nickname" /></div>
-              <div class="settings-input"><label>API Key</label><input type="text" placeholder="API_KEY" /></div>
+          <div aria-labelledby="v-pills-profile-tab" class="tab-pane fade show active" id="v-pills-profile"
+               role="tabpanel">
+            <h1>Edit Profile</h1>
+            <div id="profile-image-box">
+              <img class="profile-image-big" src="assets/img/login-bg.jpg">
+            </div>
+            <div class="cv-form cv-textfield-outline">
+              <label>Firstname</label>
+              <input [value]="(userObj)?.firstname" name="textInput" placeholder="Firstname" required type="text">
+              <!--              <span>cv-form cv-textfield-outline</span>-->
+            </div>
+            <div class="cv-form cv-textfield-outline">
+              <label>Lastname</label>
+              <input [value]="(userObj)?.lastname" name="textInput" placeholder="Lastname" required type="text">
+              <!--              <span>cv-form cv-textfield-outline</span>-->
+            </div>
+            <div class="cv-form cv-textfield-outline">
+              <label>Nickname</label>
+              <input [value]="(userObj)?.nickname" name="textInput" placeholder="Nickname" required type="text">
+              <!--              <span>cv-form cv-textfield-outline</span>-->
+            </div>
+            <button (onThrottle)="saveProfileChanges()" [throttle]
+                    class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">Save
+            </button>
           </div>
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div aria-labelledby="v-pills-notifications-tab" class="tab-pane fade" id="v-pills-notifications"
+               role="tabpanel">
             <h1>Notification Preferences</h1>
+            <div id="profile-notification-container">
+              <div class="cv-checkbox">
+                <label for="cv-checkbox-notification-funded">Project Funded</label>
+                <input id="cv-checkbox-notification-funded" name="cv-checkbox-notification-funded" type="checkbox">
+              </div>
+              <div class="cv-checkbox">
+                <label for="cv-checkbox-notification-comment">New Project Comment</label>
+                <input id="cv-checkbox-notification-comment" name="cv-checkbox-notification-comment" type="checkbox">
+              </div>
+              <div class="cv-checkbox">
+                <label for="cv-checkbox-notification-projects">New Projects Available</label>
+                <input id="cv-checkbox-notification-projects" name="cv-checkbox-notification-projects" type="checkbox">
+              </div>
+              <div class="cv-checkbox">
+                <label for="cv-checkbox-notification-close">Nearly Funded Projects</label>
+                <input id="cv-checkbox-notification-close" name="cv-checkbox-notification-close" type="checkbox">
+              </div>
+            </div>
+            <button (onThrottle)="saveNotificationChanges()" [throttle]
+                    class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">Save
+            </button>
           </div>
-          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <div aria-labelledby="v-pills-projects-tab" class="tab-pane fade" id="v-pills-projects" role="tabpanel">
             <h1>Your Projects</h1>
+            <div *ngIf="myProjects.length == 0" id="profile-projects-not-available-container">
+              <p class="cv-font-size-md">You haven't created any Projects.</p>
+              <p>
+                Realise your own Ideas by creating your own Project.
+              </p>
+              <a class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r" href="#create">Create a Project</a>
+            </div>
+            <div *ngIf="myProjects.length > 0" id="profile-projects-available-container">
+              Projects
+            </div>
           </div>
-          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <div aria-labelledby="v-pills-investments-tab" class="tab-pane fade" id="v-pills-investments" role="tabpanel">
             <h1>Your Investments</h1>
+            <div *ngIf="myInvestments.length == 0" id="profile-investments-not-available-container">
+              <p class="cv-font-size-md">You haven't invested in anything yet.</p>
+              <p>
+                Invest in a Project and realise your own Ideas or collaborate with others on a Project.
+              </p>
+            </div>
+            <div *ngIf="myInvestments.length > 0" id="profile-investments-available-container">
+              Projects
+            </div>
           </div>
         </div>
       </div>

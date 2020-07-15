@@ -6,14 +6,75 @@
   height: 250px;
   background-color: #08f828;
   margin: 20px 8px;
+
+  .profile-image-big {
+    width: 100%;
+    height: 100%;
+  }
 }
 
-#v-pills-tabContent{
+#v-pills-tabContent {
   width: 100%;
 }
 
-#profile-container{
+#profile-container {
   margin-top: 5%;
+
+  .nav-link {
+    border-radius: 0;
+  }
+}
+
+#v-pills-profile {
+  .cv-form {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  button {
+    margin: 8px;
+  }
+}
+
+#v-pills-notifications {
+  #profile-notification-container {
+    width: 100%;
+
+    .cv-checkbox {
+      width: 100%;
+      display: inline-block;
+
+      label {
+        float: left;
+      }
+
+      span {
+      }
+
+      input[type="checkbox"] {
+        float: right;
+      }
+    }
+  }
+
+}
+
+#profile-projects-not-available-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  a {
+    margin: 16px;
+  }
+}
+
+.profile-image-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 /*.profile-icon-large{
