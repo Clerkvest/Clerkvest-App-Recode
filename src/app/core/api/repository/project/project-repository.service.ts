@@ -1,10 +1,10 @@
-import { IProject } from './../../models/IProject';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { ConfigurationService } from '../configuration.service';
-import { Injectable } from '@angular/core';
-import { IProjectImage } from '../../models/IProjectImage';
-import { LoggerService } from 'src/app/core/utils/logger/logger.service';
+import {IProject} from './../../models/IProject';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {ConfigurationService} from '../configuration.service';
+import {Injectable} from '@angular/core';
+import {IProjectImage} from '../../models/IProjectImage';
+import {LoggerService} from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,10 @@ export class ProjectRepositoryService {
 
   public logger: LoggerService = LoggerService.build(ProjectRepositoryService.name);
 
-  public static readonly SERVICE_BASE: string = '/project/'
+  public static readonly SERVICE_BASE: string = '/project/';
 
-  private static readonly GET_ALL_WITH_IMAGE: string = ProjectRepositoryService.SERVICE_BASE + 'all/image'
+  private static readonly GET_ALL_WITH_IMAGE: string = ProjectRepositoryService.SERVICE_BASE + 'all/image';
+  private static readonly GET_ALL_SELF: string = ProjectRepositoryService.SERVICE_BASE + 'get/employee';
   private static readonly GET_SINGLE: string = ProjectRepositoryService.SERVICE_BASE + 'get/';
   private static readonly CREATE: string = ProjectRepositoryService.SERVICE_BASE + 'create';
   private static readonly UPDATE: string = ProjectRepositoryService.SERVICE_BASE + 'update';
@@ -33,9 +34,20 @@ export class ProjectRepositoryService {
     this.logger.debug('Executing request: ' + url);
 
     return this.httpClient.get<Array<IProjectImage>>(url,
-    {
+      {
         headers: headers,
-    });
+      });
+  }
+
+  public getAllSelf(): Observable<Array<IProject>> {
+    let headers = this.configuration.getHeaders();
+    let url = this.basePath + ProjectRepositoryService.GET_ALL_SELF;
+    this.logger.debug('Executing request: ' + url);
+
+    return this.httpClient.get<Array<IProject>>(url,
+      {
+        headers: headers,
+      });
   }
 
   public getById(id: number): Observable<IProject> {
@@ -44,9 +56,9 @@ export class ProjectRepositoryService {
     this.logger.debug('Executing request: ' + url);
 
     return this.httpClient.get<IProject>(url,
-    {
+      {
         headers: headers,
-    });
+      });
   }
 
   public create(body: IProject): Observable<any> {
