@@ -1,0 +1,12 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  overflow-x: auto;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

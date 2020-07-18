@@ -1,0 +1,7 @@
+<div class="container">
+  <horizontal-scroller [color]="'dark'" [title]="'Popular'" [displayScrollbar]="false" [scrollStep]="'600'">
+    <div *ngFor="let project of projectsObservable | async as list">
+      <dashboard-project [project]="project"></dashboard-project>
+    </div>
+  </horizontal-scroller>
+</div>
