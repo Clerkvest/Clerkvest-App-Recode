@@ -3,7 +3,7 @@
   <p class="subtitle" *ngIf="subTitle">{{subTitle}}</p>
 </div>
 <div class="container-fluid">
-  <div #wrapper class="wrapper row" [class]="{'cv-scrollbar': displayScrollbar, 'cv-scrollbar-hidden': !displayScrollbar}">
+  <div #wrapper class="wrapper row" [class]="{'cv-scrollbar': displayScrollbar || isMobile(), 'cv-scrollbar-hidden': !displayScrollbar && !isMobile()}">
     <ng-content></ng-content>
   </div>
   <button id="btn-scroll-left" [class]="{'hidden': !displayButtonLeft}" (click)="scrollLeft()">

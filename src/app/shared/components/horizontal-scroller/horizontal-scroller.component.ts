@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { LoggerService } from 'src/app/core/utils/logger/logger.service';
+import { DisplayService } from 'src/app/core/utils/device/display.service';
 
 @Component({
   selector: 'horizontal-scroller',
@@ -33,7 +34,10 @@ export class HorizontalScrollerComponent implements OnInit, AfterViewInit, After
 
   private _maxScroll: number = 0;
 
-  constructor(private _cdRef: ChangeDetectorRef) {
+  constructor(
+    private _cdRef: ChangeDetectorRef,
+    private _displayService: DisplayService
+    ) {
     this._logger = LoggerService.build(HorizontalScrollerComponent.name);
   }
 
@@ -69,6 +73,10 @@ export class HorizontalScrollerComponent implements OnInit, AfterViewInit, After
   public updateButtonDisplayRight() {
     let maxScroll = this._wrapperElemt.nativeElement.scrollWidth - this._wrapperElemt.nativeElement.clientWidth;
     this._displayButtonRight = this._wrapperElemt.nativeElement.scrollLeft < maxScroll;
+  }
+
+  public isMobile(): boolean {
+    return this._displayService.isMobile;
   }
 
     /**
@@ -213,6 +221,22 @@ export class HorizontalScrollerComponent implements OnInit, AfterViewInit, After
      */
 	public set displayButtonRight(value: boolean ) {
 		this._displayButtonRight = value;
+	}
+
+    /**
+     * Getter maxScroll
+     * @return {number }
+     */
+	public get maxScroll(): number  {
+		return this._maxScroll;
+	}
+
+    /**
+     * Setter maxScroll
+     * @param {number } value
+     */
+	public set maxScroll(value: number ) {
+		this._maxScroll = value;
 	}
 
 }
