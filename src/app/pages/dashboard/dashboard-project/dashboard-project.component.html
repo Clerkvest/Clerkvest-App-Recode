@@ -1,13 +1,14 @@
 <div id="container">
-  <div class="mr-2">
+  <div class="">
     <card [height]="'400px'" [width]="'350px'">
       <div id="card-container">
         <div id="img-container" class="text-center">
-          <img [src]="trustUrl(project.image)" alt="project-image">
+          <img [src]="trustUrl(project.image)" *ngIf="project.image" alt="project-image">
+          <img src="../../../../assets/img/missing.png"*ngIf="!project.image" alt="project-image">
         </div>
         <div>
-          <p id="title">{{project.title}}</p>
-          <p id="description">{{project.description | shrink: "200"}}</p>
+          <p id="title" class="cv-transition-sh">{{project.title}}</p>
+          <p id="description" [title]="project.description">{{project.description | shrink: "100"}}</p>
         </div>
         <div>
           <div id="raised-goal-container">
