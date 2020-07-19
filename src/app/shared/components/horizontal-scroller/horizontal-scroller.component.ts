@@ -42,6 +42,7 @@ export class HorizontalScrollerComponent implements OnInit, AfterViewInit, After
   }
 
   ngOnInit(): void {
+    this._logger.debug('Creating horizontal-scroller: ' + this._title);
   }
 
   ngAfterViewInit(): void {

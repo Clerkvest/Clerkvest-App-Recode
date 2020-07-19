@@ -1,5 +1,19 @@
 {
-  "hello": "Hello",
+  "hello": "hello",
+  "dashboardPage": {
+    "hello": "Hello there,",
+    "welcome": "welcome to your dashboard",
+    "sectionOne": "Closest projects",
+    "sectionTwo": "Newest projects",
+    "sectionThree": "Finished projects",
+    "sectionFour": "sectionFour",
+    "sectionFive": "sectionFive",
+    "sectionSix": "sectionSix",
+    "sectionSeven": "sectionSeven",
+    "sectionEight": "sectionEight",
+    "sectionNine": "sectionNine",
+    "sectionTen": "sectionTen"
+  },
   "loginPage": {
     "inputSection": {
       "headline": "Log in",

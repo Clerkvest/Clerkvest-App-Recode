@@ -5,13 +5,14 @@ import { SubscriptionService } from 'src/app/core/utils/subscription/subscriptio
 import { Observable } from 'rxjs';
 import { IProjectImage } from 'src/app/core/api/models/models';
 import { tap, filter, map } from 'rxjs/operators';
+import { LocalizationService } from 'src/app/core/utils/localization/localization.service';
 
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit {
 
   private _logger: LoggerService;
   private _subscription: SubscriptionService;
@@ -19,8 +20,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private _projectsObservable: Observable<Array<IProjectImage>>;
 
   constructor(
-    private _projectRepository: ProjectRepositoryService
-
+    private _projectRepository: ProjectRepositoryService,
+    private _localizationService: LocalizationService
   ) {
     this._logger = LoggerService.build(DashboardComponent.name);
     this._subscription = new SubscriptionService();
@@ -28,10 +29,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this._projectsObservable = this._projectRepository.getAll();
-  }
-
-  ngOnDestroy(): void {
-
   }
 
   public orderClose(projects: Array<IProjectImage>) {
@@ -61,6 +58,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private percentInvested(project: IProjectImage): number {
     return (project.investedIn / project.goal) * 100;
   }
+
+    /**
+     * Getter localizationService
+     * @return {LocalizationService}
+     */
+	public get localizationService(): LocalizationService {
+		return this._localizationService;
+	}
 
     /**
      * Getter logger

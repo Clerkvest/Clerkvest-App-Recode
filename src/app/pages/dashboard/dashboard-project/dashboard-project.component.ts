@@ -3,6 +3,8 @@ import { IProjectImage } from 'src/app/core/api/models/models';
 import { Router } from '@angular/router';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { getLocaleNumberFormat, NumberFormatStyle, formatNumber } from '@angular/common';
+import { LoggerService } from 'src/app/core/utils/logger/logger.service';
+import { SubscriptionService } from 'src/app/core/utils/subscription/subscription.service';
 
 @Component({
   selector: 'dashboard-project',
@@ -17,12 +19,18 @@ export class DashboardProjectComponent implements OnInit {
   @Input('class')
   private _class: string;
 
+  private _logger: LoggerService;
+  private _subscription: SubscriptionService;
+
   constructor(
     private sanitizer: DomSanitizer
-  ) { }
+  ) {
+    this._logger = LoggerService.build(DashboardProjectComponent.name);
+    this._subscription = new SubscriptionService();
+  }
 
   ngOnInit(): void {
-    //console.log(this._project);
+    this._logger.debug('Creating card for project: ' + this.project.id + ' - ' + this._project.title);
   }
 
   public trustUrl(image: string): SafeUrl {

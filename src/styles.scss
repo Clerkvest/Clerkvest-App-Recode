@@ -94,19 +94,32 @@ body {
 
 /******************
 
-  display
-  display
-  display
-  display
-  display
-  display
+  scrollbar
+  scrollbar
+  scrollbar
+  scrollbar
+  scrollbar
+  scrollbar
 
 *******************/
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background : transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background : $dark;
+  border-radius: 10px;
+}
 
 .cv-scrollbar::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
   height: 8px;
 }
 
