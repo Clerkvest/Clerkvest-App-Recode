@@ -14,13 +14,15 @@ export class DashboardProjectComponent implements OnInit {
   @Input('project')
   private _project: IProjectImage;
 
+  @Input('class')
+  private _class: string;
+
   constructor(
-    private router: Router,
     private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
-    console.log(this._project);
+    //console.log(this._project);
   }
 
   public trustUrl(image: string): SafeUrl {
@@ -43,6 +45,22 @@ export class DashboardProjectComponent implements OnInit {
      */
 	public set project(value: IProjectImage) {
 		this._project = value;
+	}
+
+    /**
+     * Getter class
+     * @return {string}
+     */
+	public get class(): string {
+		return this._class;
+	}
+
+    /**
+     * Setter class
+     * @param {string} value
+     */
+	public set class(value: string) {
+		this._class = value;
 	}
 
 }

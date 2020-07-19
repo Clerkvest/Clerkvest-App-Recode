@@ -27,18 +27,35 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._projectsObservable = this._projectRepository.getAll().pipe(
-      map(results => results.filter(result => !result.reached)),
-      tap(results => {
-        results.sort((a, b) => {
-          return this.percentInvested(b) - this.percentInvested(a);
-        });
-      }),
-    );
+    this._projectsObservable = this._projectRepository.getAll();
   }
 
   ngOnDestroy(): void {
 
+  }
+
+  public orderClose(projects: Array<IProjectImage>) {
+    if(projects) {
+      return projects.sort((a, b) => {
+        return this.percentInvested(b) - this.percentInvested(a);
+      });
+    }
+  }
+
+  public orderNewest(projects: Array<IProjectImage>) {
+    if(projects) {
+      return projects.sort((a, b) => {
+        let left: string = String(a.createdAt);
+        let right: string = String(b.createdAt);
+
+        if (left < right)
+          return -1;
+        if (left > right)
+          return 1;
+
+        return 0;
+      });
+    }
   }
 
   private percentInvested(project: IProjectImage): number {

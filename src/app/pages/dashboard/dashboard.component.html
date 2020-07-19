@@ -1,7 +1,27 @@
 <div class="container">
-  <horizontal-scroller [color]="'dark'" [title]="'Popular'" [displayScrollbar]="false" [scrollStep]="'600'">
-    <div *ngFor="let project of projectsObservable | async as list">
-      <dashboard-project [project]="project"></dashboard-project>
+  <h3 class="mt-3">Hello there,</h3>
+  <div id="path-container" class="mb-4">
+    <h6>welcome to your dashboard</h6>
+  </div>
+  <horizontal-scroller [color]="'dark'" [title]="'Closest Projects'" [displayScrollbar]="false" [scrollStep]="'600'">
+    <div class="mb-1" *ngFor="let project of orderClose((projectsObservable | async)) as list; last as isLast">
+      <dashboard-project *ngIf="!project.reached" [class]="{'mr-2': !isLast}" [project]="project"></dashboard-project>
     </div>
   </horizontal-scroller>
+
+  <div class="mt-4"></div>
+  <horizontal-scroller [color]="'dark'" [title]="'Newest Projects'" [displayScrollbar]="false" [scrollStep]="'600'">
+    <div class="mb-1" *ngFor="let project of orderNewest((projectsObservable | async)) as list; last as isLast">
+      <dashboard-project *ngIf="!project.reached" [class]="{'mr-2': !isLast}" [project]="project"></dashboard-project>
+    </div>
+  </horizontal-scroller>
+
+  <div class="mt-4"></div>
+  <horizontal-scroller [color]="'dark'" [title]="'Finished Projects'" [displayScrollbar]="false" [scrollStep]="'600'">
+    <div class="mb-1" *ngFor="let project of projectsObservable | async as list; last as isLast">
+      <dashboard-project *ngIf="project.reached" [class]="{'mr-2': !isLast}" [project]="project"></dashboard-project>
+    </div>
+  </horizontal-scroller>
+
+  <div class="mb-4"></div>
 </div>
