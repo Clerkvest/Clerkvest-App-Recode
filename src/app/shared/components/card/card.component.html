@@ -1,0 +1,8 @@
+<div id="container" [style.height]="height" [style.width]="width">
+  <p class="title clickable" [class]="titleColor" *ngIf="title && clickableTitle" (onClick)="onClickTitle()">{{title}}</p>
+  <p class="title" [class]="titleColor" *ngIf="title && !clickableTitle">{{title}}</p>
+  <p class="sub-title" [class]="subTitleColor" *ngIf="subTitle">{{subTitle}}</p>
+  <div class="ng">
+    <ng-content></ng-content>
+  </div>
+</div>

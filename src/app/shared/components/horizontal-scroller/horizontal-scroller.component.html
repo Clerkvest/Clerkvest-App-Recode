@@ -1,0 +1,14 @@
+<h4 class="mt-2" *ngIf="title">{{title}}</h4>
+<p class="subtitle" *ngIf="subTitle">{{subTitle}}</p>
+
+<div class="container-fluid">
+  <div #wrapper class="wrapper row" [class]="{'cv-scrollbar': displayScrollbar || isMobile(), 'cv-scrollbar-hidden': !displayScrollbar && !isMobile()}">
+    <ng-content></ng-content>
+  </div>
+  <button id="btn-scroll-left" [class]="{'hidden': !displayButtonLeft}" (click)="scrollLeft()">
+    <i class="fa fa-chevron-left" [class]="color" aria-hidden="true"></i>
+  </button>
+  <button id="btn-scroll-right" [class]="{'hidden': !displayButtonRight}" (click)="scrollRight()">
+    <i class="fa fa-chevron-right" [class]="color" aria-hidden="true"></i>
+  </button>
+</div>

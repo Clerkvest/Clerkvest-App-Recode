@@ -27,6 +27,13 @@ import { CookieService } from './core/utils/cookie/cookie.service';
 import { NavigatorComponent } from './shared/components/navigator/navigator.component';
 import { NavigatorDesktopComponent } from './shared/components/navigator/navigator-desktop/navigator-desktop.component';
 import { NavigatorMobileComponent } from './shared/components/navigator/navigator-mobile/navigator-mobile.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardProjectComponent } from './pages/dashboard/dashboard-project/dashboard-project.component';
+import { HorizontalScrollerComponent } from './shared/components/horizontal-scroller/horizontal-scroller.component';
+import { CardComponent } from './shared/components/card/card.component';
+import { NumberFormatPipe } from './shared/pipes/NumberFormat/number-format.pipe';
+import { ShrinkPipe } from './shared/pipes/Shrink/shrink.pipe';
+import { MonetaryUnitsComponent } from './shared/components/monetary-units/monetary-units.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +59,13 @@ import { NavigatorMobileComponent } from './shared/components/navigator/navigato
     NavigatorComponent,
     NavigatorDesktopComponent,
     NavigatorMobileComponent,
+    DashboardComponent,
+    DashboardProjectComponent,
+    HorizontalScrollerComponent,
+    CardComponent,
+    NumberFormatPipe,
+    ShrinkPipe,
+    MonetaryUnitsComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +75,9 @@ import { NavigatorMobileComponent } from './shared/components/navigator/navigato
   providers: [
     LocalizationService,
     CookieService,
+  ],
+  exports: [
+    ShrinkPipe
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 import { TokenRepositoryService } from 'src/app/core/api/repository/token/token-repository.service';
 import { ILocalizedComponent } from 'src/app/core/utils/localization/ILocalizedComponent';
 import { Localization } from 'src/app/core/utils/localization/ilocalization';
+import { Cookies, CookieTime } from 'src/app/core/utils/cookie/cookie';
 
 @Component({
   selector: 'login-auth-manually',
@@ -60,6 +61,7 @@ export class LoginAuthManuallyComponent implements OnInit, OnDestroy {
     this._subscription.add(
       this._tokenRepository.getApiKey(this._textfieldAuthElemt.nativeElement.value).subscribe(
         response => {
+          this._cookieService.set(Cookies.API_KEY, response.response, CookieTime.YEAR);
           this._router.navigate(['']);
         },
         err => {

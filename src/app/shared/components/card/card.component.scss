@@ -1,0 +1,95 @@
+@import "../../../../color.scss";
+
+#container {
+  background-color: $white;
+  padding: 1.5rem 1.75rem;
+  border-radius: 8px;
+
+  .title {
+    color: $dark;
+    font-size: 1rem;
+    font-weight: bold;
+
+    &.primary {
+      color: $primary;
+    }
+
+    &.secondary {
+      color: $secondary;
+    }
+
+    &.success {
+      color: $success;
+    }
+
+    &.info {
+      color: $info;
+    }
+
+    &.warn {
+      color: $warn;
+    }
+
+    &.danger {
+      color: $danger;
+    }
+
+    &.light {
+      color: $light;
+    }
+
+    &.dark {
+      color: $dark;
+    }
+
+    &.clickable {
+      cursor: pointer;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .sub-title {
+    color: lighten($color: $dark, $amount: 10);
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    &.primary {
+      color: $primary;
+    }
+
+    &.secondary {
+      color: $secondary;
+    }
+
+    &.success {
+      color: $success;
+    }
+
+    &.info {
+      color: $info;
+    }
+
+    &.warn {
+      color: $warn;
+    }
+
+    &.danger {
+      color: $danger;
+    }
+
+    &.light {
+      color: $light;
+    }
+
+    &.dark {
+      color: $dark;
+    }
+  }
+}
+
+.ng {
+  height: 100%;
+}
