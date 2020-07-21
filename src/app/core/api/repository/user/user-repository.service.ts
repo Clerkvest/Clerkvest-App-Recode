@@ -1,12 +1,10 @@
-import { IResponse } from './../../models/IResponse';
-import { IEmployee } from './../../models/IEmployee';
-import { Injectable } from '@angular/core';
-import { ConfigurationService } from '../configuration.service';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { ProjectRepositoryService } from '../project/project-repository.service';
-import { IProjectImage, IProject } from '../../models/models';
-import { LoggerService } from 'src/app/core/utils/logger/logger.service';
+import {IResponse} from './../../models/IResponse';
+import {IEmployee} from './../../models/IEmployee';
+import {Injectable} from '@angular/core';
+import {ConfigurationService} from '../configuration.service';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {LoggerService} from 'src/app/core/utils/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +13,7 @@ export class UserRepositoryService {
 
   public logger: LoggerService = LoggerService.build(UserRepositoryService.name);
 
-  public static readonly SERVICE_BASE: string = '/employee/'
+  public static readonly SERVICE_BASE: string = '/employee/';
 
   private static readonly GET_ALL: string = UserRepositoryService.SERVICE_BASE + 'all/'
   private static readonly GET_SINGLE: string = UserRepositoryService.SERVICE_BASE + 'get/';

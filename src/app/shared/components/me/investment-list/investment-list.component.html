@@ -1,0 +1,14 @@
+<h1>Your Investments</h1>
+<div *ngIf="investments.length == 0" id="profile-investments-not-available-container">
+  <p class="cv-font-size-md">You haven't invested in anything yet.</p>
+  <p>
+    Invest in a Project and realise your own Ideas or collaborate with others on a Project.
+  </p>
+</div>
+<div *ngIf="investments.length > 0" id="profile-investments-available-container">
+  <ul>
+    <li *ngFor="let investment of investments; let i = index">
+      {{  investment.id }}  {{  investment.investment }}  {{  investment.projectId }}
+    </li>
+  </ul>
+</div>

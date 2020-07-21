@@ -1,0 +1,19 @@
+#profile-notification-container {
+  width: 100%;
+
+  .cv-checkbox {
+    width: 100%;
+    display: inline-block;
+
+    label {
+      float: left;
+    }
+
+    span {
+    }
+
+    input[type="checkbox"] {
+      float: right;
+    }
+  }
+}

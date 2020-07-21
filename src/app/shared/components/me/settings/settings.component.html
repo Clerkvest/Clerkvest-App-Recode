@@ -1,0 +1,29 @@
+<div id="profile-notification-container">
+  <div class="cv-checkbox">
+    <label for="cv-checkbox-notification-funded">Project Funded</label>
+    <input (change)="settingsObj.notificationProjectFunded = !settingsObj.notificationProjectFunded"
+           [checked]="settingsObj?.notificationProjectFunded" id="cv-checkbox-notification-funded"
+           name="cv-checkbox-notification-funded" type="checkbox">
+  </div>
+  <div class="cv-checkbox">
+    <label for="cv-checkbox-notification-comment">New Project Comment</label>
+    <input (change)="settingsObj.notificationProjectComment = !settingsObj.notificationProjectComment"
+           [checked]="settingsObj?.notificationProjectComment" id="cv-checkbox-notification-comment"
+           name="cv-checkbox-notification-comment" type="checkbox">
+  </div>
+  <div class="cv-checkbox">
+    <label for="cv-checkbox-notification-projects">New Projects Available</label>
+    <input (change)="settingsObj.notificationProjectAvailable = !settingsObj.notificationProjectAvailable"
+           [checked]="settingsObj?.notificationProjectAvailable" id="cv-checkbox-notification-projects"
+           name="cv-checkbox-notification-projects" type="checkbox">
+  </div>
+  <div class="cv-checkbox">
+    <label for="cv-checkbox-notification-close">Nearly Funded Projects</label>
+    <input (change)="settingsObj.notificationProjectNearlyFunded = !settingsObj.notificationProjectNearlyFunded"
+           [checked]="settingsObj?.notificationProjectNearlyFunded" id="cv-checkbox-notification-close"
+           name="cv-checkbox-notification-close" type="checkbox">
+  </div>
+  <button (onThrottle)="saveNotificationChanges()" [throttle]
+          class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">Save
+  </button>
+</div>

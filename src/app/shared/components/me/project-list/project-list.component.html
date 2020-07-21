@@ -1,0 +1,15 @@
+<h1>Your Projects</h1>
+<div *ngIf="projects.length == 0" id="profile-projects-not-available-container">
+  <p class="cv-font-size-md">You haven't created any Projects.</p>
+  <p>
+    Realise your own Ideas by creating your own Project.
+  </p>
+  <a class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r" href="#create">Create a Project</a>
+</div>
+<div *ngIf="projects.length > 0" id="profile-projects-available-container">
+  <ul>
+    <li *ngFor="let project of projects; let i = index">
+      {{  project.id }}  {{  project.title }}  {{  project.reached }}  {{  project.goal }}  {{  project.investedIn }}  {{  project.description }}
+    </li>
+  </ul>
+</div>

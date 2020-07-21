@@ -13,20 +13,25 @@ export class MeComponent implements OnInit, OnDestroy {
 
   private _logger: LoggerService;
   private _subscriptionService: SubscriptionService;
-  private _userRepo: UserRepositoryService;
+  private _userObj: IEmployee;
 
-  constructor(private _userRepository: UserRepositoryService) {
-    this._userRepo = _userRepository;
+  constructor(
+    private _userRepository: UserRepositoryService
+  ) {
   }
 
-  private _userObj: IEmployee;
+  private _shownPill: number;
+
+  get shownPill(): number {
+    return this._shownPill;
+  }
+
+  ngOnDestroy(): void {
+    this._subscriptionService.unsubscribe();
+  }
 
   get userObj(): IEmployee {
     return this._userObj;
-  }
-
-  get myProjects(): [] {
-    return [];
   }
 
   /**
@@ -37,36 +42,23 @@ export class MeComponent implements OnInit, OnDestroy {
     return false;
   }
 
-  get myInvestments(): [] {
-    return [];
-  }
-
   ngOnInit(): void {
     this._logger = LoggerService.build(MeComponent.name);
     this._subscriptionService = new SubscriptionService();
     //this._userRepo.getMyself().toPromise().then(loadUserDetails(value))
 
-    this._subscriptionService.add(this._userRepo.getMyself().subscribe(
+    this._subscriptionService.add(this._userRepository.getMyself().subscribe(
       response => {
         this._userObj = response;
-      },
-      err => {
-
-      },
-      () => {
-
       }
     ), 'MeComponent#ngOnInit');
   }
 
-  ngOnDestroy(): void {
-    this._subscriptionService.unsubscribe();
-  }
-
   saveProfileChanges() {
+    this._userRepository.update(this.userObj);
   }
 
-  saveNotificationChanges() {
-
+  show(id: number) {
+    this._shownPill = id;
   }
 }

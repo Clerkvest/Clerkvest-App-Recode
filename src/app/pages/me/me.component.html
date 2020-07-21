@@ -7,13 +7,15 @@
             <span>{{(userObj)?.firstname}}</span>
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a aria-controls="v-pills-profile" aria-selected="true" class="nav-link active" data-toggle="pill"
-                 href="#v-pills-profile" id="v-pills-profile-tab" role="tab">Edit Profile</a>
+                 (click)="show(0)" href="#v-pills-profile" id="v-pills-profile-tab" role="tab">Edit Profile</a>
               <a aria-controls="v-pills-notifications" aria-selected="false" class="nav-link" data-toggle="pill"
-                 href="#v-pills-notifications" id="v-pills-notifications-tab" role="tab">Notification Preferences</a>
+                 (click)="show(1)" href="#v-pills-notifications" id="v-pills-notifications-tab" role="tab">Notification
+                Preferences</a>
               <a aria-controls="v-pills-projects" aria-selected="false" class="nav-link" data-toggle="pill"
-                 href="#v-pills-projects" id="v-pills-projects-tab" role="tab">Your Projects</a>
+                 (click)="show(2)" href="#v-pills-projects" id="v-pills-projects-tab" role="tab">Your Projects</a>
               <a aria-controls="v-pills-investments" aria-selected="false" class="nav-link" data-toggle="pill"
-                 href="#v-pills-investments" id="v-pills-investments-tab" role="tab">Your Investments</a>
+                 (click)="show(3)" href="#v-pills-investments" id="v-pills-investments-tab" role="tab">Your
+                Investments</a>
             </div>
           </div>
         </div>
@@ -22,78 +24,41 @@
         <div class="tab-content" id="v-pills-tabContent">
           <div aria-labelledby="v-pills-profile-tab" class="tab-pane fade show active" id="v-pills-profile"
                role="tabpanel">
-            <h1>Edit Profile</h1>
-            <div id="profile-image-box">
-              <img class="profile-image-big" src="assets/img/login-bg.jpg">
+            <div *ngIf="shownPill == 0">
+              <h1>Edit Profile</h1>
+              <div id="profile-image-box">
+                <img class="profile-image-big" src="assets/img/login-bg.jpg">
+              </div>
+              <div class="cv-form cv-textfield-outline">
+                <label>Firstname</label>
+                <input [value]="(userObj)?.firstname" name="textInput" placeholder="Firstname" required type="text">
+                <!--              <span>cv-form cv-textfield-outline</span>-->
+              </div>
+              <div class="cv-form cv-textfield-outline">
+                <label>Lastname</label>
+                <input [value]="(userObj)?.lastname" name="textInput" placeholder="Lastname" required type="text">
+                <!--              <span>cv-form cv-textfield-outline</span>-->
+              </div>
+              <div class="cv-form cv-textfield-outline">
+                <label>Nickname</label>
+                <input [value]="(userObj)?.nickname" name="textInput" placeholder="Nickname" required type="text">
+                <!--              <span>cv-form cv-textfield-outline</span>-->
+              </div>
+              <button (onThrottle)="saveProfileChanges()" [throttle]
+                      class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">Save
+              </button>
             </div>
-            <div class="cv-form cv-textfield-outline">
-              <label>Firstname</label>
-              <input [value]="(userObj)?.firstname" name="textInput" placeholder="Firstname" required type="text">
-              <!--              <span>cv-form cv-textfield-outline</span>-->
-            </div>
-            <div class="cv-form cv-textfield-outline">
-              <label>Lastname</label>
-              <input [value]="(userObj)?.lastname" name="textInput" placeholder="Lastname" required type="text">
-              <!--              <span>cv-form cv-textfield-outline</span>-->
-            </div>
-            <div class="cv-form cv-textfield-outline">
-              <label>Nickname</label>
-              <input [value]="(userObj)?.nickname" name="textInput" placeholder="Nickname" required type="text">
-              <!--              <span>cv-form cv-textfield-outline</span>-->
-            </div>
-            <button (onThrottle)="saveProfileChanges()" [throttle]
-                    class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">Save
-            </button>
           </div>
           <div aria-labelledby="v-pills-notifications-tab" class="tab-pane fade" id="v-pills-notifications"
                role="tabpanel">
             <h1>Notification Preferences</h1>
-            <div id="profile-notification-container">
-              <div class="cv-checkbox">
-                <label for="cv-checkbox-notification-funded">Project Funded</label>
-                <input id="cv-checkbox-notification-funded" name="cv-checkbox-notification-funded" type="checkbox">
-              </div>
-              <div class="cv-checkbox">
-                <label for="cv-checkbox-notification-comment">New Project Comment</label>
-                <input id="cv-checkbox-notification-comment" name="cv-checkbox-notification-comment" type="checkbox">
-              </div>
-              <div class="cv-checkbox">
-                <label for="cv-checkbox-notification-projects">New Projects Available</label>
-                <input id="cv-checkbox-notification-projects" name="cv-checkbox-notification-projects" type="checkbox">
-              </div>
-              <div class="cv-checkbox">
-                <label for="cv-checkbox-notification-close">Nearly Funded Projects</label>
-                <input id="cv-checkbox-notification-close" name="cv-checkbox-notification-close" type="checkbox">
-              </div>
-            </div>
-            <button (onThrottle)="saveNotificationChanges()" [throttle]
-                    class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">Save
-            </button>
+            <settings *ngIf="shownPill == 1"></settings>
           </div>
           <div aria-labelledby="v-pills-projects-tab" class="tab-pane fade" id="v-pills-projects" role="tabpanel">
-            <h1>Your Projects</h1>
-            <div *ngIf="myProjects.length == 0" id="profile-projects-not-available-container">
-              <p class="cv-font-size-md">You haven't created any Projects.</p>
-              <p>
-                Realise your own Ideas by creating your own Project.
-              </p>
-              <a class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r" href="#create">Create a Project</a>
-            </div>
-            <div *ngIf="myProjects.length > 0" id="profile-projects-available-container">
-              Projects
-            </div>
+            <project-list *ngIf="shownPill == 2"></project-list>
           </div>
           <div aria-labelledby="v-pills-investments-tab" class="tab-pane fade" id="v-pills-investments" role="tabpanel">
-            <h1>Your Investments</h1>
-            <div *ngIf="myInvestments.length == 0" id="profile-investments-not-available-container">
-              <p class="cv-font-size-md">You haven't invested in anything yet.</p>
-              <p>
-                Invest in a Project and realise your own Ideas or collaborate with others on a Project.
-              </p>
-            </div>
-            <div *ngIf="myInvestments.length > 0" id="profile-investments-available-container">
-              Projects
-            </div>
+            <app-investment-list *ngIf="shownPill == 3"></app-investment-list>
           </div>
         </div>
       </div>

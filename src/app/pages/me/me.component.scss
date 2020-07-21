@@ -36,39 +36,6 @@
   }
 }
 
-#v-pills-notifications {
-  #profile-notification-container {
-    width: 100%;
-
-    .cv-checkbox {
-      width: 100%;
-      display: inline-block;
-
-      label {
-        float: left;
-      }
-
-      span {
-      }
-
-      input[type="checkbox"] {
-        float: right;
-      }
-    }
-  }
-
-}
-
-#profile-projects-not-available-container {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-
-  a {
-    margin: 16px;
-  }
-}
-
 .profile-image-thumb {
   width: 50px;
   height: 50px;
