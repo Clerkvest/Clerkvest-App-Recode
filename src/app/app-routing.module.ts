@@ -4,6 +4,8 @@ import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.compone
 import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-layout.component';
 import { ElementsComponent } from './pages/elements/elements.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuardService } from './core/auth/auth-guard.service';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -12,8 +14,14 @@ const routes: Routes = [
     component: NavigatorLayoutComponent,
     children: [
       {
+        path: 'elements',
+        component: ElementsComponent,
+        canActivate: [AuthGuardService]
+      },
+      {
         path: '',
-        component: ElementsComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuardService]
       }
     ]
   },

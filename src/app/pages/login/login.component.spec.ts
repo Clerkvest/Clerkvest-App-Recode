@@ -36,7 +36,7 @@ describe('LoginComponent', () => {
 
   it('should set state to LoginComponent.STATE_SEND', () => {
     component.emailSend();
-    expect(component.state).toBe(LoginComponent.STATE_SEND);
+    expect(component.state).toBe(LoginComponent.STATE_SENT);
   });
 
   it('should set state to LoginComponent.STATE_SEND', () => {
@@ -51,11 +51,11 @@ describe('LoginComponent', () => {
 
   it('should set state to LoginComponent.STATE_SEND', () => {
     component.emailSend();
-    expect(component.state).toBe(LoginComponent.STATE_SEND);
+    expect(component.state).toBe(LoginComponent.STATE_SENT);
     component.openLanguageSelector();
     expect(component.state).toBe(LoginComponent.STATE_LANG_SELECTOR);
     component.closeLanguageSelector();
-    expect(component.state).toBe(LoginComponent.STATE_SEND);
+    expect(component.state).toBe(LoginComponent.STATE_SENT);
 
     component.authManually();
     expect(component.state).toBe(LoginComponent.STATE_MANUALLY);

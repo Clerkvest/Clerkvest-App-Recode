@@ -74,6 +74,9 @@ ${classname | element} {
 
 *******************/
 
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   height: 100%;
@@ -83,6 +86,63 @@ body {
   margin: 0;
   font-family: 'Nunito', 'Roboto', sans-serif;
   background-color: $secondary;
+
+  overflow-x: hidden;
+}
+
+
+
+/******************
+
+  scrollbar
+  scrollbar
+  scrollbar
+  scrollbar
+  scrollbar
+  scrollbar
+
+*******************/
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background : transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background : $dark;
+  border-radius: 10px;
+}
+
+.cv-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.cv-scrollbar::-webkit-scrollbar-track {
+  background : transparent;
+  border-radius: 10px;
+}
+
+.cv-scrollbar::-webkit-scrollbar-thumb {
+  background : $dark;
+  border-radius: 10px;
+}
+
+.cv-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.cv-scrollbar-hidden::-webkit-scrollbar-track {
+  display: none;
+}
+
+.cv-scrollbar-hidden::-webkit-scrollbar-thumb {
+  display: none;
 }
 
 
@@ -97,6 +157,7 @@ body {
   display
 
 *******************/
+
 
 
 
@@ -275,6 +336,10 @@ body {
 
 .cv-align-center {
   align-items: center;
+}
+
+.cv-position-relative {
+  position: relative;
 }
 
 /******************

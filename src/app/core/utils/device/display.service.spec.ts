@@ -24,7 +24,7 @@ describe('DisplayService', () => {
   });
 
   it('should get mobile state', () => {
-    expect(service.getIsMobile()).toBeFalse();
+    expect(service.isMobile).toBeFalse();
   });
 
   it('should be able to set window inner width', () => {
@@ -38,7 +38,7 @@ describe('DisplayService', () => {
     window.dispatchEvent(new Event('resize'));
     expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_MOBILE);
     service.onResize();
-    expect(service.getIsMobile()).toBeTrue();
+    expect(service.isMobile).toBeTrue();
   });
 
   it('should get set mobile to false on large devices', () => {
@@ -46,6 +46,6 @@ describe('DisplayService', () => {
     window.dispatchEvent(new Event('resize'));
     expect(window.innerWidth).toBe(DisplayService.BREAKPOINT_MOBILE + 1);
     service.onResize();
-    expect(service.getIsMobile()).toBeFalse();
+    expect(service.isMobile).toBeFalse();
   });
 });
