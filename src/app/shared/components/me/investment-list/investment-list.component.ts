@@ -3,6 +3,7 @@ import {LoggerService} from '../../../../core/utils/logger/logger.service';
 import {SubscriptionService} from '../../../../core/utils/subscription/subscription.service';
 import {IInvestIn} from '../../../../core/api/models/IInvestIn';
 import {InvestRepositoryService} from '../../../../core/api/repository/invest/invest-repository.service';
+import {LocalizationService} from '../../../../core/utils/localization/localization.service';
 
 @Component({
   selector: 'app-investment-list',
@@ -15,7 +16,8 @@ export class InvestmentListComponent implements OnInit, OnDestroy {
   private _subscriptionService: SubscriptionService;
 
   constructor(
-    private _investmentRepository: InvestRepositoryService) {
+    private _investmentRepository: InvestRepositoryService,
+    private _localizationService: LocalizationService) {
   }
 
   private _investments: Array<IInvestIn> = [];
@@ -44,4 +46,7 @@ export class InvestmentListComponent implements OnInit, OnDestroy {
     this._subscriptionService.unsubscribe();
   }
 
+  get localizationService(): LocalizationService {
+    return this._localizationService;
+  }
 }

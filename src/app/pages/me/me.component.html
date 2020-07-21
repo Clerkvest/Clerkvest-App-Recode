@@ -3,19 +3,21 @@
       <div class="col-md-6 col-xl-4">
         <div class="row">
           <div class="col">
-            <img class="profile-image-thumb" src="assets/img/login-bg.jpg">
+            <img class="profile-image-thumb" src="assets/img/missing.png">
             <span>{{(userObj)?.firstname}}</span>
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a aria-controls="v-pills-profile" aria-selected="true" class="nav-link active" data-toggle="pill"
-                 (click)="show(0)" href="#v-pills-profile" id="v-pills-profile-tab" role="tab">Edit Profile</a>
+                 (click)="show(0)" href="#v-pills-profile" id="v-pills-profile-tab"
+                 role="tab">{{localeService.localized.profilePage.overviewSection.editProfile}}</a>
               <a aria-controls="v-pills-notifications" aria-selected="false" class="nav-link" data-toggle="pill"
-                 (click)="show(1)" href="#v-pills-notifications" id="v-pills-notifications-tab" role="tab">Notification
-                Preferences</a>
+                 (click)="show(1)" href="#v-pills-notifications" id="v-pills-notifications-tab"
+                 role="tab">{{localeService.localized.profilePage.overviewSection.settingsPref}}</a>
               <a aria-controls="v-pills-projects" aria-selected="false" class="nav-link" data-toggle="pill"
-                 (click)="show(2)" href="#v-pills-projects" id="v-pills-projects-tab" role="tab">Your Projects</a>
+                 (click)="show(2)" href="#v-pills-projects" id="v-pills-projects-tab"
+                 role="tab">{{localeService.localized.profilePage.overviewSection.yourProjects}}</a>
               <a aria-controls="v-pills-investments" aria-selected="false" class="nav-link" data-toggle="pill"
-                 (click)="show(3)" href="#v-pills-investments" id="v-pills-investments-tab" role="tab">Your
-                Investments</a>
+                 (click)="show(3)" href="#v-pills-investments" id="v-pills-investments-tab"
+                 role="tab">{{localeService.localized.profilePage.overviewSection.yourInvestments}}</a>
             </div>
           </div>
         </div>
@@ -25,36 +27,39 @@
           <div aria-labelledby="v-pills-profile-tab" class="tab-pane fade show active" id="v-pills-profile"
                role="tabpanel">
             <div>
-              <h1>Edit Profile</h1>
+              <h1>{{localeService.localized.profilePage.overviewSection.editProfile}}</h1>
               <div id="profile-image-box">
-                <img class="profile-image-big" src="assets/img/login-bg.jpg">
+                <img class="profile-image-big" src="assets/img/missing.png">
               </div>
               <div class="cv-form cv-textfield-outline">
-                <label>Firstname</label>
+                <label>{{localeService.localized.profilePage.detailsSection.firstname}}</label>
                 <input (input)="userObj.firstname = $event.target.value" [value]="(userObj)?.firstname" name="textInput"
-                       placeholder="Firstname" required type="text">
+                       placeholder="{{localeService.localized.profilePage.detailsSection.firstname}}" required
+                       type="text">
                 <!--              <span>cv-form cv-textfield-outline</span>-->
               </div>
               <div class="cv-form cv-textfield-outline">
-                <label>Lastname</label>
+                <label>{{localeService.localized.profilePage.detailsSection.lastname}}</label>
                 <input (input)="userObj.lastname = $event.target.value" [value]="(userObj)?.lastname" name="textInput"
-                       placeholder="Lastname" required type="text">
+                       placeholder="{{localeService.localized.profilePage.detailsSection.lastname}}" required
+                       type="text">
                 <!--              <span>cv-form cv-textfield-outline</span>-->
               </div>
               <div class="cv-form cv-textfield-outline">
-                <label>Nickname</label>
+                <label>{{localeService.localized.profilePage.detailsSection.nickname}}</label>
                 <input (input)="userObj.nickname = $event.target.value" [value]="(userObj)?.nickname" name="textInput"
-                       placeholder="Nickname" required type="text">
+                       placeholder="{{localeService.localized.profilePage.detailsSection.nickname}}" required
+                       type="text">
                 <!--              <span>cv-form cv-textfield-outline</span>-->
               </div>
               <button (onThrottle)="saveProfileChanges()" [throttle]
-                      class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">Save
+                      class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r">{{localeService.localized.profilePage.overviewSection.save}}
               </button>
             </div>
           </div>
           <div aria-labelledby="v-pills-notifications-tab" class="tab-pane fade" id="v-pills-notifications"
                role="tabpanel">
-            <h1>Notification Preferences</h1>
+            <h1>{{localeService.localized.profilePage.overviewSection.settingsPref}}</h1>
             <settings *ngIf="shownPill == 1"></settings>
           </div>
           <div aria-labelledby="v-pills-projects-tab" class="tab-pane fade" id="v-pills-projects" role="tabpanel">

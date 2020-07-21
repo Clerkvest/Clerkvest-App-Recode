@@ -3,6 +3,7 @@ import {UserRepositoryService} from 'src/app/core/api/repository/user/user-repos
 import {LoggerService} from '../../core/utils/logger/logger.service';
 import {SubscriptionService} from '../../core/utils/subscription/subscription.service';
 import {IEmployee} from '../../core/api/models/IEmployee';
+import {LocalizationService} from '../../core/utils/localization/localization.service';
 
 @Component({
   selector: 'app-me',
@@ -10,14 +11,18 @@ import {IEmployee} from '../../core/api/models/IEmployee';
   styleUrls: ['./me.component.scss']
 })
 export class MeComponent implements OnInit, OnDestroy {
+  constructor(
+    private _userRepository: UserRepositoryService,
+    private _localeService: LocalizationService
+  ) {
+  }
 
   private _logger: LoggerService;
   private _subscriptionService: SubscriptionService;
   private _userObj: IEmployee;
 
-  constructor(
-    private _userRepository: UserRepositoryService
-  ) {
+  get localeService(): LocalizationService {
+    return this._localeService;
   }
 
   private _shownPill: number;

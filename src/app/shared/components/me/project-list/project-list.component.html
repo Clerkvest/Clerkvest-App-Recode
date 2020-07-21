@@ -1,10 +1,11 @@
-<h1>Your Projects</h1>
+<h1>{{localizationService.localized.profilePage.overviewSection.yourProjects}}</h1>
 <div *ngIf="projects.length == 0" id="profile-projects-not-available-container">
-  <p class="cv-font-size-md">You haven't created any Projects.</p>
+  <p class="cv-font-size-md">{{localizationService.localized.profilePage.emptyProjectsSection.p1}}</p>
   <p>
-    Realise your own Ideas by creating your own Project.
+    {{localizationService.localized.profilePage.emptyProjectsSection.p2}}
   </p>
-  <a class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r" routerLink="/create">Create a Project</a>
+  <a class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r"
+     routerLink="/create">{{localizationService.localized.profilePage.emptyProjectsSection.b1}}</a>
 </div>
 <div *ngIf="projects.length > 0" id="profile-projects-available-container">
   <ul>

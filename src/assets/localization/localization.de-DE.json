@@ -51,5 +51,34 @@
   "legal": {
     "terms": "Services Terms",
     "privacy": "Privacy Policy"
+  },
+  "profilePage": {
+    "overviewSection": {
+      "editProfile": "Edit Profile",
+      "settingsPref": "Notification Preferences",
+      "yourProjects": "Your Projects",
+      "yourInvestments": "Your Investments",
+      "save": "Save"
+    },
+    "detailsSection": {
+      "firstname": "First name",
+      "lastname": "Last name",
+      "nickname": "Nickname"
+    },
+    "settingsSection": {
+      "projectFunded": "Project Funded",
+      "freshComment": "New Project Comment",
+      "freshProject": "New Projects Available",
+      "nearlyFundedProject": "Nearly funded Projects"
+    },
+    "emptyProjectsSection": {
+      "p1": "You haven't created any Projects.",
+      "p2": "Realise your own Ideas by creating your own Project.",
+      "b1": "Create a Project"
+    },
+    "emptyInvestmentsSection": {
+      "p1": "You haven't invested in anything yet.",
+      "p2": "Invest in a Project and realise your own Ideas or collaborate with others on a Project."
+    }
   }
 }

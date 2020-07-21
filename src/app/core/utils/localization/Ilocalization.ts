@@ -4,6 +4,7 @@ export class Localization {
   loginPage?: LocalizationLogin = new LocalizationLogin();
   language?: LocalizationLanguage = new LocalizationLanguage();
   legal?: LocalizationLegal = new LocalizationLegal();
+  profilePage?: ProfilePage = new ProfilePage();
 }
 
 class LocalizationDashboard {
@@ -68,4 +69,44 @@ class LocalizationLanguage {
 class LocalizationLegal {
   terms?: string = 'Services Terms';
   privacy?: string = 'Privacy Policy';
+}
+
+class ProfilePage {
+  overviewSection?: Profile = new Profile();
+  detailsSection?: ProfileDetails = new ProfileDetails();
+  settingsSection?: SettingsPref = new SettingsPref();
+  emptyProjectsSection?: EmptyProfileProjectList = new EmptyProfileProjectList();
+  emptyInvestmentsSection?: EmptyProfileInvestmentsList = new EmptyProfileInvestmentsList();
+}
+
+class Profile {
+  editProfile?: string = 'Edit Profile';
+  settingsPref?: string = 'Notification Preferences';
+  yourProjects?: string = 'Your Projects';
+  yourInvestments?: string = 'Your Investments';
+  save?: string = 'Save';
+}
+
+class ProfileDetails {
+  firstname?: string = 'First name';
+  lastname?: string = 'Last name';
+  nickname?: string = 'Nickname';
+}
+
+class SettingsPref {
+  projectFunded?: string = 'Project Funded';
+  freshComment?: string = 'New Project Comment';
+  freshProject?: string = 'New Projects Available';
+  nearlyFundedProject?: string = 'Nearly funded Projects';
+}
+
+class EmptyProfileProjectList {
+  p1?: string = 'You haven\'t created any Projects.';
+  p2?: string = 'Realise your own Ideas by creating your own Project.';
+  b1?: string = 'Create a Project';
+}
+
+class EmptyProfileInvestmentsList {
+  p1?: string = 'You haven\'t invested in anything yet.';
+  p2?: string = 'Invest in a Project and realise your own Ideas or collaborate with others on a Project.';
 }

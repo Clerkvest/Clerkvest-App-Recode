@@ -1,8 +1,8 @@
-<h1>Your Investments</h1>
+<h1>{{localizationService.localized.profilePage.overviewSection.yourInvestments}}</h1>
 <div *ngIf="investments.length == 0" id="profile-investments-not-available-container">
-  <p class="cv-font-size-md">You haven't invested in anything yet.</p>
+  <p class="cv-font-size-md">{{localizationService.localized.profilePage.emptyInvestmentsSection.p1}}</p>
   <p>
-    Invest in a Project and realise your own Ideas or collaborate with others on a Project.
+    {{localizationService.localized.profilePage.emptyInvestmentsSection.p2}}
   </p>
 </div>
 <div *ngIf="investments.length > 0" id="profile-investments-available-container">

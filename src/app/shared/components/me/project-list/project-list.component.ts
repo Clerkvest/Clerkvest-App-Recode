@@ -3,6 +3,7 @@ import {IProject} from '../../../../core/api/models/IProject';
 import {ProjectRepositoryService} from '../../../../core/api/repository/project/project-repository.service';
 import {LoggerService} from '../../../../core/utils/logger/logger.service';
 import {SubscriptionService} from '../../../../core/utils/subscription/subscription.service';
+import {LocalizationService} from '../../../../core/utils/localization/localization.service';
 
 @Component({
   selector: 'project-list',
@@ -15,7 +16,8 @@ export class ProjectListComponent implements OnInit, OnDestroy {
   private _subscriptionService: SubscriptionService;
 
   constructor(
-    private _projectRepository: ProjectRepositoryService) {
+    private _projectRepository: ProjectRepositoryService,
+    private _localizationService: LocalizationService) {
   }
 
   private _projects: Array<IProject> = [];
@@ -44,4 +46,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
     this._subscriptionService.unsubscribe();
   }
 
+  get localizationService(): LocalizationService {
+    return this._localizationService;
+  }
 }
