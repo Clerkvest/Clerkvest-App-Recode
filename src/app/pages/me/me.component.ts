@@ -55,7 +55,7 @@ export class MeComponent implements OnInit, OnDestroy {
   }
 
   saveProfileChanges() {
-    this._userRepository.update(this.userObj);
+    this._userRepository.update(this.userObj).subscribe(value => console.log(value));
   }
 
   show(id: number) {

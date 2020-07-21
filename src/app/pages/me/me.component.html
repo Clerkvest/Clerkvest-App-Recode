@@ -24,24 +24,27 @@
         <div class="tab-content" id="v-pills-tabContent">
           <div aria-labelledby="v-pills-profile-tab" class="tab-pane fade show active" id="v-pills-profile"
                role="tabpanel">
-            <div *ngIf="shownPill == 0">
+            <div>
               <h1>Edit Profile</h1>
               <div id="profile-image-box">
                 <img class="profile-image-big" src="assets/img/login-bg.jpg">
               </div>
               <div class="cv-form cv-textfield-outline">
                 <label>Firstname</label>
-                <input [value]="(userObj)?.firstname" name="textInput" placeholder="Firstname" required type="text">
+                <input (input)="userObj.firstname = $event.target.value" [value]="(userObj)?.firstname" name="textInput"
+                       placeholder="Firstname" required type="text">
                 <!--              <span>cv-form cv-textfield-outline</span>-->
               </div>
               <div class="cv-form cv-textfield-outline">
                 <label>Lastname</label>
-                <input [value]="(userObj)?.lastname" name="textInput" placeholder="Lastname" required type="text">
+                <input (input)="userObj.lastname = $event.target.value" [value]="(userObj)?.lastname" name="textInput"
+                       placeholder="Lastname" required type="text">
                 <!--              <span>cv-form cv-textfield-outline</span>-->
               </div>
               <div class="cv-form cv-textfield-outline">
                 <label>Nickname</label>
-                <input [value]="(userObj)?.nickname" name="textInput" placeholder="Nickname" required type="text">
+                <input (input)="userObj.nickname = $event.target.value" [value]="(userObj)?.nickname" name="textInput"
+                       placeholder="Nickname" required type="text">
                 <!--              <span>cv-form cv-textfield-outline</span>-->
               </div>
               <button (onThrottle)="saveProfileChanges()" [throttle]
