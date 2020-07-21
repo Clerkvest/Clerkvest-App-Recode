@@ -1,7 +1,24 @@
 export class Localization {
+  hello?: string = 'hello';
+  dashboardPage?: LocalizationDashboard = new LocalizationDashboard();
   loginPage?: LocalizationLogin = new LocalizationLogin();
   language?: LocalizationLanguage = new LocalizationLanguage();
   legal?: LocalizationLegal = new LocalizationLegal();
+}
+
+class LocalizationDashboard {
+  hello?: string = 'Hello there,';
+  welcome?: string = 'welcome to your dashboard';
+  sectionOne: string = 'Closest projects';
+  sectionTwo: string = 'Newest projects';
+  sectionThree: string = 'Finished projects';
+  sectionFour: string = 'sectionFour';
+  sectionFive: string = 'sectionFive';
+  sectionSix: string = 'sectionSix';
+  sectionSeven: string = 'sectionSeven';
+  sectionEight: string = 'sectionEight';
+  sectionNine: string = 'sectionNine';
+  sectionTen: string = 'sectionTen';
 }
 
 class LocalizationLogin {

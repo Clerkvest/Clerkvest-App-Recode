@@ -6,8 +6,6 @@ import { LocalizationService } from 'src/app/core/utils/localization/localizatio
 import { UserRepositoryService } from 'src/app/core/api/repository/user/user-repository.service';
 import { LoggerService } from 'src/app/core/utils/logger/logger.service';
 import { SubscriptionService } from 'src/app/core/utils/subscription/subscription.service';
-import { ILocalizedComponent } from 'src/app/core/utils/localization/ILocalizedComponent';
-import { Localization } from 'src/app/core/utils/localization/ilocalization';
 import { Cookies, CookieTime } from 'src/app/core/utils/cookie/cookie';
 
 @Component({
