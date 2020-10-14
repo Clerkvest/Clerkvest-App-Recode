@@ -1,14 +1,25 @@
 <h1>{{localizationService.localized.profilePage.overviewSection.yourInvestments}}</h1>
-<div *ngIf="investments.length == 0" id="profile-investments-not-available-container">
+<div *ngIf="investments?.length == 0" id="profile-investments-not-available-container">
   <p class="cv-font-size-md">{{localizationService.localized.profilePage.emptyInvestmentsSection.p1}}</p>
   <p>
     {{localizationService.localized.profilePage.emptyInvestmentsSection.p2}}
   </p>
 </div>
-<div *ngIf="investments.length > 0" id="profile-investments-available-container">
-  <ul>
-    <li *ngFor="let investment of investments; let i = index">
-      {{  investment.id }}  {{  investment.investment }}  {{  investment.projectId }}
-    </li>
-  </ul>
+<div *ngIf="investments?.length > 0" id="profile-investments-available-container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Investment</th>
+      <th scope="col">Project ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let investment of investments; let i = index">
+      <th scope="row">{{  investment.id }}</th>
+      <td>{{  investment.investment }}</td>
+      <td>{{  investment.projectId }}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

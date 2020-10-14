@@ -20,7 +20,7 @@ export class InvestmentListComponent implements OnInit, OnDestroy {
     private _localizationService: LocalizationService) {
   }
 
-  private _investments: Array<IInvestIn> = [];
+  private _investments: Array<IInvestIn>;
 
   get investments(): Array<IInvestIn> {
     return this._investments;

@@ -13,7 +13,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 
 /******************
@@ -89,6 +89,7 @@ body {
 
   overflow-x: hidden;
 }
+
 
 
 
@@ -1548,3 +1549,22 @@ body {
   height: auto;
 }
 
+/******************
+
+snackbar
+
+*******************/
+
+.custom-snackbar-info {
+  font-family: 'Nunito', 'Roboto', sans-serif;
+  font-size: 14px;
+  color: white;
+  background: $primary;
+}
+
+.custom-snackbar-error {
+  font-family: 'Nunito', 'Roboto', sans-serif;
+  font-size: 14px;
+  color: white;
+  background: $danger;
+}

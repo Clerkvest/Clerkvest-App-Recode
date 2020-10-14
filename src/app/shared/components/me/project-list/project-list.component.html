@@ -1,5 +1,5 @@
 <h1>{{localizationService.localized.profilePage.overviewSection.yourProjects}}</h1>
-<div *ngIf="projects.length == 0" id="profile-projects-not-available-container">
+<div *ngIf="projects?.length == 0" id="profile-projects-not-available-container">
   <p class="cv-font-size-md">{{localizationService.localized.profilePage.emptyProjectsSection.p1}}</p>
   <p>
     {{localizationService.localized.profilePage.emptyProjectsSection.p2}}
@@ -7,10 +7,30 @@
   <a class="cv-btn cv-btn-dark cv-btn-edgy cv-margin-sm-r"
      routerLink="/create">{{localizationService.localized.profilePage.emptyProjectsSection.b1}}</a>
 </div>
-<div *ngIf="projects.length > 0" id="profile-projects-available-container">
-  <ul>
-    <li *ngFor="let project of projects; let i = index">
-      {{  project.id }}  {{  project.title }}  {{  project.reached }}  {{  project.goal }}  {{  project.investedIn }}  {{  project.description }}
-    </li>
-  </ul>
+<div *ngIf="projects?.length > 0" id="profile-projects-available-container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Reached</th>
+      <th scope="col">Goal</th>
+      <th scope="col">Invested</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects; let i = index">
+      <th scope="row">{{  project.id }}</th>
+      <td>{{  project.title }}</td>
+      <td>
+        <i *ngIf="project.reached;else not_reached" class="fa fa-check"></i>
+        <ng-template #not_reached>
+          <i class="fa fa-times"></i>
+        </ng-template>
+      </td>
+      <td>{{  project.goal }}</td>
+      <td>{{  project.investedIn }}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

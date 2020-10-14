@@ -4,6 +4,7 @@ import {SubscriptionService} from '../../../../core/utils/subscription/subscript
 import {IEmployeeSettings} from '../../../../core/api/models/IEmployeeSettings';
 import {UserSettingsRepositoryService} from '../../../../core/api/repository/user/settings/user-settings-repository.service';
 import {LocalizationService} from '../../../../core/utils/localization/localization.service';
+import {SnackService} from '../../../../core/utils/snake/snack.service';
 
 @Component({
   selector: 'settings',
@@ -15,7 +16,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   private _subscriptionService: SubscriptionService;
 
   constructor(private userSettingsRepositoryService: UserSettingsRepositoryService,
-              private _localizationService: LocalizationService) {
+              private _localizationService: LocalizationService,
+              private _snackService: SnackService) {
   }
 
   private _settingsObj: IEmployeeSettings;
@@ -45,7 +47,16 @@ export class SettingsComponent implements OnInit, OnDestroy {
   }
 
   saveNotificationChanges() {
-    this.userSettingsRepositoryService.update(this.settingsObj);
+    this.userSettingsRepositoryService.update(this.settingsObj).subscribe(
+      response => {
+        this._snackService.info('Successfully Updated Settings');
+      },
+      error => {
+        this._snackService.error('Error While Updating Settings');
+      },
+      () => {
+
+      });
   }
 
   get localizationService(): LocalizationService {

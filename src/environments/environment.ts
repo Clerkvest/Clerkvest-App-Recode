@@ -8,7 +8,7 @@ export const environment = {
   logTimestamp: true,
   logType: true,
   logIdentifier: true,
-  basePath: 'https://clerkvest.com/api'
+  basePath: 'http://localhost:8080/api'
 };
 
 /*

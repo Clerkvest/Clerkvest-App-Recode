@@ -20,7 +20,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
     private _localizationService: LocalizationService) {
   }
 
-  private _projects: Array<IProject> = [];
+  private _projects: Array<IProject>;
 
   get projects(): Array<IProject> {
     return this._projects;

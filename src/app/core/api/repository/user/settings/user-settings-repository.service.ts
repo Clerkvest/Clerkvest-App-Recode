@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {IEmployeeSettings} from './../../../models/IEmployeeSettings';
+import {IEmployeeSettings} from '../../../models/IEmployeeSettings';
 import {LoggerService} from '../../../../utils/logger/logger.service';
 import {ConfigurationService} from '../../configuration.service';
 import {HttpClient} from '@angular/common/http';
@@ -44,26 +44,15 @@ export class UserSettingsRepositoryService {
   }
 
 
-  public update(body: IEmployeeSettings) {
+  public update(body: IEmployeeSettings): Observable<IEmployeeSettings> {
     let headers = this.configuration.getHeaders();
     let url = this.basePath + UserSettingsRepositoryService.UPDATE;
     this.logger.debug('Executing request: ' + url);
 
-    this.httpClient.put<IEmployeeSettings>(url, body,
+    return this.httpClient.put<IEmployeeSettings>(url, body,
       {
         headers: headers,
-      }).subscribe(
-      response => {
-        console.log(response);
-      },
-      error => {
-        console.log(error);
-      },
-      () => {
-
-      }
-    );
-
-    return null;
+      });
+    //TODO: Add HTTP Interceptor for Default Error Handling
   }
 }

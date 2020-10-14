@@ -3,7 +3,7 @@
       <div class="col-md-6 col-xl-4">
         <div class="row">
           <div class="col">
-            <img class="profile-image-thumb" src="assets/img/missing.png">
+            <img #profileImageSmall class="profile-image-thumb" src="assets/img/missing.png">
             <span>{{(userObj)?.firstname}}</span>
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a aria-controls="v-pills-profile" aria-selected="true" class="nav-link active" data-toggle="pill"
@@ -29,7 +29,10 @@
             <div>
               <h1>{{localeService.localized.profilePage.overviewSection.editProfile}}</h1>
               <div id="profile-image-box">
-                <img class="profile-image-big" src="assets/img/missing.png">
+                <input #imageInput (change)="uploadProfileImage($event)" accept="image/jpeg,image/png" hidden="hidden"
+                       type="file">
+                <img #profileImageBig (click)="imageInput.click()" class="profile-image-big"
+                     src="assets/img/missing.png">
               </div>
               <div class="cv-form cv-textfield-outline">
                 <label>{{localeService.localized.profilePage.detailsSection.firstname}}</label>
