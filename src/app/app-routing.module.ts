@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
-import { NavigatorLayoutComponent } from './layout/navigator-layout/navigator-layout.component';
-import { ElementsComponent } from './pages/elements/elements.component';
-import { LoginComponent } from './pages/login/login.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {EmptyLayoutComponent} from './layout/empty-layout/empty-layout.component';
+import {NavigatorLayoutComponent} from './layout/navigator-layout/navigator-layout.component';
+import {ElementsComponent} from './pages/elements/elements.component';
+import {LoginComponent} from './pages/login/login.component';
 import {MeComponent} from './pages/me/me.component';
-import { AuthGuardService } from './core/auth/auth-guard.service';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import {AuthGuardService} from './core/auth/auth-guard.service';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -26,7 +26,8 @@ const routes: Routes = [
       },
       {
         path: 'me',
-        component: MeComponent
+        component: MeComponent,
+        canActivate: [AuthGuardService]
       }
     ]
   },
