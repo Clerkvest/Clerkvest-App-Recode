@@ -1,0 +1,33 @@
+<div class="container">
+  <h3 class="mt-3">{{localizationService.localized.dashboardPage.hello}}</h3>
+  <div class="mb-4" id="path-container">
+    <h6>{{localizationService.localized.dashboardPage.welcome}}</h6>
+  </div>
+  <horizontal-scroller [color]="'dark'" [displayScrollbar]="false" [scrollStep]='600'
+                       [title]="localizationService.localized.dashboardPage.sectionOne">
+    <div *ngFor="let project of orderClose((projectsObservable | async)) as list; last as isLast" class="mb-1">
+      <app-dashbord-material-project *ngIf="!project.reached" [class]="{'mr-2': !isLast}"
+                                     [project]="project"></app-dashbord-material-project>
+    </div>
+  </horizontal-scroller>
+
+  <div class="mt-4"></div>
+  <horizontal-scroller [color]="'dark'" [displayScrollbar]="false" [scrollStep]='600'
+                       [title]="localizationService.localized.dashboardPage.sectionTwo">
+    <div *ngFor="let project of orderNewest((projectsObservable | async)) as list; last as isLast" class="mb-1">
+      <app-dashbord-material-project *ngIf="!project.reached" [class]="{'mr-2': !isLast}"
+                                     [project]="project"></app-dashbord-material-project>
+    </div>
+  </horizontal-scroller>
+
+  <div class="mt-4"></div>
+  <horizontal-scroller [color]="'dark'" [displayScrollbar]="false" [scrollStep]='600'
+                       [title]="localizationService.localized.dashboardPage.sectionThree">
+    <div *ngFor="let project of projectsObservable | async as list; last as isLast" class="mb-1">
+      <app-dashbord-material-project *ngIf="project.reached" [class]="{'mr-2': !isLast}"
+                                     [project]="project"></app-dashbord-material-project>
+    </div>
+  </horizontal-scroller>
+
+  <div class="mb-4"></div>
+</div>

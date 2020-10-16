@@ -7,6 +7,7 @@ import {LoginComponent} from './pages/login/login.component';
 import {MeComponent} from './pages/me/me.component';
 import {AuthGuardService} from './core/auth/auth-guard.service';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {DashboardMaterialComponent} from './pages/dashboard-material/dashboard-material.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,11 @@ const routes: Routes = [
       {
         path: 'me',
         component: MeComponent,
+        canActivate: [AuthGuardService]
+      },
+      {
+        path: 'dashboard-material',
+        component: DashboardMaterialComponent,
         canActivate: [AuthGuardService]
       }
     ]

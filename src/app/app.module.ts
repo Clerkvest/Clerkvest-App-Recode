@@ -40,6 +40,18 @@ import {ProjectListComponent} from './shared/components/me/project-list/project-
 import {InvestmentListComponent} from './shared/components/me/investment-list/investment-list.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DashboardMaterialComponent} from './pages/dashboard-material/dashboard-material.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {LayoutModule} from '@angular/cdk/layout';
+import {NavigatiorMaterialComponent} from './shared/components/navigatior-material/navigatior-material.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {DashbordMaterialProjectComponent} from './pages/dashboard-material/dashbord-material-project/dashbord-material-project.component';
 
 @NgModule({
   declarations: [
@@ -76,13 +88,25 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SettingsComponent,
     ProjectListComponent,
     InvestmentListComponent,
+    DashboardMaterialComponent,
+    NavigatiorMaterialComponent,
+    DashbordMaterialProjectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     LocalizationService,
