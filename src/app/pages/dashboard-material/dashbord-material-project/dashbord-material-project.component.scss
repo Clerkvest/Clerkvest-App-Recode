@@ -1,12 +1,45 @@
+@import "src/app/theme.scss";
+
 .dashboard-project-card {
-  max-width: 400px;
-  max-height: 600px;
+  max-width: 300px;
+  max-height: 500px;
 }
 
-.mat-card-content {
-  .span {
+mat-card-content {
+  span {
     display: inline-block;
-    max-height: 150px;
+    height: 100px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
   }
 }
 
+mat-card-actions {
+  mat-progress-bar {
+    height: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  #raised-goal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    #raised-container, #goal-container {
+      #raised, #goal {
+        color: mat-color($cv-app-mat-primary);
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8rem;
+
+        span {
+          color: mat-color($cv-app-mat-accent);
+          font-weight: normal;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

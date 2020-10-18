@@ -22,23 +22,23 @@
   }
 
   #title {
-    color: $dark;
+    color: $cv-dark;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
 
     &:hover {
-      color: $primary;
+      color: $cv-primary;
     }
   }
 
   #description {
-    color: $dark;
+    color: $cv-dark;
     font-size: 1rem;
   }
 
   .progress-bar {
-    background-color: $primary;
+    background-color: $cv-primary;
   }
 
   #raised-goal-container {
@@ -48,13 +48,13 @@
 
     #raised-container, #goal-container {
       #raised, #goal {
-        color: darken($color: $primary, $amount: 15);
+        color: darken($color: $cv-primary, $amount: 15);
         text-transform: uppercase;
         font-weight: bold;
         font-size: 0.8rem;
 
         span {
-          color: $dark;
+          color: $cv-dark;
           font-weight: normal;
           font-size: 1rem;
         }

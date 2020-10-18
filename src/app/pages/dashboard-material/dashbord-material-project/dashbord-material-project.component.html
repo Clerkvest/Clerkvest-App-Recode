@@ -1,17 +1,29 @@
 <mat-card class="dashboard-project-card">
   <mat-card-header>
     <div mat-card-avatar></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>{{project.title}}</mat-card-title>
   </mat-card-header>
-  <img alt="Image of the Project" mat-card-image src="../../../../assets/img/missing.png">
+  <img *ngIf="project.image" [src]="trustUrl(project.image)" alt="project-image" mat-card-image>
+  <img *ngIf="!project.image" alt="project-image" mat-card-image src="../../../../assets/img/missing.png">
   <mat-card-content>
     <span>
-      {{ "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originallybred for hunting.The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originallybred for hunting.The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originallybred for hunting." | shrink:"290" }}
+      {{project.description}}
     </span>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <div id="raised-goal-container">
+      <div id="raised-container">
+              <span id="raised">Raised:
+                <monetary-units [value]="project.investedIn"></monetary-units>
+              </span>
+      </div>
+      <div id="goal-container">
+              <span id="goal">Goal:
+                <monetary-units [value]='project.goal'></monetary-units>
+              </span>
+      </div>
+    </div>
+    <mat-progress-bar [value]="((project.investedIn / project.goal) * 100)" color="primary" mode="determinate"
+                      value="40"></mat-progress-bar>
   </mat-card-actions>
 </mat-card>

@@ -52,6 +52,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {DashbordMaterialProjectComponent} from './pages/dashboard-material/dashbord-material-project/dashbord-material-project.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import {DashbordMaterialProjectComponent} from './pages/dashboard-material/dashb
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule
   ],
   providers: [
     LocalizationService,
@@ -116,6 +118,6 @@ import {DashbordMaterialProjectComponent} from './pages/dashboard-material/dashb
     ShrinkPipe
   ],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -1,91 +1,91 @@
 @import "../../../../color.scss";
 
 #container {
-  background-color: $white;
+  background-color: $cv-white;
   padding: 1.5rem 1.75rem;
   border-radius: 8px;
 
   .title {
-    color: $dark;
+    color: $cv-dark;
     font-size: 1rem;
     font-weight: bold;
 
     &.primary {
-      color: $primary;
+      color: $cv-primary;
     }
 
     &.secondary {
-      color: $secondary;
+      color: $cv-secondary;
     }
 
     &.success {
-      color: $success;
+      color: $cv-success;
     }
 
     &.info {
-      color: $info;
+      color: $cv-info;
     }
 
     &.warn {
-      color: $warn;
+      color: $cv-warn;
     }
 
     &.danger {
-      color: $danger;
+      color: $cv-danger;
     }
 
     &.light {
-      color: $light;
+      color: $cv-light;
     }
 
     &.dark {
-      color: $dark;
+      color: $cv-dark;
     }
 
     &.clickable {
       cursor: pointer;
 
       &:hover {
-        color: $primary;
+        color: $cv-primary;
       }
     }
   }
 
   .sub-title {
-    color: lighten($color: $dark, $amount: 10);
+    color: lighten($color: $cv-dark, $amount: 10);
     font-size: 0.9rem;
     font-weight: bold;
 
     &.primary {
-      color: $primary;
+      color: $cv-primary;
     }
 
     &.secondary {
-      color: $secondary;
+      color: $cv-secondary;
     }
 
     &.success {
-      color: $success;
+      color: $cv-success;
     }
 
     &.info {
-      color: $info;
+      color: $cv-info;
     }
 
     &.warn {
-      color: $warn;
+      color: $cv-warn;
     }
 
     &.danger {
-      color: $danger;
+      color: $cv-danger;
     }
 
     &.light {
-      color: $light;
+      color: $cv-light;
     }
 
     &.dark {
-      color: $dark;
+      color: $cv-dark;
     }
   }
 }

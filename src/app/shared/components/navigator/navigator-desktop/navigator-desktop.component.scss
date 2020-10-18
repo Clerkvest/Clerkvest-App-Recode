@@ -9,11 +9,11 @@ nav {
     height: $navbar-height;
 
     &.upper {
-      background-color: $primary;
+      background-color: $cv-primary;
     }
 
     &.lower {
-      background-color: $white;
+      background-color: $cv-white;
     }
   }
 }

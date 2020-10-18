@@ -32,6 +32,7 @@
 @import 'variable.scss';
 @import 'color.scss';
 @import 'image.scss';
+@import 'app/theme.scss';
 
 
 
@@ -103,7 +104,7 @@ ${classname | element} {
 }
 
 ::-webkit-scrollbar-thumb {
-  background : $dark;
+  background: $cv-dark;
   border-radius: 10px;
 }
 
@@ -118,7 +119,7 @@ ${classname | element} {
 }
 
 .cv-scrollbar::-webkit-scrollbar-thumb {
-  background : $dark;
+  background: $cv-dark;
   border-radius: 10px;
 }
 
@@ -617,36 +618,36 @@ ${classname | element} {
     display: block;
   }
 
-  .cv-message-primary{
-    color: $primary;
+  .cv-message-primary {
+    color: $cv-primary;
   }
 
-  .cv-message-secondary{
-    color: $secondary;
+  .cv-message-secondary {
+    color: $cv-secondary;
   }
 
-  .cv-message-success{
-    color: $success;
+  .cv-message-success {
+    color: $cv-success;
   }
 
-  .cv-message-info{
-    color: $info;
+  .cv-message-info {
+    color: $cv-info;
   }
 
-  .cv-message-warn{
-    color: $warn;
+  .cv-message-warn {
+    color: $cv-warn;
   }
 
-  .cv-message-danger{
-    color: $danger;
+  .cv-message-danger {
+    color: $cv-danger;
   }
 
-  .cv-message-light{
-    color: $light;
+  .cv-message-light {
+    color: $cv-light;
   }
 
-  .cv-message-dark{
-    color: $dark;
+  .cv-message-dark {
+    color: $cv-dark;
   }
 }
 
@@ -666,27 +667,27 @@ ${classname | element} {
 
 
 .cv-h1 {
-  color: $black;
+  color: $cv-black;
 }
 
 .cv-h2 {
-  color: $black;
+  color: $cv-black;
 }
 
 .cv-h3 {
-  color: $black;
+  color: $cv-black;
 }
 
 .cv-h4 {
-  color: $black;
+  color: $cv-black;
 }
 
 .cv-h5 {
-  color: $gray;
+  color: $cv-gray;
 }
 
 .cv-h6 {
-  color: $gray;
+  color: $cv-gray;
 }
 
 
@@ -707,8 +708,8 @@ ${classname | element} {
 .cv-btn {
   padding: 10px 15px 10px 15px;
 
-  background-color: $primary;
-  color: $white !important;
+  background-color: $cv-primary;
+  color: $cv-white !important;
 
   text-align: center;
   text-decoration: none;
@@ -736,11 +737,11 @@ ${classname | element} {
   }
 
   &:hover, &.active {
-    background-color: darken($primary, 10%);
+    background-color: darken($cv-primary, 10%);
   }
 
   &:focus {
-    background-color: darken($primary, 10%);
+    background-color: darken($cv-primary, 10%);
     border: 0;
     outline: 0;
   }
@@ -755,21 +756,21 @@ ${classname | element} {
     primary
   **********/
   &.cv-btn-primary {
-    color: $white;
-    background-color: $primary;
+    color: $cv-white;
+    background-color: $cv-primary;
 
     &:hover, &:focus, &.active {
-      background-color: darken($primary, 10%);
+      background-color: darken($cv-primary, 10%);
     }
 
     &.cv-btn-outline {
-      border: 1px solid $primary;
+      border: 1px solid $cv-primary;
       background-color: transparent;
-      color: $primary !important;
+      color: $cv-primary !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $primary;
+        color: $cv-white !important;
+        background-color: $cv-primary;
       }
     }
   }
@@ -780,21 +781,21 @@ ${classname | element} {
     secondary
   **********/
   &.cv-btn-secondary {
-    color: $black !important;
-    background-color: $secondary;
+    color: $cv-black !important;
+    background-color: $cv-secondary;
 
     &:hover, &:focus, &.active {
-      background-color: darken($secondary, 10%);
+      background-color: darken($cv-secondary, 10%);
     }
 
     &.cv-btn-outline {
-      border: 1px solid $secondary;
+      border: 1px solid $cv-secondary;
       background-color: transparent;
-      color: $secondary !important;
+      color: $cv-secondary !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $secondary;
+        color: $cv-white !important;
+        background-color: $cv-secondary;
       }
     }
   }
@@ -805,21 +806,21 @@ ${classname | element} {
     success
   **********/
   &.cv-btn-success {
-    color: $white;
-    background-color: $success;
+    color: $cv-white;
+    background-color: $cv-success;
 
     &:hover, &:focus, &.active {
-      background-color: darken($success, 10%);
+      background-color: darken($cv-success, 10%);
     }
 
     &.cv-btn-outline {
-      border: 1px solid $success;
+      border: 1px solid $cv-success;
       background-color: transparent;
-      color: $success !important;
+      color: $cv-success !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $success;
+        color: $cv-white !important;
+        background-color: $cv-success;
       }
     }
   }
@@ -830,21 +831,21 @@ ${classname | element} {
     info
   **********/
   &.cv-btn-info {
-    color: $white;
-    background-color: $info;
+    color: $cv-white;
+    background-color: $cv-info;
 
     &:hover, &:focus, &.active {
-      background-color: darken($info, 10%);
+      background-color: darken($cv-info, 10%);
     }
 
     &.cv-btn-outline {
-      border: 1px solid $info;
+      border: 1px solid $cv-info;
       background-color: transparent;
-      color: $info !important;
+      color: $cv-info !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $info;
+        color: $cv-white !important;
+        background-color: $cv-info;
       }
     }
   }
@@ -855,21 +856,21 @@ ${classname | element} {
     warn
   **********/
   &.cv-btn-warn {
-    color: $white;
-    background-color: $warn;
+    color: $cv-white;
+    background-color: $cv-warn;
 
     &:hover, &:focus, &.active {
-      background-color: darken($warn, 10%);
+      background-color: darken($cv-warn, 10%);
     }
 
     &.cv-btn-outline {
-      border: 1px solid $warn;
+      border: 1px solid $cv-warn;
       background-color: transparent;
-      color: $warn !important;
+      color: $cv-warn !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $warn;
+        color: $cv-white !important;
+        background-color: $cv-warn;
       }
     }
   }
@@ -880,21 +881,21 @@ ${classname | element} {
     danger
   **********/
   &.cv-btn-danger {
-    color: $white;
-    background-color: $danger;
+    color: $cv-white;
+    background-color: $cv-danger;
 
     &:hover, &:focus, &.active {
-      background-color: darken($danger, 10%);
+      background-color: darken($cv-danger, 10%);
     }
 
     &.cv-btn-outline {
-      border: 1px solid $danger;
+      border: 1px solid $cv-danger;
       background-color: transparent;
-      color: $danger !important;
+      color: $cv-danger !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $danger;
+        color: $cv-white !important;
+        background-color: $cv-danger;
       }
     }
   }
@@ -905,21 +906,21 @@ ${classname | element} {
     light
   **********/
   &.cv-btn-light {
-    color: $black !important;
-    background-color: $light;
+    color: $cv-black !important;
+    background-color: $cv-light;
 
     &:hover, &:focus, &.active {
-      background-color: darken($light, 10%);
+      background-color: darken($cv-light, 10%);
     }
 
     &.cv-btn-outline {
       //border: 1px solid $light;
       background-color: transparent;
-      color: $dark !important;
+      color: $cv-dark !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $dark;
+        color: $cv-white !important;
+        background-color: $cv-dark;
       }
     }
   }
@@ -930,21 +931,21 @@ ${classname | element} {
     dark
   **********/
   &.cv-btn-dark {
-    color: $white;
-    background-color: $dark;
+    color: $cv-white;
+    background-color: $cv-dark;
 
     &:hover, &:focus, &.active {
-      background-color: darken($dark, 10%);
+      background-color: darken($cv-dark, 10%);
     }
 
     &.cv-btn-outline {
-      border: 1px solid $dark;
+      border: 1px solid $cv-dark;
       background-color: transparent;
-      color: $dark !important;
+      color: $cv-dark !important;
 
       &:hover, &:focus, &.active {
-        color: $white !important;
-        background-color: $dark;
+        color: $cv-white !important;
+        background-color: $cv-dark;
       }
     }
   }
@@ -962,16 +963,16 @@ ${classname | element} {
     font-weight: bold;
     letter-spacing: 0.7px;
 
-    color: $white !important;
+    color: $cv-white !important;
     background-color: transparent;
 
     &:hover, &:focus {
-      color: $white !important;
+      color: $cv-white !important;
     }
 
     &.active {
-      color: $dark !important;
-      background-color: $white;
+      color: $cv-dark !important;
+      background-color: $cv-white;
     }
   }
 
@@ -987,19 +988,19 @@ ${classname | element} {
     font-size: 15px;
     font-weight: bold;
 
-    color: $dark !important;
+    color: $cv-dark !important;
     background-color: transparent;
 
     &:hover, &:focus {
-      color: $primary !important;
+      color: $cv-primary !important;
     }
 
     &:focus {
-      background-color: $secondary;
+      background-color: $cv-secondary;
     }
 
     &.active {
-      background-color: $secondary;
+      background-color: $cv-secondary;
     }
   }
 }
@@ -1042,7 +1043,7 @@ ${classname | element} {
     padding-left: 5px;
     padding-top: 2px;
 
-    color: $gray;
+    color: $cv-gray;
 
     font-size: 13px;
   }
@@ -1069,7 +1070,7 @@ ${classname | element} {
       background: $icon-check no-repeat;
       background-size: 30px 30px;
       background-position: 99% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
+      background-color: lighten($color: $cv-gray, $amount: 10);
     }
   }
 
@@ -1078,13 +1079,13 @@ ${classname | element} {
       background: $icon-danger no-repeat;
       background-size: 30px 30px;
       background-position: 99% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
+      background-color: lighten($color: $cv-gray, $amount: 10);
     }
   }
 
   input {
     padding: 8px 12px 8px 12px;
-    background-color: lighten($color: $gray, $amount: 10);
+    background-color: lighten($color: $cv-gray, $amount: 10);
     outline: 0;
     border: 0;
     border-radius: 5px;
@@ -1100,7 +1101,7 @@ ${classname | element} {
       background-position: 99% 50%;
       background-color: transparent;
 
-      border: 1px solid $success;
+      border: 1px solid $cv-success;
     }
   }
 
@@ -1111,7 +1112,7 @@ ${classname | element} {
       background-position: 99% 50%;
       background-color: transparent;
 
-      border: 1px solid $danger;
+      border: 1px solid $cv-danger;
     }
   }
 
@@ -1121,7 +1122,7 @@ ${classname | element} {
     background-color: transparent;
 
     outline: 0;
-    border: 1px solid $gray;
+    border: 1px solid $cv-gray;
     border-radius: 5px;
   }
 }
@@ -1146,7 +1147,7 @@ ${classname | element} {
       background: $icon-check no-repeat;
       background-size: 30px 30px;
       background-position: 98% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
+      background-color: lighten($color: $cv-gray, $amount: 10);
     }
   }
 
@@ -1155,14 +1156,14 @@ ${classname | element} {
       background: $icon-danger no-repeat;
       background-size: 30px 30px;
       background-position: 98% 50%;
-      background-color: lighten($color: $gray, $amount: 10);
+      background-color: lighten($color: $cv-gray, $amount: 10);
     }
   }
 
   select {
     padding: 8px 12px 8px 12px;
 
-    background-color: lighten($color: $gray, $amount: 10);
+    background-color: lighten($color: $cv-gray, $amount: 10);
 
     outline: 0;
     border: 0;
@@ -1179,9 +1180,9 @@ ${classname | element} {
       background: $icon-check no-repeat;
       background-size: 30px 30px;
       background-position: 98% 50%;
-      background-color: $white;
+      background-color: $cv-white;
 
-      border: 1px solid $success;
+      border: 1px solid $cv-success;
     }
   }
 
@@ -1190,19 +1191,19 @@ ${classname | element} {
       background: $icon-danger no-repeat;
       background-size: 30px 30px;
       background-position: 98% 50%;
-      background-color: $white;
+      background-color: $cv-white;
 
-      border: 1px solid $danger;
+      border: 1px solid $cv-danger;
     }
   }
 
   select {
     padding: 8px 12px 8px 12px;
 
-    background-color: $white;
+    background-color: $cv-white;
 
     outline: 0;
-    border: 1px solid $gray;
+    border: 1px solid $cv-gray;
     border-radius: 5px;
 
     cursor: pointer;
@@ -1257,10 +1258,10 @@ ${classname | element} {
     background-color: transparent;
 
     outline: none;
-    border: 1px solid $gray;
+    border: 1px solid $cv-gray;
     border-radius: 50px;
 
-    box-shadow: inset -20px 0px 0px 0px $danger;
+    box-shadow: inset -20px 0px 0px 0px $cv-danger;
 
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -1273,9 +1274,9 @@ ${classname | element} {
     transition: all $transition-sh ease-in-out;
 
     &:checked {
-      border: 1px solid $success;
+      border: 1px solid $cv-success;
 
-      box-shadow: inset 20px 0px 0px 0px $success;
+      box-shadow: inset 20px 0px 0px 0px $cv-success;
     }
   }
 
@@ -1324,10 +1325,10 @@ ${classname | element} {
     background-color: transparent;
 
     outline: none;
-    border: 1px solid $gray;
+    border: 1px solid $cv-gray;
     border-radius: 50px;
 
-    box-shadow: inset -20px 0px 0px 0px $danger;
+    box-shadow: inset -20px 0px 0px 0px $cv-danger;
 
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -1340,9 +1341,9 @@ ${classname | element} {
     transition: all $transition-sh ease-in-out;
 
     &:checked {
-      border: 1px solid $success;
+      border: 1px solid $cv-success;
 
-      box-shadow: inset 20px 0px 0px 0px $success;
+      box-shadow: inset 20px 0px 0px 0px $cv-success;
     }
   }
 
@@ -1377,46 +1378,46 @@ ${classname | element} {
 
   padding: 2px 8px 2px 8px;
 
-  color: $white !important;
+  color: $cv-white !important;
   border-radius: 100px;
-  background-color: $primary;
+  background-color: $cv-primary;
 
   &.cv-badge-edgy {
     border-radius: 0;
   }
 
   &.cv-badge-primary {
-    background-color: $primary;
+    background-color: $cv-primary;
   }
 
   &.cv-badge-secondary {
-    background-color: $secondary;
-    color: $dark !important;
+    background-color: $cv-secondary;
+    color: $cv-dark !important;
   }
 
   &.cv-badge-success {
-    background-color: $success;
+    background-color: $cv-success;
   }
 
   &.cv-badge-info {
-    background-color: $info;
+    background-color: $cv-info;
   }
 
   &.cv-badge-warn {
-    background-color: $warn;
+    background-color: $cv-warn;
   }
 
   &.cv-badge-danger {
-    background-color: $danger;
+    background-color: $cv-danger;
   }
 
   &.cv-badge-light {
-    background-color: $light;
-    color: $dark !important;
+    background-color: $cv-light;
+    color: $cv-dark !important;
   }
 
   &.cv-badge-dark {
-    background-color: $dark;
+    background-color: $cv-dark;
   }
 }
 
@@ -1547,14 +1548,14 @@ snackbar
   font-family: 'Nunito', 'Roboto', sans-serif;
   font-size: 14px;
   color: white;
-  background: $primary;
+  background: $cv-primary;
 }
 
 .custom-snackbar-error {
   font-family: 'Nunito', 'Roboto', sans-serif;
   font-size: 14px;
   color: white;
-  background: $danger;
+  background: $cv-danger;
 }
 
 html, body {
